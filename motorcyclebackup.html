@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
+        <link href="styles.css" rel="stylesheet"> <!-- LINKING TO STYLE CSS SHEET -->
+        <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;700&display=swap" rel="stylesheet">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Anita Petrovic - Portfolio</title>
+    </head>
+
+    <body>
+
+        <!-- NAV BAR -->
+        <nav class="navbar">
+            <div class="nav-container"> 
+                <div class="nav-brand">
+                    <a href="index.html">ANITA PETROVIC</a>
+                </div>
+                <div class="nav-links">
+                    <a href="resume.html">Resume</a>
+                    <a href="portfolio.html">Portfolio</a>
+                    <a href="personal.html">Personal</a>
+                </div>
+            </div>
+        </nav>
+        
+
+        <!-- Main Content Section -->
+        <!-- Portfolio Content Section -->
+        <div class="main-content">
+            
+            <div class="portfolio-heading">
+                <p><a href="portfolio.html">< Back to Portfolio</a></p>
+                
+                <div class="portfolio-info">
+                    <div class="portfolio-text">
+                        <h2>Hydrogen Motorcycle</h2>
+                        <p> This was my 2023 Capstone. The project aimed to establish the feasibility 
+                            of powering a motorcycle using a hydrogen fuel cell. The project goals were to source and 
+                            calculate the total cost of components for the powertrain design and to perform high-level
+                             component integration and simulation. My contributions included creating components 
+                             of the CAD, designing the fuel cell schematics, and the Simulink simulation of how the fuel cell, supercapacitor, 
+                             DC/DC converter, and motor system perform under different loading conditions.
+                             </p>
+                    </div>
+
+                    <div class="portfolio-image">
+                        <img src="motorcycle1.png" alt="motorcycle1" /> 
+                    </div>   
+                </div>
+
+                <!-- SCHEMATIC SECTION -->
+
+                <div class="portfolio-info">
+                    <div class="portfolio-text">
+                        <h7>Components Overview</h7>
+                        <p> I created a general schematic to demonstrate how each component functions within the Fuelcell system. The 
+                            schematic, legend, and table describing each Fuelcell component can be found below. 
+                             </p>
+                    </div>
+
+                    <div class="portfolio-image2">
+                        <img src="FC system schematic legend.png" alt="FClegend1" /> 
+                    </div>   
+                </div>
+
+                <div class="portfolio-image3">
+                    <img src="FC system schematic.png" alt="FCschematic1" /> 
+                </div> 
+
+                <!-- TABLE FOR SCHEMATIC EXPLINATION -->
+                
+                <div class="portfolio-image3">
+                    <img src="test1.png" alt="FCschematic1" /> 
+                </div> 
+
+                <div class="portfolio-info">
+                    <div class="motorcycle-text3">
+                        <h1>Fuel Cell Stack</h1>
+                        <li> The fuel cell stack generates direct current (DC) from an electrochemical reaction</li>       
+                        <li> The fuel cell takes in hydrogen and air as fuel</li> 
+                        <li> The outputs of the fuel cell are hydrogen (recirculated), air, and water vapour </li>        
+                        
+                             
+                    </div>
+
+                    <div class="motorcycle-text3">
+                        <h1>Hydrogen Flow</h1>
+                        <li>Hydrogen is released from the hydrogen tank, controlled by the fuel cell controller </li>
+                        <li>The hydrogen passes through an analogue pressure gauge </li>
+                        <li>A quick release refill valve is attached to the hydrogen circuit for refueling </li>
+                        <li>Solenoid supply valve is used to control the flow of the hydrogen inputting to the system </li>
+                        <li>Venturi meter is used to recirculate the output hydrogen back into the main line </li>
+                        <li>Pressure transducer is controlled by the fuel cell controller and can control the pressure of the hydrogen </li>
+                        <li>Solenoid supply valve is used to control the flow of the hydrogen output from the system </li>
+                    </div>  
+
+                    
+                </div>
+
+                
+
+                <div class="row align-items-start portfolio-info">
+                    <div class="col-md-4 schematic-text">
+                        <h1>Fuel Cell Stack</h1>
+                    </div>
+                    <div class="col-md-8">
+                        <ul class="schematic-text-list">
+                            <!-- List items -->
+                            <li>The fuel cell stack generates direct current (DC) from an electrochemical reaction</li>
+                            <li>The fuel cell takes in hydrogen and air as fuel</li>
+                            <li>The outputs of the fuel cell are hydrogen (recirculated), air, and water vapour</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="row align-items-start portfolio-info">
+                    <div class="col-md-4 schematic-text">
+                        <h2>Hydrogen Flow</h2>
+                    </div>
+                    <div class="col-md-8">
+                        <ul class="schematic-text-list">
+                            <!-- List items -->
+                            <li>Hydrogen is released from the hydrogen tank, controlled by the fuel cell controller </li>
+                            <li>The hydrogen passes through an analogue pressure gauge </li>
+                            <li>A quick release refill valve is attached to the hydrogen circuit for refueling </li>
+                            <li>Solenoid supply valve is used to control the flow of the hydrogen inputting to the system </li>
+                            <li>Venturi meter is used to recirculate the output hydrogen back into the main line </li>
+                            <li>Pressure transducer is controlled by the fuel cell controller and can control the pressure of the hydrogen </li>
+                            <li>Solenoid supply valve is used to control the flow of the hydrogen output from the system </li>
+                        </ul>
+                    </div>
+                    
+                </div>
+
+                <div class="row align-items-start portfolio-info">
+                    <div class="col-md-4 schematic-text">
+                        <h3>Air Flow </h3>
+                    </div>
+                    <div class="col-md-8">
+                        <ul class="schematic-text-list">
+                            <!-- List items -->
+                            <li>Air intake is taken through a series of filters  </li>
+                            <li>Air is outputted from a series of fans into the atmosphere </li>
+                            
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="row align-items-start portfolio-info">
+                    <div class="col-md-4 schematic-text">
+                        <h4>Auxiliary Battery </h4>
+                    </div>
+                    <div class="col-md-8">
+                        <ul class="schematic-text-list">
+                            <!-- List items -->
+                            <li>The battery jumpstarts the hydrogen fuel cell </li>
+                            <li>Battery powers all auxiliary electronics (lights, dashboard, etc.), safety components, and the fuel cell controller</li>
+                            <li> When the fuel cell is active, the relay board will switch the primary power source to the fuel cell instead of the battery </li>
+                            
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="row align-items-start portfolio-info">
+                    <div class="col-md-4 schematic-text">
+                        <h5>Air Flow </h5>
+                    </div>
+                    <div class="col-md-8">
+                        <ul class="schematic-text-list">
+                            <!-- List items -->
+                            <li>Air intake is taken through a series of filters  </li>
+                            <li>Air is outputted from a series of fans into the atmosphere </li>
+                            
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="row align-items-start portfolio-info">
+                    <div class="col-md-4 schematic-text">
+                        <h6>Air Flow </h6>
+                    </div>
+                    <div class="col-md-8">
+                        <ul class="schematic-text-list">
+                            <!-- List items -->
+                            <li>Air intake is taken through a series of filters  </li>
+                            <li>Air is outputted from a series of fans into the atmosphere </li>
+                            
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="row align-items-start portfolio-info">
+                    <div class="col-md-4 schematic-text">
+                        <h7>Air Flow </h7>
+                    </div>
+                    <div class="col-md-8">
+                        <ul class="schematic-text-list">
+                            <!-- List items -->
+                            <li>Air intake is taken through a series of filters  </li>
+                            <li>Air is outputted from a series of fans into the atmosphere </li>
+                            
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="container">
+                    <div class="row mb-4">
+                        <div class="col-12 col-md-4">
+                            <div class="header-box">
+                                <h2>Fuel Cell Stack</h2>
+                            </div>
+                        </div>
+                        <div class="col-12 col-md-8">
+                            <ul class="list-unstyled">
+                                <li>The fuel cell stack generates direct current (DC) from an electrochemical reaction</li>
+                                <li>The fuel cell takes in hydrogen and air as fuel</li>
+                                <li>The outputs of the fuel cell are hydrogen (recirculated), air, and water vapour.</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="row mb-4">
+                        <div class="col-12 col-md-4">
+                            <div class="header-box">
+                                <h2>Fuel Cell Stack</h2>
+                            </div>
+                        </div>
+                        <div class="col-12 col-md-8">
+                            <ul class="list-unstyled">
+                                <li>Hydrogen is released from the hydrogen tank, controlled by the fuel cell controller </li>
+                            <li>The hydrogen passes through an analogue pressure gauge </li>
+                            <li>A quick release refill valve is attached to the hydrogen circuit for refueling </li>
+                            <li>Solenoid supply valve is used to control the flow of the hydrogen inputting to the system </li>
+                            <li>Venturi meter is used to recirculate the output hydrogen back into the main line </li>
+                            <li>Pressure transducer is controlled by the fuel cell controller and can control the pressure of the hydrogen </li>
+                            <li>Solenoid supply valve is used to control the flow of the hydrogen output from the system </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <!-- Repeat the row for each section -->
+                </div>
+                <div class="portfolio-info">
+                    <div class="portfolio-text-center">
+                        <h2>Performance Modelling</h2>
+                        <p> Simulink™ is a MATLAB based software used to solve non-linear ordinary differential equations. 
+                            Simulink was used to simplify each component into their fundamental equations to predict how the 
+                            system performs dynamically and to model and prove the performance of the final design. Figure 5 
+                            shows a simplified overview of the Simulink model and Table 4 lists a brief description of individual 
+                            component function. Further details on the Simulink model and its construction, assumptions, 
+                            outputs, and validation can be found in Appendix O. 
+                             </p>
+                    </div>
+
+                       
+                </div>
+
+                
+
+                <div class="portfolio-image3">
+                    <img src="simulinkdiagram1.png" alt="simulinkdiagram1" /> 
+                </div> 
+
+                <!-- <div class="portfolio-image3">
+                    <img src="simulinkdiagramtable1.png" alt="simulinkdiagramtable" /> 
+                </div>  -->
+
+                <div class="portfolio-info">
+                    <div class="portfolio-text-center">
+                        <h2>Performance Modelling Results</h2>
+                        <p> Simulink™ is a MATLAB based software used to solve non-linear ordinary differential equations. 
+                            Simulink was used to simplify each component into their fundamental equations to predict how the 
+                            system performs dynamically and to model and prove the performance of the final design. Figure 5 
+                            shows a simplified overview of the Simulink model and Table 4 lists a brief description of individual 
+                            component function. Further details on the Simulink model and its construction, assumptions, 
+                            outputs, and validation can be found in Appendix O. 
+                             </p>
+                    </div>
+
+                       
+                </div>
+
+
+            </div>
+        </div>
+            
+        
+
+        <!-- FOOTER -->
+        <div class="footer-container">
+            <footer class="footer">
+                <div class="footer-column">
+                    <span class="footer-title">EMAIL:</span>
+                    <a href="mailto:anita.petrovic@example.com" class="footer-link">anita.petrovic@example.com</a>
+                </div>
+                <div class="footer-column">
+                    <span class="footer-title">LINKEDIN:</span>
+                    <a href="https://www.linkedin.com/in/anitapetrovic/" target="_blank" class="footer-link">Anita's Profile</a>
+                </div>
+            </footer>
+        </div>
+    
+
+
+    </body>
+    </html>

@@ -1,0 +1,771 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
+        <link href="styles.css" rel="stylesheet"> <!-- LINKING TO STYLE CSS SHEET -->
+        <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;700&display=swap" rel="stylesheet">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Anita Petrovic - Portfolio</title>
+    </head>
+
+    <body>
+
+        <!-- NAV BAR -->
+        <nav class="navbar">
+            <div class="nav-container"> 
+                <div class="nav-brand">
+                    <a href="index.html">ANITA PETROVIC</a>
+                </div>
+                <div class="nav-links">
+                    <a href="resume.html">Resume</a>
+                    <a href="portfolio.html">Portfolio</a>
+                    <a href="personal.html">Personal</a>
+                </div>
+            </div>
+        </nav>
+        
+
+        <!-- Main Content Section -->
+        <!-- Portfolio Content Section -->
+        <div class="main-content">
+            
+            <div class="portfolio-heading">
+                <p><a href="portfolio.html">< Back to Portfolio</a></p>
+                
+                <div class="portfolio-info">
+                    <div class="portfolio-text">
+                        <h2>Hydrogen Motorcycle</h2>
+                        <p> This was my 2023 Capstone. The project aimed to establish the feasibility 
+                            of powering a motorcycle using a hydrogen fuel cell. The project goals were to source and 
+                            calculate the total cost of components for the powertrain design and to perform high-level
+                             component integration and simulation. My contributions included creating components 
+                             of the CAD, designing the fuel cell schematics, and the Simulink simulation of how the fuel cell, supercapacitor, 
+                             DC/DC converter, and motor system perform under different loading conditions.
+                             
+                            </p>
+                            <p> The report from my capstone group project can be downloaded  <a href="motorcyclereport.pdf">here</a></p>
+                    </div>
+
+                    <div class="portfolio-image">
+                        <img src="motorcycle1.png" alt="motorcycle1" /> 
+                    </div>   
+                </div>
+
+                <!-- SCHEMATIC SECTION -->
+
+                <div class="portfolio-info">
+                    <div class="portfolio-text">
+                        <h7>Hydrogen Fuel Cell Components Overview</h7>
+                        <p> The main components necessary for the hydrogen fuel cell system can be found illustrated in the figures below. The following schematic demonstrates how each component of the fuel cell system is connected. Below the schematic is a color-coded table which describes the purpose of the system components.</p>
+                    </div>
+
+                    <div class="portfolio-image2">
+                        <img src="FC system schematic legend.png" alt="FClegend1" /> 
+                    </div>   
+                </div>
+
+                <div class="portfolio-image3">
+                    <img src="FC system schematic.png" alt="FCschematic1" /> 
+                </div> 
+
+                <!-- TABLE FOR SCHEMATIC EXPLINATION -->
+                
+                <div class="motorcycle-container">
+                    <div class="row mb-4">
+                        <div class="col-12 col-md-4">
+                            <div class="header-box header-fuel-cell-stack">Fuel Cell Stack</div>
+                        </div>
+                        <div class="col-12 col-md-8">
+                            <ul class="list-styled">
+                                <li>The fuel cell stack generates direct current (DC) from an electrochemical reaction</li>
+                                <li>The fuel cell takes in hydrogen and air as fuel</li>
+                                <li>The outputs of the fuel cell are hydrogen (recirculated), air, and water vapour.</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="row mb-4">
+                        <div class="col-12 col-md-4">
+                            <div class="header-box header-hydrogen-flow">Hydrogen Flow</div>
+                        </div>
+                        <div class="col-12 col-md-8">
+                            <ul class="list-styled">
+                                <li>Hydrogen is released from the hydrogen tank, controlled by the fuel cell controller </li>
+                                <li>The hydrogen passes through an analogue pressure gauge </li>
+                                <li>A quick release refill valve is attached to the hydrogen circuit for refueling </li>
+                                <li>Solenoid supply valve is used to control the flow of the hydrogen inputting to the system </li>
+                                <li>Venturi meter is used to recirculate the output hydrogen back into the main line </li>
+                                <li>Pressure transducer is controlled by the fuel cell controller and can control the pressure of the hydrogen </li>
+                                <li>Solenoid supply valve is used to control the flow of the hydrogen output from the system </li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="row mb-4">
+                        <div class="col-12 col-md-4">
+                            <div class="header-box header-air-flow">Air Flow</div>
+                        </div>
+                        <div class="col-12 col-md-8">
+                            <ul class="list-styled">
+                                <li>Air intake is taken through a series of filters  </li>
+                                <li>Air is outputted from a series of fans into the atmosphere  </li>
+                                
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="row mb-4">
+                        <div class="col-12 col-md-4">
+                            <div class="header-box header-aux-battery">Auxiliary Battery</div>
+                        </div>
+                        <div class="col-12 col-md-8">
+                            <ul class="list-styled">
+                                <li>The battery jumpstarts the hydrogen fuel cell  </li>
+                                <li>Battery powers all auxiliary electronics (lights, dashboard, etc.), safety components, and the fuel cell controller. </li>
+                                <li>When the fuel cell is active, the relay board will switch the primary power source to the fuel cell instead of the battery </li>
+                                
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="row mb-4">
+                        <div class="col-12 col-md-4">
+                            <div class="header-box header-h2-safety">H2 Safety</div>
+                        </div>
+                        <div class="col-12 col-md-8">
+                            <ul class="list-styled">
+                                <li>Series of internal and external safety features to stop all processes in case of an emergency  </li>
+                                
+                                
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="row mb-4">
+                        <div class="col-12 col-md-4">
+                            <div class="header-box header-controllers">Drive System</div>
+                        </div>
+                        <div class="col-12 col-md-8">
+                            <ul class="list-styled">
+                                <li>Fuel cell controller is used to control stack temperature, blowers, hydrogen flow, purging, and electrical output  </li>
+                                <li>Motor controller is used to control torque, speed, and power to the wheels </li>
+                                
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="row mb-4">
+                        <div class="col-12 col-md-4">
+                            <div class="header-box header-drive-system">Drive System</div>
+                        </div>
+                        <div class="col-12 col-md-8">
+                            <ul class="list-styled">
+                                <li> Drive system composes of the components between the power supply and controllers.  </li>
+                                <li> Relay board will switch the primary power source to the fuel cell instead of the battery  </li>
+                                <li> The relay board will also control the amount of power output from the fuel cell and super capacitors </li>
+                                <li> Supercapacitors release energy quickly during acceleration cases </li>
+                                <li> Supercapacitors charge using excess fuel cell energy </li>
+                                <li> Throttle is the input to the motor controller letting the rider control the power output</li>
+                                <li> Motor converts electrical energy to mechanical energy </li>
+                            </ul>
+                        </div>
+                    </div>
+                
+                </div>
+
+                <!-- Component Description Section --> 
+
+                <div class="portfolio-info">
+                  <div class="portfolio-text-center">
+                      <h2>Component Sourcing</h2>
+                      <p> The below table summarizes the selected components, makes, and models that will be used in the hydrogen fuel cell system. The selected components will then be modeled together using Simulink.
+
+                      </p>
+                  </div>
+
+                     
+              </div>
+
+                   
+                <div class="table-responsive">
+                <table class="component-table">
+                  <thead>
+                    <tr>
+                      <th>Component</th>
+                      <th>Supplier</th>
+                      <th>Model Number</th>
+                      <th>Details</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>Double 5-kW proton exchange membrane fuel cell stack</td>
+                      <td>Horizon Educational</td>
+                      <td>FCS-C5000</td>
+                      <td>
+                        <ul>
+                          <li>Integrated with air cooling and hydrogen recirculation</li>
+                          <li>Two stacks in series for a total of 10 kW of power and 144 V</li>
+                        </ul>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>48V, 165F supercapacitor</td>
+                      <td>Maxwell</td>
+                      <td>BMOD0165 P048 C0B</td>
+                      <td>
+                        <ul>
+                          <li>Stores electrical charge and discharges power quickly in scenarios with power demand greater than 10 kW</li>
+                        </ul>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>20 kW Liquid Cooled Motor</td>
+                      <td>Golden Motor</td>
+                      <td>HPM-20KW-LIQ </td>
+                      <td>
+                        <ul>
+                          <li>Operate at speeds of 3200 to 6000 RPM</li>
+                          <li>Peak stall torque of 160 N-m</li>
+                          <li>Continuous rated torque of 80 N-m</li>
+                          <li>Brushless DC motor was selected as it allowed for instantaneous changes in speed and torque without requiring a transmission</li>
+                        </ul>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>Metal Hydride Hydrogen Tank</td>
+                      <td>Fuel Cell Store</td>
+                      <td>1021852 </td>
+                      <td>
+                        <ul>
+                          <li>Standard hydrogen storage tanks require either very low temperature or very high pressure to counteract the strong repelling force between hydrogen molecules</li>
+                          <li>Metal hydride powders in the selected storage system break apart the hydrogen and allow the atoms to be packed much more densely</li>
+                          <li>Reduced risk in a crash scenario because of the lower storage pressure (10 bar)</li>
+                          <li>56 x 11 cm (H x D) tank stores 1.65 kg of hydrogen</li>
+                          <li>Gives the motorcycle a range of 343 km</li>
+                        </ul>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>DC/DC Converter</td>
+                      <td>ZekaLabs </td>
+                      <td>10 kW, 800 V</td>
+                      <td>
+                        <ul>
+                          <li>Ensures the DC voltage out of the fuel cell stack matched the super capacitor’s rated voltage</li>
+                          <li>Selected DC/DC converted has a nominal power of 10 kW</li>
+                          <li>Selected DC/DC converted is rated for the selected voltage, current, and power requirements</li>
+                          <li>Selected DC/DC converter is compatible with fuel cell systems</li>
+                        </ul>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>24 V Li-Po Battery</td>
+                      <td>Lithium King</td>
+                      <td>6S 22AH</td>
+                      <td>
+                        <ul>
+                          <li>Required to jumpstart the fuel cell and to bring the fuel cell stack up to temperature</li>
+                          <li>A 24 V Li-Po battery was selected due to the requirements from the fuel cell manufacturers manual</li>
+                        </ul>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>CS-MSW Fuel Cell Controller</td>
+                      <td>Horizon Educational </td>
+                      <td>CS-MSW</td>
+                      <td>
+                        <ul>
+                          <li>Controls the fuel cell stack temperature, blowers, hydrogen flow, purging, and electrical output</li>
+                          <li>Selected fuel cell controller is sold by the fuel cell manufacturer Horizon Educational</li>
+                          <li>Fuel cell controller is compatible with the two 5 kW fuel cells</li>
+                        </ul>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>KBL96251 Motor Controller</td>
+                      <td>Kelly</td>
+                      <td>KBL96251</td>
+                      <td>
+                        <ul>
+                          <li>Controls torque and speed outputs of the motor</li>
+                          <li>Motor controller controls the torque and RPMs of the motor</li>
+                          <li>Motor controller is rated for the voltage and current supplied by the fuel cell and supercapacitor</li>
+                        </ul>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+                
+
+
+
+                <!-- SIMULINK SECTION -->
+
+                <div class="portfolio-info">
+                    <div class="portfolio-text-center">
+                        <h2>Simulink Performance Modelling</h2>
+                        <!-- <p> Simulink™ is a MATLAB based software used to solve non-linear ordinary differential equations. 
+                            Simulink was used to simplify each component into their fundamental equations to predict how the 
+                            system performs dynamically and to model and prove the performance of the final design. The figure below 
+                            shows a simplified overview of the Simulink model. The table below lists a brief description of individual 
+                            component function. Further details on the Simulink model and its construction, assumptions, 
+                            outputs, and validation can be found in Appendix O. 
+                             </p> -->
+
+                        <p> 
+                          Simulink™ is a MATLAB-based graphical programming environment for modeling, simulating, and analyzing multidomain 
+                          dynamical systems. Its primary purpose is to provide an interactive graphical interface and a set of block libraries 
+                          that let you design, simulate, implement, and test a variety of time-varying systems, including control systems, 
+                          signal processing systems, communication systems, and many others that can be represented with block diagrams.</p>
+
+                        <p>For this project, Simulink was mainly used to model a hybrid system and how 
+                          it responds to different loading cases. The Simulink model was created by modeling each component into their fundamental 
+                          equations then sending data between them to see how they interact. A top model overview of the 
+                          entire system is found in the figure below. The below figure shows the specific signals and data being transferred 
+                          throughout the system. From this model, the speed, acceleration, torque, efficiency, and wheel slip 
+                          can be calculated. The table below lists a brief description of individual component function   </p>
+                          
+                    </div>
+
+                       
+                </div>
+
+                
+
+                <div class="portfolio-image3">
+                    <img src="simulinkdiagram1.png" alt="simulinkdiagram1" /> 
+                </div> 
+
+                <div class="table-responsive">
+                    <table class="component-table">
+                      <thead>
+                        <tr>
+                          <th>Simulink Component</th>
+                          <th>Function</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td>Power Command System</td>
+                          <td>
+                            <ul>
+                              <li>Calculates the power required from the fuel cell and supercapacitor</li>
+                              <li>Has a power stop case when braking is applied  </li>
+                              
+                            </ul>
+                          </td>
+                        </tr>
+                        <td>Fuel Cell System </td>
+                          <td>
+                            <ul>
+                              <li>Simplified the system through modelling as a static system using
+                                polarization curve data provided by the supplier</li>
+                              <li>Takes a power input from the power command system and
+                                  calculates efficiency, current, and voltage  </li>
+                              <li>Consists of two fuel cell stacks in series </li>
+                              
+                            </ul>
+                          </td>
+                        </tr>
+                        <td>DC/DC Converter</td>
+                          <td>
+                            <ul>
+                              <li> Converts the fuel cell voltage to the same voltage of the
+                                supercapacitors </li>
+                              <li> Includes efficiency losses </li>
+             
+                            
+                            </ul>
+                          </td>
+                        </tr>
+                        <td>Super Capacitor System</td>
+                          <td>
+                            <ul>
+                              <li>Assumed linear behavior and ignored self-discharging effects </li>
+                              <li>Simplified by modeling as an RC circuit  </li>
+                              <li>Input for the system is the current from the DC/DC converter </li>
+                              <li>Calculates the voltage changes in the supercapacitor </li>
+                             
+                            </ul>
+                          </td>
+                        </tr>
+                        <td>Motor System </td>
+                          <td>
+                            <ul>
+                              <li>Receives power from the DC/DC converter system</li>
+                              <li>Calculates torque, RPMs, and efficiency losses based off supplier
+                                provided data </li>
+                              
+                              
+                            </ul>
+                          </td>
+                        </tr>
+                        <td>Drivetrain System  </td>
+                          <td>
+                            <ul>
+                              <li>Uses Simscape drivetrain blocks to model the belt drive, brakes, and
+                                wheels  </li>
+                              <li>Calculates the torque output from the belt drive </li>
+                              <li>Calculates longitudinal forces, wheel slip, normal force, and axle
+                                torque </li>
+                              
+                            </ul>
+                          </td>
+                        </tr>
+                        <td>Output Command System  </td>
+                          <td>
+                            <ul>
+                              <li>Calculates acceleration and velocity</li>
+                              
+                              
+                            </ul>
+                          </td>
+                        </tr>
+                        
+                      </tbody>
+                    </table>
+                  </div>
+
+                
+
+                <div class="portfolio-info">
+                    <div class="portfolio-text-center">
+                        <h2>Power Command System</h2>
+                        <p> The initial input to the entire Simulink model comes from the power command, 
+                            which controls the outputs for all other systems in the Simulink model.  
+                            This subsystem receives a power input signal from the user which can be constant, 
+                            time varying, or cyclical in nature. Within the power command system, a switch function 
+                            is present that stops the system when braking is applied. In most cases, the command will 
+                            mainly request power from the fuel cell system, but in the event of a power input greater 
+                            than 10 kW, the power command will automatically request power from the supercapacitors 
+                            for short durations. In the figure below, the full power command model is displayed.
+                             </p>
+                    </div>
+
+                    <div class="portfolio-image3">
+                        <img src="powercommand.png" alt="Power Command Simulink" /> 
+                    </div> 
+                </div>
+
+                <div class="portfolio-info">
+                    <div class="portfolio-text-center">
+                        <h2>Fuel Cell System</h2>
+                        <p> The second system in the series is the fuel cell system, which receives a power 
+                            signal from the power command system. Upon receiving a power signal, 
+                            this system calculates the current, voltage, and efficiency of the fuel cell 
+                            at the requested power output.  </p>
+                            <p> To obtain the values, manufacturer provided polarization curve data was plotted in 
+                            MATLAB with curve fitting methods and was then converted into Simulink look-up tables. 
+                            These plots can be found in the three figures below. Using the tables, 
+                            the system was able to output specific voltages and currents for the power input signals. 
+                            To account for the system consisting of two 5 kW fuel cells stacked in a series, 
+                            the output voltage was doubled. These two stacks together provided the total power 
+                            output of 10 kW, and the complete fuel cell subsystem can be seen below.</p>                          
+                            
+                          
+                    </div>
+
+                    <div class="portfolio-info">
+                        <div class="portfolio-image">
+                            <img src="FCCurrentandPowerCurves.png" alt="Current and Power Curve used in FC Simulink Model" /> 
+                        </div>  
+    
+                        <div class="portfolio-image">
+                            <img src="FCCurrentandEfficiencyCurves.png" alt="Current and Efficiency Curve used in FC Simulink Model" /> 
+                        </div>   
+
+                        <div class="portfolio-image">
+                            <img src="FCCurrentandVoltageCurves.png" alt="Current and Voltage Curve used in FC Simulink Model" /> 
+                        </div>  
+                    </div>
+
+                    <div class="portfolio-image3">
+                        <img src="FuelCellSimulink.png" alt="Fuel Cell Simulink Model" /> 
+                    </div> 
+
+                    
+                </div>
+
+                <div class="portfolio-info">
+                    <div class="portfolio-text-center">
+                        <h2>DC/DC Converter System </h2>
+                        <p> A DC/DC converter is required to convert the input voltage from the fuel cell to the same 
+                            voltage as the supercapacitor. Ideally, this system would have been modeled as a buck/boost converter, 
+                            but this proved to be too complex to model. To simplify this process, 
+                            the DC/DC converter was instead modeled as a system of constant efficiency loss where the 
+                            output voltage would simply match that of the supercapacitor. The DC/DC converter system can be 
+                            seen in the figure below.
+                             </p>
+                    </div>
+
+                    <div class="portfolio-image3">
+                        <img src="DCDCConverterModel.png" alt="DC/DC Converter Simulink Model" /> 
+                    </div> 
+                </div>
+                
+                <div class="portfolio-info">
+                    <div class="portfolio-text-center">
+                        <h2>Supercapacitor System </h2>
+                        <p> The supercapacitor system was another complex component designed around a model created by Bertini et. al. at the KTH 
+                          Royal Institute of Technology. Supercapacitors would ideally be modeled as a series of circuits with multiple resistances 
+                          and non-linear capacitances as seen in the first figure below. However, this would be extremely difficult to model and far too 
+                          complex for the purposes of this project. 
+                          <p> <div class="portfolio-image3">
+                        <img src="IdealSupercapacitorCircuit.png" alt="Ideal Supercapacitor Circuit " style="width: 40%;" /> 
+                          </div> 
+                        </p>
+                          To simplify the model, the supercapacitor was assumed to have linear behavior and no 
+                          self-discharging effects. Through these assumptions, the supercapacitor was modeled as a RC circuit as shown in equation E-1 
+                          and its defined variables are shown in the table below. The final Simulink model for the supercapacitor can be seen below. 
+                          </p>
+                    </div>
+                </div>
+
+                  
+                  
+                  <div class="portfolio-image3">
+                      <img src="supercapacitorequation.png" alt="DC/DC Converter Simulink Model" style="width: 40%;" /> 
+                  </div> 
+
+                
+
+                <div class="table-responsive">
+                    <table class="custom-table">
+                      <thead>
+                        <tr>
+                          <th>Unit</th>
+                          <th>Definition</th>
+                          <th>Value</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td>V(s)</td>
+                          <td>Voltage as a function of time</td>
+                          <td>Variable</td>
+                        </tr>
+                        <tr>
+                          <td>ESR</td>
+                          <td>Equivalent series resistance</td>
+                          <td>0.06 Ω</td>
+                        </tr>
+                        <tr>
+                          <td>I(s)</td>
+                          <td>Current as a function of time</td>
+                          <td>Variable</td>
+                        </tr>
+                        <tr>
+                          <td>C</td>
+                          <td>Capacitance</td>
+                          <td>165 F</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                    </div>
+
+                  
+
+                <div class="portfolio-image3">
+                    <img src="SupercapacitorSimulinkModel.png" alt="Supercapacitor Simulink Model" /> 
+                </div> 
+
+                <div class="portfolio-info">
+                    <div class="portfolio-text-center">
+                        <h2>Motor System </h2>
+                        <p> The motor system was designed around the torque, speed, and efficiency data from the manufacturer which 
+                          can be found in plotted figures below. The motor data given from the supplier was converted to a series of 
+                          look-up tables in Simulink. Through the look-up tables, the efficiency and torque could be calculated for
+                           different power commands. The motor system model is shown in the figure below.</p>                          
+                                                      
+                    </div>
+
+                    <div class="portfolio-info">
+                        <div class="portfolio-image">
+                            <img src="TorquevsPowerinCurve.png" alt="Torque vs Power in Data from Motor Supplier" /> 
+                        </div>  
+    
+                        <div class="portfolio-image">
+                            <img src="TorquevsPowerOutCurve.png" alt="Torque vs Power Out Data from Motor Supplier" /> 
+                        </div>   
+
+                        <div class="portfolio-image">
+                            <img src="TorquevsEfficiencyCurve.png" alt="Torque vs Efficiency Data from Motor Supplier" /> 
+                        </div>  
+
+                        <div class="portfolio-image">
+                            <img src="TorquevsSpeedCurve.png" alt="Torque vs Speed Data from Motor Supplier" /> 
+                        </div>  
+                    </div>
+
+                    <div class="portfolio-image3">
+                        <img src="MotorSimulinkModel.png" alt="Motor Simulink Model" /> 
+                    </div> 
+
+                    
+                </div>
+
+                <div class="portfolio-info">
+                    <div class="portfolio-text-center">
+                        <h2>Drivetrain System </h2>
+                        <p> Simscape™ was used to model the drivetrain. Simscape is a Simulink feature that allows users to simulate multidomain 
+                          physical systems. By using Simscape functions, models are based off physical components that already contain 
+                          the fundamental equations they are based on. An overview of the drivetrain model can be found in the figure below. 
+                          From the model, the torque from the motor is transferred to a belt drive block. From the belt drive, the signal is 
+                          then transferred to calculate speed, acceleration, longitudinal forces, normal forces, wheel slip, and torque of the axle.
+                             </p>
+                    </div>
+
+                    <div class="portfolio-image3">
+                        <img src="DrivetrainSimulinkModel.png" alt="Drivetrain Simulink Model" /> 
+                    </div> 
+
+                    <p>Through Simscape, the motorcycle body, wheels, and braking systems were modeled. The motorcycle body system was designed using
+                       MathWorks physical modelling tutorials and can be seen below. Magic Tire Formula blocks were used to model the motorcycle wheels
+                         and the braking system was modeled using Simscape’s inbuilt Loaded-contact rotational friction blocks.
+                           </p>
+
+                    <div class="portfolio-image3">
+                        <img src="MotorcycleSubsystemSimulinkModel.png" alt="Motorcycle Subsystem Simulink Model" /> 
+                    </div> 
+
+                    <p> From the drivetrain model, the forces at the wheels could be determined for various input power command cases. 
+                      The braking force and power inputs applied to the system determined the longitudinal force, wheel slip, normal force, 
+                      and axle torque experienced by the motorcycle. </p>
+                      <!-- A single case of braking was analysed to demonstrate the function 
+                      of the drivetrain system. Here, a constant power command signal of 5 kW and a braking force of 1000 N on each 
+                      caliper is applied at 100 seconds. The speed change of the vehicle when braking can be seen in Figure O-19. 
+                      Values for axle torque, longitudinal force, wheel slip, and normal force for both the front and back wheel can 
+                      be found from Figure O-20 to O-27. -->
+
+                </div>
+                
+                <div class="portfolio-info">
+                    <div class="portfolio-text-center">
+                        <h2>Output Command System</h2>
+                        <p> The output command seen in the figure below receives data from the drivetrain subsystem and calculates acceleration 
+                          and velocity for the motorcycle. It first obtains an output acceleration by using equations E-2 and E-3, 
+                          where vehicle mass and force are known. 
+                             </p>
+                    </div>
+
+                    <div class="portfolio-image3">
+                        <img src="outputequation.png" alt="acceleration equations" style="width: 50%;" /> 
+                    </div> 
+
+                    <p> Once the acceleration is obtained, it is integrated over time to obtain velocity. T
+                      his value is back calculated into the aerodynamic drag formula, which increases the drag force term and in turn 
+                      affects the acceleration. The iterative change in acceleration, velocity, and drag force can be very 
+                      quickly calculated by the Simulink model.   </p>
+
+                    <div class="portfolio-image3">
+                        <img src="OutputCommandSimulinkModel.png" alt="Output Command Simulink Model" /> 
+                    </div> 
+                </div>
+                
+                <div class="portfolio-info">
+                    <div class="portfolio-text-center">
+                        <h2>Simulink Performance Modelling Results</h2>
+                        <p> The plot in the figure below shows the changes in voltage and power for the fuel cell and supercapacitor, 
+                          demonstrating how the system reacts to high demands of power. As the system power requirement exceeds 
+                          10 kW (fuel cell maximum output), primarily during acceleration, the supercapacitors activate for ~18 seconds 
+                          increasing the total power output to 20 kW. 20 kW is the limiting case and max power output from the 
+                          motorcycle. 
+                             </p>
+                    </div>
+
+                    <div class="image">
+                        <img src="FuelcellandSupercapacitorpowerChart.png" alt="Fuel cell and Supercapacitor power and voltage changes with respect to time" class="centered-image" /> 
+                    </div>
+
+                    <p> Simulink models different velocities and accelerations as seen from the plots in the three figures below.  
+                      These plots correspond to varying power outputs of 5 kW, 10 kW, and 20 kW respectively. The third figure (20 kW) demonstrates
+                       the increased acceleration rate when the supercapacitor is used due to the power demand exceeding 10 kW. 
+                       Depending on the power command function, the motorcycle will accelerate and reach different peak velocities. 
+                       The velocity and acceleration cases show the importance of the super capacitor assisting the motorcycle 
+                       in cases where more than 10 kW of power is required. Without the supercapacitors, the motorcycle acceleration 
+                       would be much slower. </p>
+
+                    <div class="image">
+                        <img src="VelocityandAcceleration5KWChartResults.png" alt="Velocity and Acceleration for 5 kW power from the Fuel Cell" class="centered-image" /> 
+                    </div>
+
+                    <div class="image">
+                        <img src="VelocityandAcceleration10KWChartResults.png" alt="Velocity and Acceleration for 10 kW power from the Fuel Cell" class="centered-image" /> 
+                    </div>
+
+                    <div class="image">
+                        <img src="VelocityandAcceleration20KWChartResults.png" alt="Velocity and Acceleration at 20 kW with capacitor assist then 10 kW from only Fuel Cell" class="centered-image" /> 
+                    </div>
+
+
+                    <div class="portfolio-text-center">
+                        
+                        <p> The Simulink model provided the top speeds and acceleration of the motorcycle, and this 
+                          data is summarized in the table below.</p>
+
+                    </div>
+                    
+                    
+                       
+                </div>
+
+                <div class="table-responsive">
+                        <table class="custom-table">
+                          <thead>
+                            <tr>
+                              <th>Parameter</th>
+                              <th>Power Requirement</th>
+                              <th>Value</th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            <tr>
+                              <td>Top Speed (km/hr)</td>
+                              <td>8.9 kW</td>
+                              <td>140 km/hr</td>
+                            </tr>
+                            <tr>
+                              <td>Velocity on 8% grade</td>
+                              <td>9.9 kW</td>
+                              <td>50 km/hr</td>
+                            </tr>
+                            <tr>
+                              <td>Acceleration (0 to 100 km/hr)</td>
+                              <td>20 kW</td>
+                              <td>12.5 s</td>
+                            </tr>
+                            
+                          </tbody>
+                        </table>
+                    </div>
+
+                
+
+            </div>
+        </div>
+            
+        
+
+        <!-- FOOTER -->
+        <div class="footer-container">
+            <footer class="footer">
+              <div class="footer-column">
+                    <span class="footer-title">EMAIL:</span>
+                    <a href="mailto:anita.pvic@gmail.com" class="footer-link">anita.pvic@gmail.com</a>
+                  </div>
+                <div class="footer-column">
+                    <span class="footer-title">LINKEDIN:</span>
+                    <a href="https://www.linkedin.com/in/anitapetrovic/" target="_blank" class="footer-link">Anita's Profile</a>
+                </div>
+            </footer>
+        </div>
+    
+
+
+    </body>
+    </html>

@@ -1,0 +1,281 @@
+.motorcycle-info {
+    display: flex; /* Use flexbox to place elements side by side */
+    align-items: flex-start; /* Align items to the top */
+    justify-content: space-between; /* Space between the text and image */
+    flex-wrap: wrap; /* Allow items to wrap on smaller screens */
+}
+
+.motorcycle-info p {
+    margin-bottom: 20px;
+    text-align: left;
+    
+}
+
+.motorcycle-text1 {
+    flex-basis: 50%; /* Take up half the space of the container */
+    max-width: 30%; /* Maximum width of text container */
+    text-align: left; /* Center text */
+    margin-bottom: 20px; /* Space below the text */
+    
+}
+
+.motorcycle-text1 h1 {
+    background-color: #FF99FF; /* Styling for the 'Hydrogen Motorcycle' heading */
+    color: black;
+    padding: 10px 20px;
+    border-radius: 10px;
+    display: inline-block;
+    border: 2px solid #000000;
+    font-size: 1.2rem;
+    text-align: center; /* Align the heading to the left */
+    margin-bottom: 20px; /* Space below the heading */
+}
+
+.motorcycle-text1 h2 {
+    background-color: #FDE9FF; /* Styling for the 'Hydrogen Motorcycle' heading */
+    color: black;
+    padding: 10px 20px;
+    border-radius: 10px;
+    display: inline-block;
+    border: 2px solid #000000;
+    font-size: 1.2rem;
+    text-align: center; /* Align the heading to the left */
+    margin-bottom: 20px; /* Space below the heading */
+}
+
+.motorcycle-text1 h3 {
+    background-color: #5CE3D4; /* Styling for the 'Hydrogen Motorcycle' heading */
+    color: black;
+    padding: 10px 20px;
+    border-radius: 10px;
+    display: inline-block;
+    border: 2px solid #000000;
+    font-size: 1.2rem;
+    text-align: center; /* Align the heading to the left */
+    margin-bottom: 20px; /* Space below the heading */
+}
+
+.motorcycle-text2 {
+    flex-basis: 90%; /* Take up half the space of the container */
+    max-width: 70%; /* Maximum width of text container */
+    text-align: center; /* Center text */
+    margin-bottom: 20px; /* Space below the text */
+    
+}
+
+.motorcycle-text2 li{
+    text-align: left;
+    padding-left: 30px; /* Adjust padding for alignment */
+    list-style-position: outside; /* Keeps bullets inside the content flow */
+    display: list-item; /* Ensure they're treated as list items */
+    list-style-type: disc;
+    
+}
+
+
+
+.motorcycle-text2 h1 {
+    background-color: #FF99FF; /* Styling for the 'Hydrogen Motorcycle' heading */
+    color: black;
+    padding: 10px 20px;
+    border-radius: 10px;
+    display: inline-block;
+    border: 2px solid #000000;
+    font-size: 1.2rem;
+    text-align: center; /* Align the heading to the left */
+    margin-bottom: 20px; /* Space below the heading */
+}
+
+.motorcycle-text2 h2 {
+    background-color: #FDE9FF; /* Styling for the 'Hydrogen Motorcycle' heading */
+    color: black;
+    padding: 10px 20px;
+    border-radius: 10px;
+    display: inline-block;
+    border: 2px solid #000000;
+    font-size: 1.2rem;
+    text-align: center; /* Align the heading to the left */
+    margin-bottom: 20px; /* Space below the heading */
+}
+
+.motorcycle-text3 {
+    flex-basis: 100%; /* Take up all the space of the container */
+    max-width: 100%; /* Maximum width of text container */
+    text-align: center; /* Center text */
+    margin-bottom: 20px; /* Space below the text */
+    
+}
+
+.motorcycle-text3 li{
+    text-align: left;
+    padding-left: 100px; /* Adjust padding for alignment */
+    list-style-position: outside; /* Keeps bullets inside the content flow */
+    display: list-item; /* Ensure they're treated as list items */
+    list-style-type: disc;
+    
+}
+
+
+.motorcycle-text3 h1 {
+    background-color: #FF99FF; /* Styling for the 'Hydrogen Motorcycle' heading */
+    color: black;
+    padding: 10px 20px;
+    border-radius: 10px;
+    display: inline-block;
+    border: 2px solid #000000;
+    font-size: 1.2rem;
+    text-align: center; /* Align the heading to the left */
+    margin-bottom: 20px; /* Space below the heading */
+}
+
+
+.schematic-text h1 {
+    background-color: #FF99FF !important ;  /* Adjust the color as needed */
+    color: black !important ;
+    
+    padding: 10px 20px !important ;
+    border-radius: 10px !important ;
+    border: 2px solid #000000 !important;
+    font-size: 1.2rem !important ;
+    /* Removed 'display: inline-block' and 'text-align: center' */
+    /* 'text-align: center' is not needed if you want the text to align left */
+    margin-bottom: 20px !important ; /* Space below the heading */
+    width: 80% !important ; /* This makes the header take the full width of its parent */
+}
+
+.schematic-text h2 {
+    background-color: #FDE9FF  ;  /* Adjust the color as needed */
+    color: black  ;
+    padding: 10px 20px !important ;
+    border-radius: 10px !important ;
+    border: 2px solid #000000 ;
+    font-size: 1.2rem !important ;
+    text-align: center;
+    /* Removed 'display: inline-block' and 'text-align: center' */
+    /* 'text-align: center' is not needed if you want the text to align left */
+    margin-bottom: 20px !important ; /* Space below the heading */
+    width: 80% !important ; /* This makes the header take the full width of its parent */
+}
+
+.schematic-text h3 {
+    background-color: #5CE3D4  ;  /* Adjust the color as needed */
+    color: black  ;
+    padding: 10px 20px !important ;
+    border-radius: 10px !important ;
+    border: 2px solid #000000 ;
+    font-size: 1.2rem !important ;
+    text-align: center;
+    /* Removed 'display: inline-block' and 'text-align: center' */
+    /* 'text-align: center' is not needed if you want the text to align left */
+    margin-bottom: 20px !important ; /* Space below the heading */
+    width: 80% !important ; /* This makes the header take the full width of its parent */
+}
+
+.schematic-text h4 {
+    background-color: #7DD5F6  ;  /* Adjust the color as needed */
+    color: black  ;
+    padding: 10px 20px !important ;
+    border-radius: 10px !important ;
+    border: 2px solid #000000 ;
+    font-size: 1.2rem !important ;
+    text-align: center;
+    /* Removed 'display: inline-block' and 'text-align: center' */
+    /* 'text-align: center' is not needed if you want the text to align left */
+    margin-bottom: 20px !important ; /* Space below the heading */
+    width: 80% !important ; /* This makes the header take the full width of its parent */
+}
+
+.schematic-text h5 {
+    background-color: #F47068 ;  /* Adjust the color as needed */
+    color: black  ;
+    padding: 10px 20px !important ;
+    border-radius: 10px !important ;
+    border: 2px solid #000000 ;
+    font-size: 1.2rem !important ;
+    text-align: center;
+    /* Removed 'display: inline-block' and 'text-align: center' */
+    /* 'text-align: center' is not needed if you want the text to align left */
+    margin-bottom: 20px !important ; /* Space below the heading */
+    width: 80% !important ; /* This makes the header take the full width of its parent */
+}
+
+.schematic-text h6 {
+    background-color: #FFBD59 ;  /* Adjust the color as needed */
+    color: black  ;
+    padding: 10px 20px !important ;
+    border-radius: 10px !important ;
+    border: 2px solid #000000 ;
+    font-size: 1.2rem !important ;
+    text-align: center;
+    /* Removed 'display: inline-block' and 'text-align: center' */
+    /* 'text-align: center' is not needed if you want the text to align left */
+    margin-bottom: 20px !important ; /* Space below the heading */
+    width: 80% !important ; /* This makes the header take the full width of its parent */
+}
+
+.schematic-text h7 {
+    background-color: #787FF6;  /* Adjust the color as needed */
+    color: white ;
+    padding: 10px 20px !important ;
+    border-radius: 10px !important ;
+    border: 2px solid #000000 ;
+    font-size: 1.2rem !important ;
+    text-align: center;
+    /* Removed 'display: inline-block' and 'text-align: center' */
+    /* 'text-align: center' is not needed if you want the text to align left */
+    margin-bottom: 20px !important ; /* Space below the heading */
+    width: 80% !important ; /* This makes the header take the full width of its parent */
+}
+
+.schematic-text-list {
+    list-style-type: disc;
+    list-style-type: disc;
+    padding-left: 20px; /* Adjust this as needed, depending on your design */
+    padding-right: 0; /* Ensure no padding on the right */
+    margin-right: 0; /* Ensure no margin on the right */
+    width: auto; /* This will make sure the list takes the full width of its container */
+}
+    /* padding-left: 0; Bootstrap already has padding, set this to 0 or adjust as needed */
+    /* ... Other styles ... */
+
+.motorcycle-header-container {
+    padding: 0.5rem 1rem;
+    margin-bottom: 0.5rem;
+    border-radius: 5px;
+}
+
+.motorcycle-bg-pink {
+    background-color: #FF99FF;
+    color: black;
+    border: 2px solid #000;
+}
+
+.motorcycle-bg-light-purple {
+    background-color: #EEAEEE;
+    color: black;
+    border: 2px solid #000;
+}
+
+.motorcycle-bg-lighter-purple {
+    background-color: #DDCCDD;
+    color: black;
+    border: 2px solid #000;
+    }
+
+.motorcycle-bg-light {
+    background-color: #f8f9fa;
+    border: 2px solid #000;
+    border-top: none; /* Removes the top border to make it seamless with the header */
+    }
+    
+.motorcycle-ul {
+list-style-position: inside; /* Position bullets inside the list /
+padding-left: 0; / Adjust padding to control indentation if list-style-position is removed */
+}
+    
+    /* You might also want to add a specific class to style the list items if necessary /
+    .portfolio-li {
+    / Add specific list item styles here if needed */
+.motorcycle-li {
+    list-style-type: disc;
+}

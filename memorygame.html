@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
+        <link href="styles.css" rel="stylesheet"> <!-- LINKING TO STYLE CSS SHEET -->
+        <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;700&display=swap" rel="stylesheet">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Anita Petrovic - Portfolio</title>
+
+    </head>
+
+    <body>
+
+        <!-- NAV BAR -->
+        <nav class="navbar">
+            <div class="nav-container"> 
+                <div class="nav-brand">
+                    <a href="index.html">ANITA PETROVIC</a>
+                </div>
+                <div class="nav-links">
+                    <a href="resume.html">Resume</a>
+                    <a href="portfolio.html">Portfolio</a>
+                    <a href="personal.html">Personal</a>
+                </div>
+            </div>
+        </nav>
+        
+
+        <!-- Main Content Section -->
+        <!-- Portfolio Content Section -->
+        <div class="main-content">
+            
+            <div class="portfolio-heading">
+                <p><a href="portfolio.html">< Back to Portfolio</a></p>
+                
+                <div class="portfolio-info">
+                    <div class="portfolio-text">
+                        <h3>Arduino Memory Game</h3>
+                        <p> The Arduino Joystick Memory Game is an interactive project of mine where players replicate sequences of blinking lights using a joystick. The game setup includes four LEDs arranged in a diamond pattern on a breadboard, with sequences of blinks generated randomly. As players successfully mimic these patterns, the sequences become increasingly complex, adding extra blinks with each level.
+                                                        
+                             </p>
+                    </div>
+
+                    <div class="portfolio-image">
+                        <img src="memorygame2.jpg" alt="memory2" /> 
+                    </div>   
+                </div>
+
+                <div class="portfolio-info">
+                    <div class="portfolio-text-center">
+                        <h2>Video Demo</h2>
+                        <p> Below, you can find a video demoing how my Arduino Memory game works. 
+                            As shown, there is an initial sequence of all of the lights blinking one 
+                            after another in a circle. For the player to exit the initial sequence and 
+                            start the game, they need to press down on the joystick (SW pin). 
+                            The game will then blink and beep to signify that the game is starting.
+                             </p>
+                            
+                             <div class="embed-responsive embed-responsive-16by9">
+                                <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/K4pJLVs0Qn0" allowfullscreen></iframe>
+                            </div>
+                    </div>
+
+                       
+                </div>
+
+
+                <div class="portfolio-info">
+                    <div class="portfolio-text2">
+                        <h7>Components Overview</h7>
+                        <p> A schematic of the circuit design can be found here. The following components were used in the design:
+                            <li> Arduino MEGA350 R3</li>
+                            <li> Joystick</li>
+                            <li> 4 LEDs</li>
+                            <li> 2 Breadboards</li>
+                            <li> Buzzer (Piezo Speaker)</li>
+                             </p>
+                    </div>
+
+                    <div class="portfolio-image">
+                        <img src="memorygame1.png" alt="ArduinoCircuitDesign" /> 
+                    </div>   
+                </div>
+
+                <div class="portfolio-text-center">
+                    <h2>Code</h2>
+                    <p>This is the entire code for the memory game. It can be copy and pasted then uploaded to the Arduino.</p>
+                    <div class="code-container">
+                        <pre id="code">/// This is a memory game which uses 4 LEDS to randomly generate a sequence of lights which increases in number with each round
+/// It is on the user to use a joystick to replicate the randomly generated seqeunce
+
+const byte n_pins = 4; // define the constant number of leds being used
+const byte led_pins[] = {2, 3, 4, 5}; // Defining the pins (2 = yellow, 3 = green, 4 = blue, 5 = red)
+const byte buzzer = 8; // Define the sound pin
+
+const int sw_pin = 7; // switch output connected to digital pin
+const int x_pin = 0; // analog pin connected to x output
+const int y_pin = 1; // analog pin connected to y output
+
+byte sequence[100]; // Store values for light sequence
+byte playerSequence[100]; // Store values of players response
+byte current_seq = 0; // length of sequence starts at 0
+byte input_count = 0; // length of correct joystick moves starts at 0
+
+// Define game states
+enum GameState {
+    INITIAL,
+    PLAYING,
+    RESPONSE,
+    RESET
+};
+
+// Current game state
+GameState currentState = INITIAL;
+
+// Main Code starts here
+void setup() {
+
+Serial.begin(9600); // Start the serial monitor
+setPinDirection(OUTPUT); // Initialize leds
+pinMode(buzzer, OUTPUT); // initialize buzzer
+pinMode(sw_pin, INPUT_PULLUP); // Initialize joystick switch pin
+pinMode(x_pin, INPUT); // Initialize joystick (x)
+pinMode(y_pin, INPUT); // Initialize joystick (y)
+
+// Set initial game state
+currentState = INITIAL;
+
+// Initiate start up seqeunce and switch state to PLAYING
+initial_sequence();
+
+// Initialize random seed
+randomSeed(analogRead(A0) + analogRead(A1) + millis());
+
+// Reset all arrays and constants and warn player that game is starting
+reset();
+
+}
+
+/// Setup Helper Functions
+
+// Function to set all led pins to the same direction
+void setPinDirection(byte direction) {
+    for(byte i = 0; i < n_pins; i++) {
+        pinMode(led_pins[i], direction);
+    }
+}
+
+// Function that will write to all of the led pins at once
+void write_all_pins(byte val) {
+for (int i = 0; i < n_pins; i++) {
+    digitalWrite(led_pins[i], val);
+}
+}
+
+// Function to make beep sound
+void beep(unsigned int beepDuration){
+tone(buzzer, 6000, beepDuration);
+delay(beepDuration);
+noTone(buzzer);
+}
+
+// Function to flash all the leds at once
+void flash(short freq){
+for (int i = 0; i < 1; i++) {
+    write_all_pins(HIGH);
+    delay(freq);
+    write_all_pins(LOW);
+    delay(freq);
+}
+}
+
+// Function to reset all values and warn user that game is starting
+void reset(){
+// blink all lights 3 times and beep as warining game starting
+for(int i = 0; i < 3; i++) {
+    flash(300);
+}
+beep(500);
+
+// Clear the constants, sequence, and player arrays
+current_seq = 0;
+input_count = 0;
+for (int i = 0; i < 100; i++) {
+    sequence[i] = 0;
+    playerSequence[i] = 0;
+}
+
+}
+
+// Function to create a start up sequence
+// LEDSs will light up in circle untill joystick pressed and game initiated
+void initial_sequence() {
+
+while (digitalRead(sw_pin) == HIGH) // keep looping through the LEDs {
+
+    for (int i = 0; i < n_pins; i++) { // loop though all the pins turning them off and on
+    
+    digitalWrite(led_pins[i], HIGH);
+    delay(200);
+    digitalWrite(led_pins[i], LOW);
+    }
+
+    if (digitalRead(sw_pin) == LOW) { // Joystick is pressed and breaks loop
+    
+    currentState = PLAYING; // Transition to PLAYING state
+    break; // exit loop
+    }
+}
+
+}
+
+void loop() {
+
+// Switch between differnt game states
+switch (currentState)
+{
+    // Initial states goes though the seqeunce right before the game starts
+    case INITIAL:
+
+    reset();
+    delay(1000); // Give player a second to prepare before game starts
+    currentState = PLAYING; // Send the user to Playing state
+    break;
+
+    // Playing state generates a random LED light sequence
+    case PLAYING:
+
+    setPinDirection(OUTPUT); // initialize LEDs
+    randomSeed(analogRead(A0) + analogRead(A1) + millis()); // Initialize the random number generator
+
+    sequence[current_seq] = led_pins[random(0, n_pins)]; // Select a random pin for the current level of game
+    current_seq++; // update length of light sequence
+    play_sequence(); // Display sequence on bread board to Player
+    delay(250);
+    beep(100); // beep to signal player it is their turn
+
+    // Transition to RESPONSE state where it is the Players turn
+    currentState = RESPONSE;
+    break;
+
+    // Response state is the Players turn
+    case RESPONSE:
+
+    // Wait till the player has moved their joystick then record their moves
+    while (!read_joystick()) {
+        // do nothing :(
+    }
+
+    input_count = 0; // Reset count of players moves each round
+
+    while (input_count < current_seq) {
+    
+        // Correspond the players specific moves to a specific LED pin
+        int direction = get_joystick_direction();
+
+        if (direction != 0) { // Continue if user gave valid move
+        
+        playerSequence[input_count] = direction; // Continue to add to array Player moves
+
+        // check if the player moves matches LED seqeunce. Restart the game if not player failed
+        if (playerSequence[input_count] != sequence[input_count]) {
+        
+            currentState = RESET;
+            break;
+        }
+        input_count++;
+        delay(500); // Give adequte time delay between player moves
+        }
+    }
+
+    // Continue player to next level if successful
+    if (currentState != RESET) {
+    currentState = PLAYING;
+    }
+
+    // Beep to signify the user completed level correctly
+    beep(100);
+    delay(500);
+    break;
+
+    // The response state signals the player that the lost and starts the game over again
+    case RESET:
+    lose();
+    initial_sequence();
+
+    // Send the user back to the inital state when they signal they want to play again
+    currentState = INITIAL;
+    break;
+}
+}
+
+/// Loop Helper Functions
+
+// The lose function gives unfrendly blinking and beeps to signal to the player they lost
+void lose() {
+
+for(int i = 0; i < 4; i++) {
+    flash(150);
+    beep(100);
+}
+}
+
+// Function to loop through the randomly generated LED sequence and display it to player
+void play_sequence() {
+for (int i = 0; i < current_seq; i++) {
+    Serial.print("Seq: ");
+    Serial.print(i);
+    Serial.print("Pin: ");
+    Serial.println(sequence[i]);
+    digitalWrite(sequence[i],  HIGH);
+    delay(500);
+    digitalWrite(sequence[i], LOW);
+    delay(250);
+}
+}
+
+// Return True or False if joystick moved significatly
+bool read_joystick() {
+
+int x_val = analogRead(x_pin);
+int y_val = analogRead(y_pin);
+return (x_val > 700 || x_val < 300 || y_val > 700 || y_val < 300);
+}
+
+// The movement of the joystick will return an interger value that corresponds to a specific LED pin number
+// These values can potentially change deping on your LED placement and joystick orientation
+int get_joystick_direction()
+{
+int x_val = analogRead(x_pin);
+int y_val = analogRead(y_pin);
+
+if (analogRead(x_pin) < 300) { // Right movement on joy stick matches red
+
+    return led_pins[3]; // RIGHT, PIN 5, RED
+}
+    else if (analogRead(x_pin) > 700) {
+    
+    return led_pins[1]; // LEFT, PIN 3, GREEN
+    }
+    else if (analogRead(y_pin) < 300) {
+    
+    return led_pins[2]; // UP, PIN 4, BLUE
+    }
+    else if (analogRead(y_pin) > 700) {
+    
+    return led_pins[0]; // DOWN, PIN 2, YELLOW
+    }
+
+return 0;
+
+}
+
+                            </pre>
+                            
+                            <script>
+                              // Get the code text
+                              var code = document.getElementById('code').innerText;
+                            
+                              // Split the code into an array of lines
+                              var lines = code.split('\n');
+                            
+                              // Create a new ol element
+                              var ol = document.createElement('ol');
+                            
+                              // Wrap each line in an li and append to the ol
+                              lines.forEach(function(line) {
+                                var li = document.createElement('li');
+                                var code = document.createElement('code');
+                                code.style.whiteSpace = 'pre-wrap'; // Use CSS style for white-space
+                                code.innerText = line; // Set text with preserved white-space
+                                li.appendChild(code);
+                                ol.appendChild(li);
+                              });
+                            
+                              // Replace the pre element with the new ol element
+                              document.getElementById('code').replaceWith(ol);
+                            </script>
+
+                            
+                    </div>
+                </div>
+
+                
+            </div>
+        </div>
+            
+        
+
+        <!-- FOOTER -->
+        <div class="footer-container">
+            <footer class="footer">
+                <div class="footer-column">
+                    <span class="footer-title">EMAIL:</span>
+                    <a href="mailto:anita.pvic@gmail.com" class="footer-link">anita.pvic@gmail.com</a>
+                </div>
+                <div class="footer-column">
+                    <span class="footer-title">LINKEDIN:</span>
+                    <a href="https://www.linkedin.com/in/anitapetrovic/" target="_blank" class="footer-link">Anita's Profile</a>
+                </div>
+            </footer>
+        </div>
+    
+
+
+    </body>
+    </html>

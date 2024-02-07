@@ -1,0 +1,923 @@
+body, html {
+    font-family: 'Barlow Medium', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #fff4f0; /* Adjust the color to match your desired background */
+}
+
+/* NAV BAR */
+.navbar {
+    display: flex;
+    justify-content: center; /* Center the container */
+    background-color: #fff4f0;
+    padding: 10px 0;
+}
+
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 90%; /* Adjust this to control the width */
+    max-width: 1200px; /* Optional: Prevents the navbar from getting too wide on large screens */
+    border-bottom: 2px solid black;
+}
+
+.nav-brand a {
+    text-decoration: none;
+    color: black; /* Adjust the color as needed */
+    font-family: 'Barlow Condensed', sans-serif;
+    font-weight: 700;
+    font-size: 1.25rem; /* Adjust the size as needed */
+}
+
+.nav-brand a:hover {
+    opacity: 0.6;
+}
+
+.nav-links a {
+    text-decoration: none;
+    margin-left: 30px; /* Increase margin to space out the links more */
+    color: black; /* Adjust the color as needed */
+    font-weight: 400;
+}
+
+.nav-links a:hover {
+    opacity: 0.5;
+    /* color: #007bff; */
+}
+
+/* FOOTER */
+.footer-container {
+    display: center;
+    justify-content: left; /* Center the footer content */
+    width: 90%; /* Adjust this to control the width */
+    max-width: 1200px; /* Optional: Prevents the footer from getting too wide on large screens */
+    margin: 0 auto; /* Center the container horizontally */
+    border-top: 2px solid black; /* boarder ontop of footer */
+    padding: 20px 0;
+}
+
+.footer {
+    display: flex;
+    justify-content: center;
+    
+    align-items: center;
+    flex-wrap: wrap; /* Allows for wrapping on smaller screens */
+    gap: 40px; /* Adjust the gap between the columns */
+    max-width: 1200px; /* Optional: Prevents the footer from getting too wide on large screens */
+}
+
+.footer-column {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.footer-title {
+    color: black; /* White color for the titles */
+    font-family: 'Barlow Condensed', sans-serif;
+    font-weight: 700;
+    margin-bottom: 5px; /* Space between title and link */
+}
+
+.footer-link {
+    color: black; /* White color for the links */
+    text-decoration: none;
+    font-weight: 400;
+}
+
+.footer-link:hover {
+    text-decoration: underline; /* Underline on hover for better visibility */
+}
+
+/* MAIN */
+.main-page {
+    display: flex;
+    align-items: center;
+    background-color: #ffffff;
+    padding: 40px;
+    margin: 40px auto; /* Center the content and add margin to the top and bottom */
+    border-radius: 20px; /* Adjust to match the rounded corners in the image */
+    max-width: 1000px; /* Adjust this value to bring the content closer */
+    /*box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1); /* Optional: Adds a shadow for depth */
+    border: 3px solid #ffffff; /* Adds a white border around the content */
+    border: 2px solid #000000;
+}
+
+/* INDEX PAGE */
+.profile-image img {
+    width: 336px; /* Adjust the width as needed */
+    height: 369.2px; /* Adjust the height as needed */
+    border-radius: 8%; /* Makes the image round */
+    margin-right: 50px; /* Adds some space between the image and the profile info */
+    /* border: 2px solid #000000; */
+}
+
+.profile-info {
+    flex-grow: 1;
+}
+
+.profile-info h1 {
+    margin-bottom: 20px;
+    text-align: center;
+    /* padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer; */
+    /* border: 2px solid #0f606b; */
+}
+
+.profile-info p {
+    margin-bottom: 20px;
+    text-align: center;
+   
+}
+
+.profile-buttons {
+    display: flex;
+    
+    justify-content: space-between;
+    gap: 10px; /* Adjust the space between buttons */
+    
+}
+
+.resume-button {
+    background-color: #f47068; /* Red button */
+    color: black;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 10px;
+    cursor: pointer;
+    border: 2px solid #000000;
+    width: 160px;
+}
+
+.portfolio-button {
+    background-color: #9fc7aa; /* Yellow button */
+    color: black;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 10px;
+    cursor: pointer;
+    border: 2px solid #000000;
+    width: 160px;
+}
+
+
+.personal-button {
+    background-color: #ffc24a; /* Green button */
+    color: black;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 10px;
+    cursor: pointer;
+    border: 2px solid #000000;
+    width: 160px;
+}
+
+/* Button hover effects */
+.resume-button:hover,
+.portfolio-button:hover,
+.personal-button:hover {
+    opacity: 0.8;
+}
+
+/* Remove the margin-right on the last button to avoid unnecessary spacing */
+.profile-buttons button:last-child {
+    margin-right: 0;
+}
+
+.main-content {
+    display: flex;
+    align-items: center;
+    background-color: #ffffff;
+    padding: 30px;
+    margin: 30px auto; /* Center the content and add margin to the top and bottom */
+    border-radius: 20px; /* Adjust to match the rounded corners in the image */
+    max-width: 1050px; /* Adjust this value to bring the content closer */
+    /*box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1); /* Optional: Adds a shadow for depth */
+    border: 3px solid #ffffff; /* Adds a white border around the content */
+    
+}
+
+/* PERSONAL */
+.personal-into {
+    display: flex;
+    justify-content: center; /* Horizontally center the content */
+    align-items: center; /* Vertically center the content (if necessary) */
+    flex-direction: column; /* Stack children vertically */
+    /* height: 100vh; Full viewport height. Adjust as needed for your design */
+}
+
+.personal-into h1 {
+    background-color: #ffc24a; /* Color similar to the personal button */
+    color: black;
+    padding: 10px 20px; /* Adjust padding as needed */
+    border-radius: 10px; /* Rounded corners like the button */
+    display: inline-block; /* Makes the element inline to fit the content width */
+    border: 2px solid #000000; /* Black border around the title */
+    text-align: center; /* Horizontally center the text */
+    margin: 20px auto; /* Vertical margin and auto for horizontal centering */
+    font-family: 'Barlow Condensed', sans-serif;
+    font-weight: 500;
+    font-size: 1.6rem;
+    /* Remove width: auto; if the text is not aligned center */
+}
+
+
+
+.personal-into p {
+    margin-bottom: 20px;
+    text-align: center;
+   
+}
+
+.hobbie-section h2 {
+    background-color: #fff4f0; /* Color similar to the personal button */
+    color: black;
+    padding: 10px 20px; /* Adjust padding as needed */
+    border-radius: 10px; /* Rounded corners like the button */
+    display: inline-block; /* Makes the element inline to fit the content width */
+    border: 2px solid #000000; /* Black border around the title */
+    text-align: center; /* Horizontally center the text */
+    margin: 20px auto; /* Vertical margin and auto for horizontal centering */
+    /* font-family: 'Barlow Medium', sans-serif; */
+    /* font-weight: 700; */
+    font-size: 1.2rem;
+    /* Remove width: auto; if the text is not aligned center */
+}
+
+.hobbie-section h3 {
+    background-color: #0f606b; /* Color similar to the personal button */
+    color: white;
+    padding: 10px 20px; /* Adjust padding as needed */
+    border-radius: 10px; /* Rounded corners like the button */
+    display: inline-block; /* Makes the element inline to fit the content width */
+    border: 2px solid #000000; /* Black border around the title */
+    text-align: center; /* Horizontally center the text */
+    margin: 20px auto; /* Vertical margin and auto for horizontal centering */
+    /* font-family: 'Barlow Medium', sans-serif; */
+    /* font-weight: 700; */
+    font-size: 1.2rem;
+    /* Remove width: auto; if the text is not aligned center */
+}
+
+.hobbie-section h4 {
+    background-color: #9fc7aa; /* Color similar to the personal button */
+    color: black;
+    padding: 10px 20px; /* Adjust padding as needed */
+    border-radius: 10px; /* Rounded corners like the button */
+    display: inline-block; /* Makes the element inline to fit the content width */
+    border: 2px solid #000000; /* Black border around the title */
+    text-align: center; /* Horizontally center the text */
+    margin: 20px auto; /* Vertical margin and auto for horizontal centering */
+    font-size: 1.2rem;
+    }
+
+.hobbie-section h5 {
+    background-color:  #f47068; /* Color similar to the personal button */
+    color: black;
+    padding: 10px 20px; /* Adjust padding as needed */
+    border-radius: 10px; /* Rounded corners like the button */
+    display: inline-block; /* Makes the element inline to fit the content width */
+    border: 2px solid #000000; /* Black border around the title */
+    text-align: center; /* Horizontally center the text */
+    margin: 20px auto; /* Vertical margin and auto for horizontal centering */
+    font-size: 1.2rem;
+    }
+
+.hobbie-section p {
+    margin-bottom: 20px;
+    text-align: left;
+   
+}
+
+.hobbie-section .row {
+    margin-top: 10px; /* Adjust the spacing as needed */
+}
+
+.hobbie-section .img-fluid {
+    max-width: 100%;
+    height: auto;
+    margin-bottom: 10px; /* Spacing between images */
+    border: 1px solid #ddd; /* Optional: Adds a border around the images */
+    border-radius: 4px; /* Optional: Rounds the corners of the images */
+}
+
+/* RESUME PAGE */
+.resume-header {
+    text-align: center; /* Center the header content */
+    margin-bottom: 30px; /* Space below the header section */
+    width: 100%;
+}
+
+
+.resume-header h1 {
+    background-color: #f47068; /* Color similar to the personal button */
+    color: black;
+    padding: 10px 20px; /* Adjust padding as needed */
+    border-radius: 10px; /* Rounded corners like the button */
+    display: inline-block; /* Makes the element inline to fit the content width */
+    border: 2px solid #000000; /* Black border around the title */
+    text-align: center; /* Horizontally center the text */
+    margin: 20px auto; /* Vertical margin and auto for horizontal centering */
+    font-family: 'Barlow Condensed', sans-serif;
+    font-weight: 500;
+    font-size: 1.6rem;
+    width: 220px;
+    
+    
+    /*width: auto; if the text is not aligned center */
+}
+
+
+.resume-section {
+    margin-bottom: 30px; /* Space between resume sections */
+    text-align: center;
+    
+}
+
+
+.resume-section h2 {
+    /* Styling for section headers, similar to your resume header */
+    /* ... */
+    text-align: left;
+    border-bottom: 1px solid black;
+    margin-top: 20px;
+    font-size: 24px;
+}
+
+.education-entry .row {
+    margin-bottom: 10px; /* Space between education entries */
+}
+
+.education-entry .col-md-8 p {
+    /* Styling for the education details */
+    margin: 0;
+    text-align: left;
+}
+
+.education-entry .col-md-4 p {
+    /* Styling for dates and location */
+    margin: 0;
+    text-align: right; /* Aligns the text to the right */
+}
+
+.education-list {
+    text-align: left; /* Explicitly align text to the left */
+    padding-left: 20px; /* Adjust for list padding */
+    width: 125%;
+    
+}
+
+.education-list li  {
+    list-style-type: disc;
+    
+}
+
+/* .education-list li ul {
+    list-style-type: disc;
+    
+} */
+
+.resume-section h2 {
+    /* Existing styles for resume section headers */
+}
+
+
+.skills-interests p {
+    margin-bottom: 0px; /* Space below each paragraph */
+    text-align: left; /* Align the text to the left */
+}
+
+/* PORTFOILIO PAGE */
+.portfolio-heading {
+    display: flex;
+    justify-content: center; /* Horizontally center the content */
+    align-items: center; /* Vertically center the content (if necessary) */
+    flex-direction: column; /* Stack children vertically */
+    /* height: 100vh; Full viewport height. Adjust as needed for your design */
+}
+
+.portfolio-heading h1 {
+    background-color: #9fc7aa; /* Color similar to the personal button */
+    color: black;
+    padding: 10px 20px; /* Adjust padding as needed */
+    border-radius: 10px; /* Rounded corners like the button */
+    display: inline-block; /* Makes the element inline to fit the content width */
+    border: 2px solid #000000; /* Black border around the title */
+    text-align: center; /* Horizontally center the text */
+    margin: 20px auto; /* Vertical margin and auto for horizontal centering */
+    font-family: 'Barlow Condensed', sans-serif;
+    font-weight: 500;
+    font-size: 1.6rem;
+    width: 220px;
+    /* Remove width: auto; if the text is not aligned center */
+}
+
+
+.portfolio-heading p {
+    margin-bottom: 40px;
+    text-align: center;
+}
+
+.portfolio-info {
+    display: flex; /* Use flexbox to place elements side by side */
+    align-items: flex-start; /* Align items to the top */
+    justify-content: space-between; /* Space between the text and image */
+    flex-wrap: wrap; /* Allow items to wrap on smaller screens */
+
+}
+
+
+/* .portfolio-info h1 {
+    margin-bottom: 20px;
+    text-align: center;
+    width: 720px;
+    background-color:  #f47068
+} */
+
+.portfolio-info p {
+    margin-bottom: 20px;
+    text-align: center;
+    
+   
+}
+
+.portfolio-info p2 {
+    margin-bottom: 20px;
+    text-align: left;
+    
+   
+}
+
+.portfolio-text {
+    flex-basis: 50%; /* Take up half the space of the container */
+    max-width: 50%; /* Maximum width of text container */
+    text-align: center; /* Center text */
+    margin-bottom: 40px;
+    
+}
+
+
+
+
+.portfolio-text h2 {
+    background-color: #f47068; /* Styling for the 'Hydrogen Motorcycle' heading */
+    color: black;
+    padding: 10px 20px;
+    border-radius: 10px;
+    display: inline-block;
+    border: 2px solid #000000;
+    font-size: 1.2rem;
+    text-align: center; /* Align the heading to the left */
+    margin-bottom: 20px; /* Space below the heading */
+}
+
+.portfolio-text h3 {
+    background-color: #ffc24a; /* Styling for the 'Hydrogen Motorcycle' heading */
+    color: black;
+    padding: 10px 20px;
+    border-radius: 10px;
+    display: inline-block;
+    border: 2px solid #000000;
+    font-size: 1.2rem;
+    text-align: center; /* Align the heading to the left */
+    margin-bottom: 20px; /* Space below the heading */
+}
+
+.portfolio-text h4 {
+    background-color: #9fc7aa; /* Styling for the 'Hydrogen Motorcycle' heading */
+    color: black;
+    padding: 10px 20px;
+    border-radius: 10px;
+    display: inline-block;
+    border: 2px solid #000000;
+    font-size: 1.2rem;
+    text-align: center; /* Align the heading to the left */
+    margin-bottom: 20px; /* Space below the heading */
+}
+
+.portfolio-text h5 {
+    background-color:  #a7d2dd; /* Styling for the 'Hydrogen Motorcycle' heading */
+    color: black;
+    padding: 10px 20px;
+    border-radius: 10px;
+    display: inline-block;
+    border: 2px solid #000000;
+    font-size: 1.2rem;
+    text-align: center; /* Align the heading to the left */
+    margin-bottom: 20px; /* Space below the heading */
+}
+
+.portfolio-text h6 {
+    background-color:  #0f606b; /* Styling for the 'Hydrogen Motorcycle' heading */
+    color: white;
+    padding: 10px 20px;
+    border-radius: 10px;
+    display: inline-block;
+    border: 2px solid #000000;
+    font-size: 1.2rem;
+    text-align: center; /* Align the heading to the left */
+    margin-bottom: 20px; /* Space below the heading */
+}
+
+.portfolio-text h7 {
+    background-color:  #fff4f0; /* Styling for the 'Hydrogen Motorcycle' heading */
+    color: black;
+    padding: 10px 20px;
+    border-radius: 10px;
+    display: inline-block;
+    border: 2px solid #000000;
+    font-size: 1.2rem;
+    text-align: center; /* Align the heading to the left */
+    margin-bottom: 20px; /* Space below the heading */
+}
+
+.portfolio-text p {
+    text-align: center; /* Align the text to the left */
+    margin-bottom: 20px; /* Space below the paragraph */
+}
+
+.portfolio-text2 {
+    flex-basis: 50%; /* Take up half the space of the container */
+    max-width: 50%; /* Maximum width of text container */
+    text-align: center; /* Center text */
+    
+}
+
+.portfolio-text2 h7 {
+    background-color:  #fff4f0; /* Styling for the 'Hydrogen Motorcycle' heading */
+    color: black;
+    padding: 10px 20px;
+    border-radius: 10px;
+    display: inline-block;
+    border: 2px solid #000000;
+    font-size: 1.2rem;
+    text-align: center; /* Align the heading to the left */
+    margin-bottom: 20px; /* Space below the heading */
+}
+
+.portfolio-text2 p {
+    margin-bottom: 10px;
+    text-align: left;
+    
+}
+
+.portfolio-text2 li {
+    
+    text-align: left;
+    padding-left: 5px; /* Adjust padding for alignment */
+    list-style-position: outside; /* Keeps bullets inside the content flow */
+    display: list-item; /* Ensure they're treated as list items */
+    
+}
+
+.portfolio-text2 ul {
+    list-style-type: disc;
+    padding-left: 20px; /* Adjust as needed */
+    list-style-position: outside;
+}
+
+
+
+.portfolio-text-center {
+    flex-basis: 100%; /* Take up half the space of the container */
+    max-width: 100%; /* Maximum width of text container */
+    text-align: center; /* Center text */
+    margin-top: 20px;
+    
+}
+
+.portfolio-text-center h2 {
+    background-color: #fff4f0; /* Styling for the 'Hydrogen Motorcycle' heading */
+    color: black;
+    padding: 10px 20px;
+    border-radius: 10px;
+    display: inline-block;
+    border: 2px solid #000000;
+    font-size: 1.2rem;
+    text-align: center; /* Align the heading to the left */
+    margin-bottom: 20px; /* Space below the heading */
+}
+
+.portfolio-text-center p {
+    text-align: center; /* Align the text to the center */
+    margin-bottom: 20px; /* Space below the paragraph */
+}
+
+
+.portfolio-image {
+    flex-basis: 50%; /* Take up the other half of the space */
+    max-width: 50%; /* Maximum width of image container */
+    /* Ensure the image is centered in this container if needed */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+.portfolio-image img {
+    max-width: 90%; /* Ensures the image is never wider than its container */
+    height: auto; /* Keeps the image's aspect ratio intact */
+    border-radius: 8%; /* Adjust if you want rounded corners */
+    /* Remove fixed width and height to make the image responsive */
+    margin-bottom: 40px; /* Space below the  */
+}
+
+.portfolio-image2 {
+    flex-basis: 50%; /* Take up the other half of the space */
+    max-width: 50%; /* Maximum width of image container */
+    /* Ensure the image is centered in this container if needed */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    
+}
+
+.portfolio-image2 img {
+    max-width: 90%; /* Ensures the image is never wider than its container */
+    height: auto; /* Keeps the image's aspect ratio intact */
+    border-radius: 5%; /* Adjust if you want rounded corners */
+    /* Remove fixed width and height to make the image responsive */
+    margin-bottom: 20px; /* Space below the  */
+    /* border: 2px solid #000000; */
+}
+
+.portfolio-image3 {
+    /* flex-basis: 100%; Take up the other half of the space */
+    max-width: 100%; /* Maximum width of image container */
+    /* Ensure the image is centered in this container if needed */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    
+}
+
+.portfolio-image3 img {
+    max-width: 100%; /* Ensures the image is never wider than its container */
+    height: auto; /* Keeps the image's aspect ratio intact */
+    border-radius: 5%; /* Adjust if you want rounded corners */
+    /* Remove fixed width and height to make the image responsive */
+    margin-bottom: 30px; /* Space below the  */
+    border: 0px solid #000000;
+}
+
+.portfolio-image4 {
+    flex-basis: 100%; 
+    max-width: 100%; /* Maximum width of image container */
+    /* Ensure the image is centered in this container if needed */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    
+}
+
+.portfolio-image4 img {
+    max-width: 90%; /* Ensures the image is never wider than its container */
+    height: auto; /* Keeps the image's aspect ratio intact */
+    border-radius: 0%; /* Adjust if you want rounded corners */
+    /* Remove fixed width and height to make the image responsive */
+    margin-bottom:20px; /* Space below the  */
+    
+ 
+}
+
+/* Hub Portfolio Page */
+
+.hub-container {
+    text-align: center; /* Centers the text */
+    max-width: 700px; /* Adjust the width as needed */
+    margin: 0 auto; /* Centers the container */
+}
+
+.hub-container  h2 {
+    background-color: #fff4f0; /* Styling for the 'Hydrogen Motorcycle' heading */
+    color: black;
+    padding: 10px 20px;
+    border-radius: 10px;
+    display: inline-block;
+    border: 2px solid #000000;
+    font-size: 1.2rem;
+    text-align: center; /* Align the heading to the left */
+    margin-bottom: 20px; /* Space below the heading */
+}
+
+.hub-container h3 {
+    /* Heading styles */
+}
+
+.hub-container p {
+    /* Paragraph styles */
+    text-align: center;
+}
+
+.hub-container ul {
+    padding: 20;
+    list-style: none; /* Removes default list style */
+}
+
+.hub-container li::before {
+    content: '• '; /* Custom bullet */
+    color: black; /* Bullet color */
+    font-weight: bold; /* Bullet weight */
+    display: inline-block; 
+    width: 1em; /* Space for bullet */
+    margin-left: -1em; /* Aligns bullet to the left */
+}
+
+.hub-container li {
+    text-align: left; /* Aligns the list item text to the left */
+    display: block; /* Each list item is a block for proper alignment */
+    padding-left: 30px;
+}
+
+/* Motorcycle portofiolio page */
+
+
+.header-box {
+    padding: 10px 20px;
+    border-radius: 10px;
+    border: 2px solid #000000;
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+    width: 80%;
+    text-align: center;
+}
+
+.header-fuel-cell-stack {
+    background-color: #FF99FF;
+    color: black;
+}
+
+.header-hydrogen-flow {
+    background-color: #FDE9FF;
+    color: black;
+}
+
+.header-air-flow {
+    background-color: #5CE3D4;
+    color: black;
+}
+
+.header-aux-battery {
+    background-color: #7DD5F6;
+    color: black;
+}
+
+.header-h2-safety {
+    background-color: #F47068;
+    color: black;
+}
+
+.header-controllers {
+    background-color: #FFBD59;
+    color: black;
+}
+
+.header-drive-system {
+    background-color: #787FF6;
+    color: white;
+}
+
+.list-styled {
+    list-style-type: disc;
+    padding-left: 20px;
+}
+
+
+/* components table */
+.component-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 30px;
+  }
+  
+.component-table th, .component-table td {
+border: 1px solid #000;
+padding: 8px;
+text-align: left;
+}
+
+.component-table th {
+background-color: #9fc7aa;
+text-align: center; /* Centers text in the header cells */
+}
+
+.component-table td ul {
+padding-left: 20px;
+}
+
+.component-table td li {
+margin-bottom: 0px;
+}
+
+/*super capaictor table */
+.custom-table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  .custom-table, .custom-table th, .custom-table td {
+    border: 1px solid #000;
+  }
+  
+  .custom-table th {
+    background-color: #9fc7aa;
+    color: black;
+    text-align: center;
+    padding: 8px;
+  }
+  
+  .custom-table td {
+    text-align: center;
+    padding: 14px;
+  }
+  
+  .custom-table th, .custom-table td {
+    border-color: #000;
+  }
+
+  .image {
+    text-align: center; /* Centers inline-block or inline elements within */
+    width: 100%; /* Ensures the div takes the full width of its parent */
+    margin-bottom: 20px;
+}
+  
+  .centered-image {
+    width: 80%; /* Or any other size */
+    height: auto; /* Maintain aspect ratio */
+    display: block; /* Makes the img behave like a block-level element */
+    margin: 0 auto; /* Auto margins on both sides will center the block */
+  }
+
+/* Memory game portofiolio page */
+.embed-responsive {
+    position: relative;
+    display: block;
+    width: 100%;
+    padding: 0;
+    overflow: hidden;
+    margin-bottom: 50px;
+    justify-content: center;
+    align-items: center;
+}
+
+.embed-responsive::after {
+    display: block;
+    content: '';
+    padding-bottom: 56.25%; /* 16:9 aspect ratio */
+    
+}
+
+.embed-responsive iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
+.code-container {
+    background: #f4f4f4;
+    border: 1px solid #ddd;
+    padding: 15px;
+    margin-top: 20px;
+    overflow: auto; /* Allows scrolling */
+    height: 600px;
+    font-family: monospace;
+    text-align: left;
+    position: relative;
+    
+}
+
+.code-container ol {
+    counter-reset: line-numbering;
+    list-style-type: none;
+    margin: 0;
+    padding-left: 20; /* Adjust if necessary */
+}
+
+.code-container ol li {
+    counter-increment: line-numbering;
+    line-height: 1.5em;
+    min-height: 1.5em;
+    position: relative;
+    padding-left: 30px; /* Space for line numbers */
+}
+
+.code-container ol li::before {
+    content: counter(line-numbering);
+    position: absolute;
+    left: 0;
+    width: 10px;
+    text-align: right;
+    margin-right: 10px;
+    color: #999;
+}
+
