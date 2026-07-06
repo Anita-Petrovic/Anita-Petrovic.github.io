@@ -5,7 +5,7 @@
         <meta charset="UTF-8">
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
-        <link href="styles.css" rel="stylesheet"> <!-- LINKING TO STYLE CSS SHEET -->
+        <link href="css/styles.css" rel="stylesheet"> <!-- LINKING TO STYLE CSS SHEET -->
         <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;700&display=swap" rel="stylesheet">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>Anita Petrovic - Portfolio</title>
@@ -45,7 +45,7 @@
                     </div>
 
                     <div class="portfolio-image">
-                        <img src="memorygame2.jpg" alt="memory2" /> 
+                        <img src="images/memorygame/memorygame2.jpg" alt="memory2" /> 
                     </div>   
                 </div>
 
@@ -81,16 +81,16 @@
                     </div>
 
                     <div class="portfolio-image">
-                        <img src="memorygame1.png" alt="ArduinoCircuitDesign" /> 
+                        <img src="images/memorygame/memorygame1.png" alt="ArduinoCircuitDesign" /> 
                     </div>   
                 </div>
 
                 <div class="portfolio-text-center">
                     <h2>Code</h2>
-                    <p>This is the entire code for the memory game. It can be copy and pasted then uploaded to the Arduino.</p>
+                    <p>This is the entire code for the memory game. It can be copied and pasted, then uploaded to the Arduino.</p>
                     <div class="code-container">
                         <pre id="code">/// This is a memory game which uses 4 LEDS to randomly generate a sequence of lights which increases in number with each round
-/// It is on the user to use a joystick to replicate the randomly generated seqeunce
+/// It is up to the user to use a joystick to replicate the randomly generated sequence
 
 const byte n_pins = 4; // define the constant number of leds being used
 const byte led_pins[] = {2, 3, 4, 5}; // Defining the pins (2 = yellow, 3 = green, 4 = blue, 5 = red)
@@ -101,7 +101,7 @@ const int x_pin = 0; // analog pin connected to x output
 const int y_pin = 1; // analog pin connected to y output
 
 byte sequence[100]; // Store values for light sequence
-byte playerSequence[100]; // Store values of players response
+byte playerSequence[100]; // Store values of the player's response
 byte current_seq = 0; // length of sequence starts at 0
 byte input_count = 0; // length of correct joystick moves starts at 0
 
@@ -129,7 +129,7 @@ pinMode(y_pin, INPUT); // Initialize joystick (y)
 // Set initial game state
 currentState = INITIAL;
 
-// Initiate start up seqeunce and switch state to PLAYING
+// Initiate start up sequence and switch state to PLAYING
 initial_sequence();
 
 // Initialize random seed
@@ -175,7 +175,7 @@ for (int i = 0; i < 1; i++) {
 
 // Function to reset all values and warn user that game is starting
 void reset(){
-// blink all lights 3 times and beep as warining game starting
+// blink all lights 3 times and beep as warning game starting
 for(int i = 0; i < 3; i++) {
     flash(300);
 }
@@ -192,12 +192,12 @@ for (int i = 0; i < 100; i++) {
 }
 
 // Function to create a start up sequence
-// LEDSs will light up in circle untill joystick pressed and game initiated
+// LEDs will light up in circle until joystick pressed and game initiated
 void initial_sequence() {
 
 while (digitalRead(sw_pin) == HIGH) // keep looping through the LEDs {
 
-    for (int i = 0; i < n_pins; i++) { // loop though all the pins turning them off and on
+    for (int i = 0; i < n_pins; i++) { // loop through all the pins turning them off and on
     
     digitalWrite(led_pins[i], HIGH);
     delay(200);
@@ -215,10 +215,10 @@ while (digitalRead(sw_pin) == HIGH) // keep looping through the LEDs {
 
 void loop() {
 
-// Switch between differnt game states
+// Switch between different game states
 switch (currentState)
 {
-    // Initial states goes though the seqeunce right before the game starts
+    // The initial state goes through the sequence right before the game starts
     case INITIAL:
 
     reset();
@@ -238,11 +238,11 @@ switch (currentState)
     delay(250);
     beep(100); // beep to signal player it is their turn
 
-    // Transition to RESPONSE state where it is the Players turn
+    // Transition to RESPONSE state where it is the player's turn
     currentState = RESPONSE;
     break;
 
-    // Response state is the Players turn
+    // Response state is the player's turn
     case RESPONSE:
 
     // Wait till the player has moved their joystick then record their moves
@@ -250,25 +250,25 @@ switch (currentState)
         // do nothing :(
     }
 
-    input_count = 0; // Reset count of players moves each round
+    input_count = 0; // Reset count of the player's moves each round
 
     while (input_count < current_seq) {
     
-        // Correspond the players specific moves to a specific LED pin
+        // Correspond the player's specific moves to a specific LED pin
         int direction = get_joystick_direction();
 
         if (direction != 0) { // Continue if user gave valid move
         
         playerSequence[input_count] = direction; // Continue to add to array Player moves
 
-        // check if the player moves matches LED seqeunce. Restart the game if not player failed
+        // check if the player's moves match the LED sequence; restart the game if they don't
         if (playerSequence[input_count] != sequence[input_count]) {
         
             currentState = RESET;
             break;
         }
         input_count++;
-        delay(500); // Give adequte time delay between player moves
+        delay(500); // Give adequate time delay between player moves
         }
     }
 
@@ -282,12 +282,12 @@ switch (currentState)
     delay(500);
     break;
 
-    // The response state signals the player that the lost and starts the game over again
+    // The response state signals the player that they lost and starts the game over again
     case RESET:
     lose();
     initial_sequence();
 
-    // Send the user back to the inital state when they signal they want to play again
+    // Send the user back to the initial state when they signal they want to play again
     currentState = INITIAL;
     break;
 }
@@ -295,7 +295,7 @@ switch (currentState)
 
 /// Loop Helper Functions
 
-// The lose function gives unfrendly blinking and beeps to signal to the player they lost
+// The lose function gives unfriendly blinking and beeps to signal to the player they lost
 void lose() {
 
 for(int i = 0; i < 4; i++) {
@@ -318,7 +318,7 @@ for (int i = 0; i < current_seq; i++) {
 }
 }
 
-// Return True or False if joystick moved significatly
+// Return True or False if joystick moved significantly
 bool read_joystick() {
 
 int x_val = analogRead(x_pin);
@@ -326,8 +326,8 @@ int y_val = analogRead(y_pin);
 return (x_val > 700 || x_val < 300 || y_val > 700 || y_val < 300);
 }
 
-// The movement of the joystick will return an interger value that corresponds to a specific LED pin number
-// These values can potentially change deping on your LED placement and joystick orientation
+// The movement of the joystick will return an integer value that corresponds to a specific LED pin number
+// These values can potentially change depending on your LED placement and joystick orientation
 int get_joystick_direction()
 {
 int x_val = analogRead(x_pin);
@@ -393,10 +393,6 @@ return 0;
         <!-- FOOTER -->
         <div class="footer-container">
             <footer class="footer">
-                <div class="footer-column">
-                    <span class="footer-title">EMAIL:</span>
-                    <a href="mailto:anita.pvic@gmail.com" class="footer-link">anita.pvic@gmail.com</a>
-                </div>
                 <div class="footer-column">
                     <span class="footer-title">LINKEDIN:</span>
                     <a href="https://www.linkedin.com/in/anitapetrovic/" target="_blank" class="footer-link">Anita's Profile</a>

@@ -5,7 +5,7 @@
         <meta charset="UTF-8">
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
-        <link href="styles.css" rel="stylesheet"> <!-- LINKING TO STYLE CSS SHEET -->
+        <link href="css/styles.css" rel="stylesheet"> <!-- LINKING TO STYLE CSS SHEET -->
         <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;700&display=swap" rel="stylesheet">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>Anita Petrovic - Portfolio</title>
@@ -41,16 +41,16 @@
                         <p> This was my 2023 Capstone. The project aimed to establish the feasibility 
                             of powering a motorcycle using a hydrogen fuel cell. The project goals were to source and 
                             calculate the total cost of components for the powertrain design and to perform high-level
-                             component integration and simulation. My contributions included creating components 
-                             of the CAD, designing the fuel cell schematics, and the Simulink simulation of how the fuel cell, supercapacitor, 
+                             component integration and simulation. My contributions included creating CAD components, 
+                             designing the fuel cell schematics, and simulating how the fuel cell, supercapacitor, 
                              DC/DC converter, and motor system perform under different loading conditions.
                              
                             </p>
-                            <p> The report from my capstone group project can be downloaded  <a href="motorcyclereport.pdf">here</a></p>
+                            <p> The report from my capstone group project can be downloaded <a href="docs/motorcyclereport.pdf">here</a></p>
                     </div>
 
                     <div class="portfolio-image">
-                        <img src="motorcycle1.png" alt="motorcycle1" /> 
+                        <img src="images/motorcycle/motorcycle1.png" alt="motorcycle1" /> 
                     </div>   
                 </div>
 
@@ -63,12 +63,12 @@
                     </div>
 
                     <div class="portfolio-image2">
-                        <img src="FC system schematic legend.png" alt="FClegend1" /> 
+                        <img src="images/motorcycle/FC system schematic legend.png" alt="FClegend1" /> 
                     </div>   
                 </div>
 
                 <div class="portfolio-image3">
-                    <img src="FC system schematic.png" alt="FCschematic1" /> 
+                    <img src="images/motorcycle/FC system schematic.png" alt="FCschematic1" /> 
                 </div> 
 
                 <!-- TABLE FOR SCHEMATIC EXPLINATION -->
@@ -146,7 +146,7 @@
 
                     <div class="row mb-4">
                         <div class="col-12 col-md-4">
-                            <div class="header-box header-controllers">Drive System</div>
+                            <div class="header-box header-controllers">Controllers</div>
                         </div>
                         <div class="col-12 col-md-8">
                             <ul class="list-styled">
@@ -163,9 +163,9 @@
                         </div>
                         <div class="col-12 col-md-8">
                             <ul class="list-styled">
-                                <li> Drive system composes of the components between the power supply and controllers.  </li>
+                                <li> The drive system is composed of the components between the power supply and controllers.  </li>
                                 <li> Relay board will switch the primary power source to the fuel cell instead of the battery  </li>
-                                <li> The relay board will also control the amount of power output from the fuel cell and super capacitors </li>
+                                <li> The relay board will also control the amount of power output from the fuel cell and supercapacitors </li>
                                 <li> Supercapacitors release energy quickly during acceleration cases </li>
                                 <li> Supercapacitors charge using excess fuel cell energy </li>
                                 <li> Throttle is the input to the motor controller letting the rider control the power output</li>
@@ -228,7 +228,7 @@
                       <td>HPM-20KW-LIQ </td>
                       <td>
                         <ul>
-                          <li>Operate at speeds of 3200 to 6000 RPM</li>
+                          <li>Operates at speeds of 3200 to 6000 RPM</li>
                           <li>Peak stall torque of 160 N-m</li>
                           <li>Continuous rated torque of 80 N-m</li>
                           <li>Brushless DC motor was selected as it allowed for instantaneous changes in speed and torque without requiring a transmission</li>
@@ -255,9 +255,9 @@
                       <td>10 kW, 800 V</td>
                       <td>
                         <ul>
-                          <li>Ensures the DC voltage out of the fuel cell stack matched the super capacitor’s rated voltage</li>
-                          <li>Selected DC/DC converted has a nominal power of 10 kW</li>
-                          <li>Selected DC/DC converted is rated for the selected voltage, current, and power requirements</li>
+                          <li>Ensures the DC voltage out of the fuel cell stack matched the supercapacitor’s rated voltage</li>
+                          <li>Selected DC/DC converter has a nominal power of 10 kW</li>
+                          <li>Selected DC/DC converter is rated for the selected voltage, current, and power requirements</li>
                           <li>Selected DC/DC converter is compatible with fuel cell systems</li>
                         </ul>
                       </td>
@@ -269,7 +269,7 @@
                       <td>
                         <ul>
                           <li>Required to jumpstart the fuel cell and to bring the fuel cell stack up to temperature</li>
-                          <li>A 24 V Li-Po battery was selected due to the requirements from the fuel cell manufacturers manual</li>
+                          <li>A 24 V Li-Po battery was selected due to the requirements from the fuel cell manufacturer's manual</li>
                         </ul>
                       </td>
                     </tr>
@@ -324,11 +324,11 @@
                           signal processing systems, communication systems, and many others that can be represented with block diagrams.</p>
 
                         <p>For this project, Simulink was mainly used to model a hybrid system and how 
-                          it responds to different loading cases. The Simulink model was created by modeling each component into their fundamental 
-                          equations then sending data between them to see how they interact. A top model overview of the 
+                          it responds to different loading cases. The Simulink model was created by modeling each component into its fundamental 
+                          equations, then sending data between them to see how they interact. A top model overview of the 
                           entire system is found in the figure below. The below figure shows the specific signals and data being transferred 
                           throughout the system. From this model, the speed, acceleration, torque, efficiency, and wheel slip 
-                          can be calculated. The table below lists a brief description of individual component function   </p>
+                          can be calculated. The table below lists a brief description of each component's function.</p>
                           
                     </div>
 
@@ -338,7 +338,7 @@
                 
 
                 <div class="portfolio-image3">
-                    <img src="simulinkdiagram1.png" alt="simulinkdiagram1" /> 
+                    <img src="images/motorcycle/simulinkdiagram1.png" alt="simulinkdiagram1" /> 
                 </div> 
 
                 <div class="table-responsive">
@@ -383,7 +383,7 @@
                             </ul>
                           </td>
                         </tr>
-                        <td>Super Capacitor System</td>
+                        <td>Supercapacitor System</td>
                           <td>
                             <ul>
                               <li>Assumed linear behavior and ignored self-discharging effects </li>
@@ -398,8 +398,7 @@
                           <td>
                             <ul>
                               <li>Receives power from the DC/DC converter system</li>
-                              <li>Calculates torque, RPMs, and efficiency losses based off supplier
-                                provided data </li>
+                              <li>Calculates torque, RPMs, and efficiency losses based on supplier-provided data </li>
                               
                               
                             </ul>
@@ -448,7 +447,7 @@
                     </div>
 
                     <div class="portfolio-image3">
-                        <img src="powercommand.png" alt="Power Command Simulink" /> 
+                        <img src="images/motorcycle/powercommand.png" alt="Power Command Simulink" /> 
                     </div> 
                 </div>
 
@@ -472,20 +471,20 @@
 
                     <div class="portfolio-info">
                         <div class="portfolio-image">
-                            <img src="FCCurrentandPowerCurves.png" alt="Current and Power Curve used in FC Simulink Model" /> 
+                            <img src="images/motorcycle/FCCurrentandPowerCurves.png" alt="Current and Power Curve used in FC Simulink Model" /> 
                         </div>  
     
                         <div class="portfolio-image">
-                            <img src="FCCurrentandEfficiencyCurves.png" alt="Current and Efficiency Curve used in FC Simulink Model" /> 
+                            <img src="images/motorcycle/FCCurrentandEfficiencyCurves.png" alt="Current and Efficiency Curve used in FC Simulink Model" /> 
                         </div>   
 
                         <div class="portfolio-image">
-                            <img src="FCCurrentandVoltageCurves.png" alt="Current and Voltage Curve used in FC Simulink Model" /> 
+                            <img src="images/motorcycle/FCCurrentandVoltageCurves.png" alt="Current and Voltage Curve used in FC Simulink Model" /> 
                         </div>  
                     </div>
 
                     <div class="portfolio-image3">
-                        <img src="FuelCellSimulink.png" alt="Fuel Cell Simulink Model" /> 
+                        <img src="images/motorcycle/FuelCellSimulink.png" alt="Fuel Cell Simulink Model" /> 
                     </div> 
 
                     
@@ -504,23 +503,23 @@
                     </div>
 
                     <div class="portfolio-image3">
-                        <img src="DCDCConverterModel.png" alt="DC/DC Converter Simulink Model" /> 
+                        <img src="images/motorcycle/DCDCConverterModel.png" alt="DC/DC Converter Simulink Model" /> 
                     </div> 
                 </div>
                 
                 <div class="portfolio-info">
                     <div class="portfolio-text-center">
                         <h2>Supercapacitor System </h2>
-                        <p> The supercapacitor system was another complex component designed around a model created by Bertini et. al. at the KTH 
+                        <p> The supercapacitor system was another complex component designed around a model created by Bertini et al. at the KTH 
                           Royal Institute of Technology. Supercapacitors would ideally be modeled as a series of circuits with multiple resistances 
                           and non-linear capacitances as seen in the first figure below. However, this would be extremely difficult to model and far too 
                           complex for the purposes of this project. 
                           <p> <div class="portfolio-image3">
-                        <img src="IdealSupercapacitorCircuit.png" alt="Ideal Supercapacitor Circuit " style="width: 40%;" /> 
+                        <img src="images/motorcycle/IdealSupercapacitorCircuit.png" alt="Ideal Supercapacitor Circuit " style="width: 40%;" /> 
                           </div> 
                         </p>
                           To simplify the model, the supercapacitor was assumed to have linear behavior and no 
-                          self-discharging effects. Through these assumptions, the supercapacitor was modeled as a RC circuit as shown in equation E-1 
+                          self-discharging effects. Through these assumptions, the supercapacitor was modeled as an RC circuit as shown in equation E-1 
                           and its defined variables are shown in the table below. The final Simulink model for the supercapacitor can be seen below. 
                           </p>
                     </div>
@@ -529,7 +528,7 @@
                   
                   
                   <div class="portfolio-image3">
-                      <img src="supercapacitorequation.png" alt="DC/DC Converter Simulink Model" style="width: 40%;" /> 
+                      <img src="images/motorcycle/supercapacitorequation.png" alt="DC/DC Converter Simulink Model" style="width: 40%;" /> 
                   </div> 
 
                 
@@ -571,7 +570,7 @@
                   
 
                 <div class="portfolio-image3">
-                    <img src="SupercapacitorSimulinkModel.png" alt="Supercapacitor Simulink Model" /> 
+                    <img src="images/motorcycle/SupercapacitorSimulinkModel.png" alt="Supercapacitor Simulink Model" /> 
                 </div> 
 
                 <div class="portfolio-info">
@@ -586,24 +585,24 @@
 
                     <div class="portfolio-info">
                         <div class="portfolio-image">
-                            <img src="TorquevsPowerinCurve.png" alt="Torque vs Power in Data from Motor Supplier" /> 
+                            <img src="images/motorcycle/TorquevsPowerinCurve.png" alt="Torque vs Power in Data from Motor Supplier" /> 
                         </div>  
     
                         <div class="portfolio-image">
-                            <img src="TorquevsPowerOutCurve.png" alt="Torque vs Power Out Data from Motor Supplier" /> 
+                            <img src="images/motorcycle/TorquevsPowerOutCurve.png" alt="Torque vs Power Out Data from Motor Supplier" /> 
                         </div>   
 
                         <div class="portfolio-image">
-                            <img src="TorquevsEfficiencyCurve.png" alt="Torque vs Efficiency Data from Motor Supplier" /> 
+                            <img src="images/motorcycle/TorquevsEfficiencyCurve.png" alt="Torque vs Efficiency Data from Motor Supplier" /> 
                         </div>  
 
                         <div class="portfolio-image">
-                            <img src="TorquevsSpeedCurve.png" alt="Torque vs Speed Data from Motor Supplier" /> 
+                            <img src="images/motorcycle/TorquevsSpeedCurve.png" alt="Torque vs Speed Data from Motor Supplier" /> 
                         </div>  
                     </div>
 
                     <div class="portfolio-image3">
-                        <img src="MotorSimulinkModel.png" alt="Motor Simulink Model" /> 
+                        <img src="images/motorcycle/MotorSimulinkModel.png" alt="Motor Simulink Model" /> 
                     </div> 
 
                     
@@ -613,7 +612,7 @@
                     <div class="portfolio-text-center">
                         <h2>Drivetrain System </h2>
                         <p> Simscape™ was used to model the drivetrain. Simscape is a Simulink feature that allows users to simulate multidomain 
-                          physical systems. By using Simscape functions, models are based off physical components that already contain 
+                          physical systems. By using Simscape functions, models are based on physical components that already contain 
                           the fundamental equations they are based on. An overview of the drivetrain model can be found in the figure below. 
                           From the model, the torque from the motor is transferred to a belt drive block. From the belt drive, the signal is 
                           then transferred to calculate speed, acceleration, longitudinal forces, normal forces, wheel slip, and torque of the axle.
@@ -621,7 +620,7 @@
                     </div>
 
                     <div class="portfolio-image3">
-                        <img src="DrivetrainSimulinkModel.png" alt="Drivetrain Simulink Model" /> 
+                        <img src="images/motorcycle/DrivetrainSimulinkModel.png" alt="Drivetrain Simulink Model" /> 
                     </div> 
 
                     <p>Through Simscape, the motorcycle body, wheels, and braking systems were modeled. The motorcycle body system was designed using
@@ -630,7 +629,7 @@
                            </p>
 
                     <div class="portfolio-image3">
-                        <img src="MotorcycleSubsystemSimulinkModel.png" alt="Motorcycle Subsystem Simulink Model" /> 
+                        <img src="images/motorcycle/MotorcycleSubsystemSimulinkModel.png" alt="Motorcycle Subsystem Simulink Model" /> 
                     </div> 
 
                     <p> From the drivetrain model, the forces at the wheels could be determined for various input power command cases. 
@@ -654,16 +653,15 @@
                     </div>
 
                     <div class="portfolio-image3">
-                        <img src="outputequation.png" alt="acceleration equations" style="width: 50%;" /> 
+                        <img src="images/motorcycle/outputequation.png" alt="acceleration equations" style="width: 50%;" /> 
                     </div> 
 
-                    <p> Once the acceleration is obtained, it is integrated over time to obtain velocity. T
-                      his value is back calculated into the aerodynamic drag formula, which increases the drag force term and in turn 
+                    <p> Once the acceleration is obtained, it is integrated over time to obtain velocity. This value is back-calculated into the aerodynamic drag formula, which increases the drag force term and in turn 
                       affects the acceleration. The iterative change in acceleration, velocity, and drag force can be very 
                       quickly calculated by the Simulink model.   </p>
 
                     <div class="portfolio-image3">
-                        <img src="OutputCommandSimulinkModel.png" alt="Output Command Simulink Model" /> 
+                        <img src="images/motorcycle/OutputCommandSimulinkModel.png" alt="Output Command Simulink Model" /> 
                     </div> 
                 </div>
                 
@@ -672,34 +670,33 @@
                         <h2>Simulink Performance Modelling Results</h2>
                         <p> The plot in the figure below shows the changes in voltage and power for the fuel cell and supercapacitor, 
                           demonstrating how the system reacts to high demands of power. As the system power requirement exceeds 
-                          10 kW (fuel cell maximum output), primarily during acceleration, the supercapacitors activate for ~18 seconds 
-                          increasing the total power output to 20 kW. 20 kW is the limiting case and max power output from the 
+                          10 kW (fuel cell maximum output), primarily during acceleration, the supercapacitors activate for ~18 seconds, increasing the total power output to 20 kW. 20 kW is the limiting case and max power output from the 
                           motorcycle. 
                              </p>
                     </div>
 
                     <div class="image">
-                        <img src="FuelcellandSupercapacitorpowerChart.png" alt="Fuel cell and Supercapacitor power and voltage changes with respect to time" class="centered-image" /> 
+                        <img src="images/motorcycle/FuelcellandSupercapacitorpowerChart.png" alt="Fuel cell and Supercapacitor power and voltage changes with respect to time" class="centered-image" /> 
                     </div>
 
                     <p> Simulink models different velocities and accelerations as seen from the plots in the three figures below.  
                       These plots correspond to varying power outputs of 5 kW, 10 kW, and 20 kW respectively. The third figure (20 kW) demonstrates
                        the increased acceleration rate when the supercapacitor is used due to the power demand exceeding 10 kW. 
                        Depending on the power command function, the motorcycle will accelerate and reach different peak velocities. 
-                       The velocity and acceleration cases show the importance of the super capacitor assisting the motorcycle 
+                       The velocity and acceleration cases show the importance of the supercapacitor assisting the motorcycle 
                        in cases where more than 10 kW of power is required. Without the supercapacitors, the motorcycle acceleration 
                        would be much slower. </p>
 
                     <div class="image">
-                        <img src="VelocityandAcceleration5KWChartResults.png" alt="Velocity and Acceleration for 5 kW power from the Fuel Cell" class="centered-image" /> 
+                        <img src="images/motorcycle/VelocityandAcceleration5KWChartResults.png" alt="Velocity and Acceleration for 5 kW power from the Fuel Cell" class="centered-image" /> 
                     </div>
 
                     <div class="image">
-                        <img src="VelocityandAcceleration10KWChartResults.png" alt="Velocity and Acceleration for 10 kW power from the Fuel Cell" class="centered-image" /> 
+                        <img src="images/motorcycle/VelocityandAcceleration10KWChartResults.png" alt="Velocity and Acceleration for 10 kW power from the Fuel Cell" class="centered-image" /> 
                     </div>
 
                     <div class="image">
-                        <img src="VelocityandAcceleration20KWChartResults.png" alt="Velocity and Acceleration at 20 kW with capacitor assist then 10 kW from only Fuel Cell" class="centered-image" /> 
+                        <img src="images/motorcycle/VelocityandAcceleration20KWChartResults.png" alt="Velocity and Acceleration at 20 kW with capacitor assist then 10 kW from only Fuel Cell" class="centered-image" /> 
                     </div>
 
 
@@ -755,10 +752,6 @@
         <div class="footer-container">
             <footer class="footer">
               <div class="footer-column">
-                    <span class="footer-title">EMAIL:</span>
-                    <a href="mailto:anita.pvic@gmail.com" class="footer-link">anita.pvic@gmail.com</a>
-                  </div>
-                <div class="footer-column">
                     <span class="footer-title">LINKEDIN:</span>
                     <a href="https://www.linkedin.com/in/anitapetrovic/" target="_blank" class="footer-link">Anita's Profile</a>
                 </div>
