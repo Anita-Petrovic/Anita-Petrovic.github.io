@@ -106,7 +106,7 @@ body, html {
 .profile-image img {
     width: 336px; /* Adjust the width as needed */
     height: 369.2px; /* Adjust the height as needed */
-    border-radius: 8%; /* Makes the image round */
+    border-radius: 8px; /* Subtle corner rounding */
     margin-right: 50px; /* Adds some space between the image and the profile info */
     /* border: 2px solid #000000; */
 }
@@ -592,7 +592,7 @@ body, html {
 .portfolio-image img {
     max-width: 90%; /* Ensures the image is never wider than its container */
     height: auto; /* Keeps the image's aspect ratio intact */
-    border-radius: 8%; /* Adjust if you want rounded corners */
+    border-radius: 8px; /* Subtle corner rounding */
     /* Remove fixed width and height to make the image responsive */
     margin-bottom: 40px; /* Space below the  */
 }
@@ -611,7 +611,7 @@ body, html {
 .portfolio-image2 img {
     max-width: 90%; /* Ensures the image is never wider than its container */
     height: auto; /* Keeps the image's aspect ratio intact */
-    border-radius: 5%; /* Adjust if you want rounded corners */
+    border-radius: 8px; /* Subtle corner rounding */
     /* Remove fixed width and height to make the image responsive */
     margin-bottom: 20px; /* Space below the  */
     /* border: 2px solid #000000; */
@@ -631,7 +631,7 @@ body, html {
 .portfolio-image3 img {
     max-width: 100%; /* Ensures the image is never wider than its container */
     height: auto; /* Keeps the image's aspect ratio intact */
-    border-radius: 5%; /* Adjust if you want rounded corners */
+    border-radius: 8px; /* Subtle corner rounding */
     /* Remove fixed width and height to make the image responsive */
     margin-bottom: 30px; /* Space below the  */
     border: 0px solid #000000;
