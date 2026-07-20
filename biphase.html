@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
+        <link href="css/styles.css" rel="stylesheet"> <!-- LINKING TO STYLE CSS SHEET -->
+        <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;700&display=swap" rel="stylesheet">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Anita Petrovic - Portfolio</title>
+
+    </head>
+
+    <body>
+
+        <!-- NAV BAR -->
+        <nav class="navbar">
+            <div class="nav-container">
+                <div class="nav-brand">
+                    <a href="index.html">ANITA PETROVIC</a>
+                </div>
+                <div class="nav-links">
+                    <a href="resume.html">Resume</a>
+                    <a href="portfolio.html">Portfolio</a>
+                    <a href="personal.html">Personal</a>
+                </div>
+            </div>
+        </nav>
+
+
+        <!-- Main Content Section -->
+        <!-- Portfolio Content Section -->
+        <div class="main-content">
+
+            <div class="portfolio-heading">
+                <p><a href="portfolio.html">< Back to Portfolio</a></p>
+
+                <div class="portfolio-info">
+                    <div class="portfolio-text">
+                        <h2>Cryomodule Bi-Phase Line Sizing</h2>
+                        <p> As part of my work in the cryogenics group at CERN, I developed a Python tool to size the
+                            bi-phase lines of the FCC-ee superconducting radiofrequency cryomodules. The bi-phase line
+                            is the horizontal tube sitting above the cavities in which saturated liquid helium and its
+                            vapour coexist: the liquid keeps the cavities immersed at their operating temperature, while
+                            the boil-off vapour flows along the tube toward the pumping outlet. Sizing this line correctly
+                            matters — the diameter must keep the vapour speed low enough to avoid disturbing the liquid
+                            surface, while holding enough helium to ride through operational transients.</p>
+                    </div>
+
+                    <div class="portfolio-image">
+                        <img src="images/biphase/biphase_nominal.png" alt="Bi-phase line at nominal operation, with liquid cross sections along the tube" />
+                    </div>
+                </div>
+
+                <div class="portfolio-info">
+                    <div class="portfolio-text2">
+                        <h7>How the Sizing Works</h7>
+                        <ul>
+                        <li> The cavity heat loads, with an overcapacity margin, are converted into an evaporating mass
+                            flow using the latent heat of helium at the operating temperature (2 K for the 800 MHz
+                            cryomodules and 4.5 K for the 400 MHz cryomodules)</li>
+                        <li> The vapour speed anywhere in the tube is limited to 5 m/s; from the vapour mass flow and
+                            density, this sets the minimum cross-sectional area that must remain free for the vapour</li>
+                        <li> The tube is installed on a slight slope, so the liquid level — and therefore the split
+                            between the liquid and vapour cross sections — changes along its length</li>
+                        <li> The code computes the liquid height at each position along the inclined tube and integrates
+                            the cross-sectional areas to obtain the total liquid volume for a given filling level</li>
+                        <li> Helium properties are evaluated with HEPAK at the saturated conditions of each case</li>
+                        </ul>
+                    </div>
+
+                    <div class="portfolio-image">
+                        <img src="images/biphase/biphase_dry.png" alt="Bi-phase line dry-out case, showing the liquid receding toward the inlet" />
+                    </div>
+                </div>
+
+                <div class="portfolio-info">
+                    <div class="portfolio-text2">
+                        <h7>Dry-Out Time and Diameter Selection</h7>
+                        <ul>
+                        <li> A key requirement is autonomy: if the liquid supply is interrupted, the line must keep the
+                            cavities covered long enough for the machine to respond</li>
+                        <li> Starting from the nominal 50% filling level, the code calculates how long it takes for the
+                            evaporating flow to lower the liquid level until the first cavity connection is uncovered —
+                            the "dry" condition, with the critical location taken from the CAD model</li>
+                        <li> This calculation is swept over a range of pipe diameters to find the smallest tube that
+                            still meets the required autonomy time, balancing helium inventory against the space the
+                            line takes up inside the cryomodule</li>
+                        <li> The same tool also answers operational questions, such as how the level reading at the
+                            gauge location relates to the liquid volume in the rest of the tube under worst-case
+                            vapour flow conditions</li>
+                        </ul>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+
+
+        <!-- FOOTER -->
+        <div class="footer-container">
+            <footer class="footer">
+                <div class="footer-column">
+                    <span class="footer-title">LINKEDIN:</span>
+                    <a href="https://www.linkedin.com/in/anitapetrovic/" target="_blank" class="footer-link">Anita's Profile</a>
+                </div>
+            </footer>
+        </div>
+
+
+
+    </body>
+    </html>

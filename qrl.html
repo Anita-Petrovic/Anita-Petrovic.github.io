@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
+        <link href="css/styles.css" rel="stylesheet"> <!-- LINKING TO STYLE CSS SHEET -->
+        <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;700&display=swap" rel="stylesheet">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Anita Petrovic - Portfolio</title>
+
+    </head>
+
+    <body>
+
+        <!-- NAV BAR -->
+        <nav class="navbar">
+            <div class="nav-container">
+                <div class="nav-brand">
+                    <a href="index.html">ANITA PETROVIC</a>
+                </div>
+                <div class="nav-links">
+                    <a href="resume.html">Resume</a>
+                    <a href="portfolio.html">Portfolio</a>
+                    <a href="personal.html">Personal</a>
+                </div>
+            </div>
+        </nav>
+
+
+        <!-- Main Content Section -->
+        <!-- Portfolio Content Section -->
+        <div class="main-content">
+
+            <div class="portfolio-heading">
+                <p><a href="portfolio.html">< Back to Portfolio</a></p>
+
+                <div class="portfolio-info">
+                    <div class="portfolio-text">
+                        <h2>FCC-ee QRL Cryogenic Flow Model</h2>
+                        <p> As part of my work in the cryogenics group at CERN, I am developing a Python tool that models
+                            the helium mass flow and pressure distribution along the QRL (cryogenic transfer line) for the
+                            proposed FCC-ee accelerator. The goal of the model is to map out the mass flows, pressures,
+                            temperatures, and enthalpies along the line for a given set of initial conditions, providing
+                            inputs for the sizing and design of the future cryogenic distribution system.</p>
+                    </div>
+
+                    <div class="portfolio-image">
+                        <img src="images/qrl/qrl_ph_diagram.png" alt="Helium pressure-enthalpy diagram with QRL operating points" />
+                    </div>
+                </div>
+
+                <div class="portfolio-info">
+                    <div class="portfolio-text2">
+                        <h7>Background</h7>
+                        <p> The QRL feeds helium to the superconducting radiofrequency cryomodules sitting along the
+                            accelerator tunnel. There are two types of cryomodules — 400 MHz and 800 MHz — and they operate
+                            at different temperatures, so six separate helium lines run in parallel inside the QRL:
+                            <ul>
+                            <li> Line A: 2 K helium supply to the 800 MHz cryomodules</li>
+                            <li> Line B: 2 K helium return from the 800 MHz cryomodules</li>
+                            <li> Line C: 4.5 K helium supply to the 400 MHz cryomodules</li>
+                            <li> Line D: 4.5 K helium return from the 400 MHz cryomodules</li>
+                            <li> Line E: Thermal shield supply (~45 K)</li>
+                            <li> Line F: Thermal shield return (~55 K)</li>
+                            </ul>
+                        </p>
+                    </div>
+
+                    <div class="portfolio-image">
+                        <img src="images/qrl/qrl_AB_profiles.png" alt="QRL lines A and B mass flow, velocity, pressure, temperature, and enthalpy profiles" />
+                    </div>
+                </div>
+
+                <div class="portfolio-info">
+                    <div class="portfolio-text2">
+                        <h7>How the Model Works</h7>
+                        <ul>
+                        <li> The code starts from the return module at the far end of the tunnel and steps node by node
+                            toward the machine interface</li>
+                        <li> At each node, the mass flow, pressure, temperature, and enthalpy are calculated for every line</li>
+                        <li> Heat inleaks from the pipe walls and the cryomodule load at each jumper connection are both
+                            accounted for</li>
+                        <li> Helium properties are evaluated with HEPAK, which handles the unusual behavior of helium
+                            near 2 K, including the superfluid regime</li>
+                        <li> Pressure drops are calculated from the pipe diameters, roughness, and local flow conditions</li>
+                        <li> The model prints key node tables for each line pair and generates property profile plots
+                            along the length of the line</li>
+                        </ul>
+                    </div>
+
+                    <div class="portfolio-image">
+                        <img src="images/qrl/qrl_CD_profiles.png" alt="QRL lines C and D mass flow, velocity, pressure, temperature, and enthalpy profiles" />
+                    </div>
+                </div>
+
+                <div class="portfolio-info">
+                    <div class="portfolio-text2">
+                        <h7>Results</h7>
+                        <p> The plots on this page show the modeled profiles for each line pair: mass flow, flow velocity,
+                            pressure, temperature, and enthalpy as functions of position along the transfer line. The mass
+                            flow in the return lines builds up as each cryomodule feeds into them, which drives the flow
+                            velocities and pressure gradients used to evaluate the pipe sizing. The model is set up so that
+                            cryomodule counts, spacings, heat loads, pipe diameters, and initial conditions can all be
+                            changed from a single input block, allowing different sections of the accelerator to be studied
+                            with the same code.</p>
+                    </div>
+
+                    <div class="portfolio-image">
+                        <img src="images/qrl/qrl_EF_profiles.png" alt="QRL lines E and F mass flow, velocity, pressure, temperature, and enthalpy profiles" />
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+
+
+        <!-- FOOTER -->
+        <div class="footer-container">
+            <footer class="footer">
+                <div class="footer-column">
+                    <span class="footer-title">LINKEDIN:</span>
+                    <a href="https://www.linkedin.com/in/anitapetrovic/" target="_blank" class="footer-link">Anita's Profile</a>
+                </div>
+            </footer>
+        </div>
+
+
+
+    </body>
+    </html>
