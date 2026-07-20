@@ -19,7 +19,7 @@ body, html {
     align-items: center;
     width: 90%; /* Adjust this to control the width */
     max-width: 1200px; /* Optional: Prevents the navbar from getting too wide on large screens */
-    border-bottom: 2px solid black;
+    border-bottom: 1px solid #e8ddd6;
 }
 
 .nav-brand a {
@@ -53,7 +53,7 @@ body, html {
     width: 90%; /* Adjust this to control the width */
     max-width: 1200px; /* Optional: Prevents the footer from getting too wide on large screens */
     margin: 0 auto; /* Center the container horizontally */
-    border-top: 2px solid black; /* boarder ontop of footer */
+    border-top: 1px solid #e8ddd6;
     padding: 20px 0;
 }
 
@@ -96,12 +96,10 @@ body, html {
     align-items: center;
     background-color: #ffffff;
     padding: 40px;
-    margin: 40px auto; /* Center the content and add margin to the top and bottom */
-    border-radius: 20px; /* Adjust to match the rounded corners in the image */
-    max-width: 1000px; /* Adjust this value to bring the content closer */
-    /*box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1); /* Optional: Adds a shadow for depth */
-    border: 3px solid #ffffff; /* Adds a white border around the content */
-    border: 2px solid #000000;
+    margin: 40px auto;
+    border-radius: 20px;
+    max-width: 1000px;
+    box-shadow: 0 2px 8px rgba(90, 60, 40, 0.10); /* Soft warm shadow instead of black border */
 }
 
 /* INDEX PAGE */
@@ -152,36 +150,33 @@ body, html {
 }
 
 .resume-button {
-    background-color: #f47068; /* Red button */
-    color: black;
+    background-color: #f47068;
+    color: #4a1b0c; /* Dark shade of the same family instead of black outline */
     border: none;
     padding: 10px 20px;
-    border-radius: 10px;
+    border-radius: 8px;
     cursor: pointer;
-    border: 2px solid #000000;
     width: 160px;
 }
 
 .portfolio-button {
-    background-color: #9fc7aa; /* Yellow button */
-    color: black;
+    background-color: #9fc7aa;
+    color: #173404;
     border: none;
     padding: 10px 20px;
-    border-radius: 10px;
+    border-radius: 8px;
     cursor: pointer;
-    border: 2px solid #000000;
     width: 160px;
 }
 
 
 .personal-button {
-    background-color: #ffc24a; /* Green button */
-    color: black;
+    background-color: #ffc24a;
+    color: #633806;
     border: none;
     padding: 10px 20px;
-    border-radius: 10px;
+    border-radius: 8px;
     cursor: pointer;
-    border: 2px solid #000000;
     width: 160px;
 }
 
@@ -202,12 +197,10 @@ body, html {
     align-items: center;
     background-color: #ffffff;
     padding: 30px;
-    margin: 30px auto; /* Center the content and add margin to the top and bottom */
-    border-radius: 20px; /* Adjust to match the rounded corners in the image */
-    max-width: 1050px; /* Adjust this value to bring the content closer */
-    /*box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1); /* Optional: Adds a shadow for depth */
-    border: 3px solid #ffffff; /* Adds a white border around the content */
-    
+    margin: 30px auto;
+    border-radius: 20px;
+    max-width: 1050px;
+    box-shadow: 0 2px 8px rgba(90, 60, 40, 0.10); /* Soft warm shadow instead of border */
 }
 
 /* PERSONAL */
@@ -220,18 +213,15 @@ body, html {
 }
 
 .personal-into h1 {
-    background-color: #ffc24a; /* Color similar to the personal button */
-    color: black;
-    padding: 10px 20px; /* Adjust padding as needed */
-    border-radius: 10px; /* Rounded corners like the button */
-    display: inline-block; /* Makes the element inline to fit the content width */
-    border: 2px solid #000000; /* Black border around the title */
-    text-align: center; /* Horizontally center the text */
-    margin: 20px auto; /* Vertical margin and auto for horizontal centering */
+    color: #2b2320;
+    display: inline-block;
+    padding: 0 4px 6px;
+    border-bottom: 3px solid #ffc24a; /* Accent underline instead of pill box */
+    text-align: center;
+    margin: 20px auto;
     font-family: 'Barlow Condensed', sans-serif;
     font-weight: 500;
     font-size: 1.6rem;
-    /* Remove width: auto; if the text is not aligned center */
 }
 
 
@@ -243,58 +233,48 @@ body, html {
 }
 
 .hobbie-section h2 {
-    background-color: #fff4f0; /* Color similar to the personal button */
-    color: black;
-    padding: 10px 20px; /* Adjust padding as needed */
-    border-radius: 10px; /* Rounded corners like the button */
-    display: inline-block; /* Makes the element inline to fit the content width */
-    border: 2px solid #000000; /* Black border around the title */
-    text-align: center; /* Horizontally center the text */
-    margin: 20px auto; /* Vertical margin and auto for horizontal centering */
-    /* font-family: 'Barlow Medium', sans-serif; */
-    /* font-weight: 700; */
+    color: #2b2320;
+    display: inline-block;
+    padding: 0 2px 5px;
+    border-bottom: 3px solid #ffc24a;
+    text-align: center;
+    margin: 20px auto;
     font-size: 1.2rem;
-    /* Remove width: auto; if the text is not aligned center */
+    font-weight: 500;
 }
 
 .hobbie-section h3 {
-    background-color: #0f606b; /* Color similar to the personal button */
-    color: white;
-    padding: 10px 20px; /* Adjust padding as needed */
-    border-radius: 10px; /* Rounded corners like the button */
-    display: inline-block; /* Makes the element inline to fit the content width */
-    border: 2px solid #000000; /* Black border around the title */
-    text-align: center; /* Horizontally center the text */
-    margin: 20px auto; /* Vertical margin and auto for horizontal centering */
-    /* font-family: 'Barlow Medium', sans-serif; */
-    /* font-weight: 700; */
+    color: #2b2320;
+    display: inline-block;
+    padding: 0 2px 5px;
+    border-bottom: 3px solid #0f606b;
+    text-align: center;
+    margin: 20px auto;
     font-size: 1.2rem;
-    /* Remove width: auto; if the text is not aligned center */
+    font-weight: 500;
 }
 
 .hobbie-section h4 {
-    background-color: #9fc7aa; /* Color similar to the personal button */
-    color: black;
-    padding: 10px 20px; /* Adjust padding as needed */
-    border-radius: 10px; /* Rounded corners like the button */
-    display: inline-block; /* Makes the element inline to fit the content width */
-    border: 2px solid #000000; /* Black border around the title */
-    text-align: center; /* Horizontally center the text */
-    margin: 20px auto; /* Vertical margin and auto for horizontal centering */
+    color: #2b2320;
+    display: inline-block;
+    padding: 0 2px 5px;
+    border-bottom: 3px solid #9fc7aa;
+    text-align: center;
+    margin: 20px auto;
     font-size: 1.2rem;
-    }
+    font-weight: 500;
+}
 
 .hobbie-section h5 {
-    background-color:  #f47068; /* Color similar to the personal button */
-    color: black;
-    padding: 10px 20px; /* Adjust padding as needed */
-    border-radius: 10px; /* Rounded corners like the button */
-    display: inline-block; /* Makes the element inline to fit the content width */
-    border: 2px solid #000000; /* Black border around the title */
-    text-align: center; /* Horizontally center the text */
-    margin: 20px auto; /* Vertical margin and auto for horizontal centering */
+    color: #2b2320;
+    display: inline-block;
+    padding: 0 2px 5px;
+    border-bottom: 3px solid #f47068;
+    text-align: center;
+    margin: 20px auto;
     font-size: 1.2rem;
-    }
+    font-weight: 500;
+}
 
 .hobbie-section p {
     margin-bottom: 20px;
@@ -323,21 +303,15 @@ body, html {
 
 
 .resume-header h1 {
-    background-color: #f47068; /* Color similar to the personal button */
-    color: black;
-    padding: 10px 20px; /* Adjust padding as needed */
-    border-radius: 10px; /* Rounded corners like the button */
-    display: inline-block; /* Makes the element inline to fit the content width */
-    border: 2px solid #000000; /* Black border around the title */
-    text-align: center; /* Horizontally center the text */
-    margin: 20px auto; /* Vertical margin and auto for horizontal centering */
+    color: #2b2320;
+    display: inline-block;
+    padding: 0 4px 6px;
+    border-bottom: 3px solid #f47068;
+    text-align: center;
+    margin: 20px auto;
     font-family: 'Barlow Condensed', sans-serif;
     font-weight: 500;
     font-size: 1.6rem;
-    width: 220px;
-    
-    
-    /*width: auto; if the text is not aligned center */
 }
 
 
@@ -410,19 +384,15 @@ body, html {
 }
 
 .portfolio-heading h1 {
-    background-color: #9fc7aa; /* Color similar to the personal button */
-    color: black;
-    padding: 10px 20px; /* Adjust padding as needed */
-    border-radius: 10px; /* Rounded corners like the button */
-    display: inline-block; /* Makes the element inline to fit the content width */
-    border: 2px solid #000000; /* Black border around the title */
-    text-align: center; /* Horizontally center the text */
-    margin: 20px auto; /* Vertical margin and auto for horizontal centering */
+    color: #2b2320;
+    display: inline-block;
+    padding: 0 4px 6px;
+    border-bottom: 3px solid #9fc7aa;
+    text-align: center;
+    margin: 20px auto;
     font-family: 'Barlow Condensed', sans-serif;
     font-weight: 500;
     font-size: 1.6rem;
-    width: 220px;
-    /* Remove width: auto; if the text is not aligned center */
 }
 
 
@@ -473,75 +443,69 @@ body, html {
 
 
 .portfolio-text h2 {
-    background-color: #f47068; /* Styling for the 'Hydrogen Motorcycle' heading */
-    color: black;
-    padding: 10px 20px;
-    border-radius: 10px;
+    color: #2b2320;
     display: inline-block;
-    border: 2px solid #000000;
+    padding: 0 2px 5px;
+    border-bottom: 3px solid #f47068;
     font-size: 1.2rem;
-    text-align: center; /* Align the heading to the left */
-    margin-bottom: 20px; /* Space below the heading */
+    font-weight: 500;
+    text-align: center;
+    margin-bottom: 20px;
 }
 
 .portfolio-text h3 {
-    background-color: #ffc24a; /* Styling for the 'Hydrogen Motorcycle' heading */
-    color: black;
-    padding: 10px 20px;
-    border-radius: 10px;
+    color: #2b2320;
     display: inline-block;
-    border: 2px solid #000000;
+    padding: 0 2px 5px;
+    border-bottom: 3px solid #ffc24a;
     font-size: 1.2rem;
-    text-align: center; /* Align the heading to the left */
-    margin-bottom: 20px; /* Space below the heading */
+    font-weight: 500;
+    text-align: center;
+    margin-bottom: 20px;
 }
 
 .portfolio-text h4 {
-    background-color: #9fc7aa; /* Styling for the 'Hydrogen Motorcycle' heading */
-    color: black;
-    padding: 10px 20px;
-    border-radius: 10px;
+    color: #2b2320;
     display: inline-block;
-    border: 2px solid #000000;
+    padding: 0 2px 5px;
+    border-bottom: 3px solid #9fc7aa;
     font-size: 1.2rem;
-    text-align: center; /* Align the heading to the left */
-    margin-bottom: 20px; /* Space below the heading */
+    font-weight: 500;
+    text-align: center;
+    margin-bottom: 20px;
 }
 
 .portfolio-text h5 {
-    background-color:  #a7d2dd; /* Styling for the 'Hydrogen Motorcycle' heading */
-    color: black;
-    padding: 10px 20px;
-    border-radius: 10px;
+    color: #2b2320;
     display: inline-block;
-    border: 2px solid #000000;
+    padding: 0 2px 5px;
+    border-bottom: 3px solid #a7d2dd;
     font-size: 1.2rem;
-    text-align: center; /* Align the heading to the left */
-    margin-bottom: 20px; /* Space below the heading */
+    font-weight: 500;
+    text-align: center;
+    margin-bottom: 20px;
 }
 
 .portfolio-text h6 {
-    background-color:  #0f606b; /* Styling for the 'Hydrogen Motorcycle' heading */
-    color: white;
-    padding: 10px 20px;
-    border-radius: 10px;
+    color: #2b2320;
     display: inline-block;
-    border: 2px solid #000000;
+    padding: 0 2px 5px;
+    border-bottom: 3px solid #0f606b;
     font-size: 1.2rem;
-    text-align: center; /* Align the heading to the left */
-    margin-bottom: 20px; /* Space below the heading */
+    font-weight: 500;
+    text-align: center;
+    margin-bottom: 20px;
 }
 
 .portfolio-text h7 {
-    background-color:  #fff4f0; /* Styling for the 'Hydrogen Motorcycle' heading */
-    color: black;
-    padding: 10px 20px;
-    border-radius: 10px;
+    color: #2b2320;
     display: inline-block;
-    border: 2px solid #000000;
+    padding: 0 2px 5px;
+    border-bottom: 3px solid #f47068;
     font-size: 1.2rem;
-    text-align: center; /* Align the heading to the left */
-    margin-bottom: 20px; /* Space below the heading */
+    font-weight: 500;
+    text-align: center;
+    margin-bottom: 20px;
 }
 
 .portfolio-text p {
@@ -557,15 +521,14 @@ body, html {
 }
 
 .portfolio-text2 h7 {
-    background-color:  #fff4f0; /* Styling for the 'Hydrogen Motorcycle' heading */
-    color: black;
-    padding: 10px 20px;
-    border-radius: 10px;
+    color: #2b2320;
     display: inline-block;
-    border: 2px solid #000000;
+    padding: 0 2px 5px;
+    border-bottom: 3px solid #f47068;
     font-size: 1.2rem;
-    text-align: center; /* Align the heading to the left */
-    margin-bottom: 20px; /* Space below the heading */
+    font-weight: 500;
+    text-align: center;
+    margin-bottom: 20px;
 }
 
 .portfolio-text2 p {
@@ -600,15 +563,14 @@ body, html {
 }
 
 .portfolio-text-center h2 {
-    background-color: #fff4f0; /* Styling for the 'Hydrogen Motorcycle' heading */
-    color: black;
-    padding: 10px 20px;
-    border-radius: 10px;
+    color: #2b2320;
     display: inline-block;
-    border: 2px solid #000000;
+    padding: 0 2px 5px;
+    border-bottom: 3px solid #f47068;
     font-size: 1.2rem;
-    text-align: center; /* Align the heading to the left */
-    margin-bottom: 20px; /* Space below the heading */
+    font-weight: 500;
+    text-align: center;
+    margin-bottom: 20px;
 }
 
 .portfolio-text-center p {
@@ -705,15 +667,14 @@ body, html {
 }
 
 .hub-container  h2 {
-    background-color: #fff4f0; /* Styling for the 'Hydrogen Motorcycle' heading */
-    color: black;
-    padding: 10px 20px;
-    border-radius: 10px;
+    color: #2b2320;
     display: inline-block;
-    border: 2px solid #000000;
+    padding: 0 2px 5px;
+    border-bottom: 3px solid #f47068;
     font-size: 1.2rem;
-    text-align: center; /* Align the heading to the left */
-    margin-bottom: 20px; /* Space below the heading */
+    font-weight: 500;
+    text-align: center;
+    margin-bottom: 20px;
 }
 
 .hub-container h3 {
@@ -751,7 +712,7 @@ body, html {
 .header-box {
     padding: 10px 20px;
     border-radius: 10px;
-    border: 2px solid #000000;
+    border: none;
     font-size: 1.2rem;
     margin-bottom: 20px;
     width: 80%;
