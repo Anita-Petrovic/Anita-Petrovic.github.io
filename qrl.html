@@ -33,84 +33,175 @@
         <!-- Portfolio Content Section -->
         <div class="main-content">
 
-            <div class="portfolio-heading">
+            <div class="portfolio-heading qrl-page">
                 <p><a href="portfolio.html">< Back to Portfolio</a></p>
 
-                <div class="portfolio-info">
+                <div class="portfolio-info qrl-intro">
                     <div class="portfolio-text">
                         <h2>FCC-ee QRL Cryogenic Flow Model</h2>
                         <p> As part of my work in the cryogenics group at CERN, I am developing a Python tool that models
-                            the helium mass flow and pressure distribution along the QRL (cryogenic transfer line) for the
-                            proposed FCC-ee accelerator. The goal of the model is to map out the mass flows, pressures,
+                            the helium mass flow and pressure distribution along the QRL (cryogenic distribution line)
+                            <a href="https://home.cern/science/accelerators/future-circular-collider/" target="_blank" rel="noopener noreferrer">for the proposed FCC-ee accelerator</a>. The goal of the model is to map out the mass flows, pressures,
                             temperatures, and enthalpies along the line for a given set of initial conditions, providing
                             inputs for the sizing and design of the future cryogenic distribution system.</p>
                     </div>
-
-                    <div class="portfolio-image">
-                        <img src="images/qrl/qrl_ph_diagram.png" alt="Helium pressure-enthalpy diagram with QRL operating points" />
-                    </div>
                 </div>
 
-                <div class="portfolio-info">
-                    <div class="portfolio-text2">
-                        <h7>Background</h7>
-                        <p> The QRL feeds helium to the superconducting radiofrequency cryomodules sitting along the
-                            accelerator tunnel. There are two types of cryomodules — 400 MHz and 800 MHz — and they operate
-                            at different temperatures, so six separate helium lines run in parallel inside the QRL:
-                            <ul>
-                            <li> Line A: 2 K helium supply to the 800 MHz cryomodules</li>
-                            <li> Line B: 2 K helium return from the 800 MHz cryomodules</li>
-                            <li> Line C: 4.5 K helium supply to the 400 MHz cryomodules</li>
-                            <li> Line D: 4.5 K helium return from the 400 MHz cryomodules</li>
-                            <li> Line E: Thermal shield supply (~45 K)</li>
-                            <li> Line F: Thermal shield return (~55 K)</li>
-                            </ul>
-                        </p>
-                    </div>
+                <figure class="portfolio-image qrl-intro-image qrl-figure">
+                    <img src="images/qrl/qrl_code_definitions.png" alt="QRL cryogenic flow model diagram with component legend" />
+                    <figcaption>Simplified diagram of the components connected to the QRL (cryogenic distribution line) and their acronyms.</figcaption>
+                </figure>
 
-                    <div class="portfolio-image">
-                        <img src="images/qrl/qrl_AB_profiles.png" alt="QRL lines A and B mass flow, velocity, pressure, temperature, and enthalpy profiles" />
-                    </div>
-                </div>
-
-                <div class="portfolio-info">
-                    <div class="portfolio-text2">
-                        <h7>How the Model Works</h7>
+                <section class="qrl-section">
+                    <div class="qrl-section-copy">
+                        <h3 class="qrl-section-title">Background</h3>
+                        <p>The QRL feeds helium to the dozens of superconducting radiofrequency cryomodules along the accelerator
+                            tunnel. The 400 MHz and 800 MHz cryomodules operate at different conditions, so six helium
+                            lines run in parallel inside the transfer line:</p>
                         <ul>
-                        <li> The code starts from the return module at the far end of the tunnel and steps node by node
-                            toward the machine interface</li>
-                        <li> At each node, the mass flow, pressure, temperature, and enthalpy are calculated for every line</li>
-                        <li> Heat inleaks from the pipe walls and the cryomodule load at each jumper connection are both
-                            accounted for</li>
-                        <li> Helium properties are evaluated with HEPAK, which handles the unusual behavior of helium
-                            near 2 K, including the superfluid regime</li>
-                        <li> Pressure drops are calculated from the pipe diameters, roughness, and local flow conditions</li>
-                        <li> The model prints key node tables for each line pair and generates property profile plots
-                            along the length of the line</li>
+                            <li>Line A: 2 K helium supply to the 800 MHz cryomodules</li>
+                            <li>Line B: 2 K helium return from the 800 MHz cryomodules</li>
+                            <li>Line C: 4.5 K helium supply to the 400 MHz cryomodules</li>
+                            <li>Line D: 4.5 K helium return from the 400 MHz cryomodules</li>
+                            <li>Line E: thermal-shield supply (~45 K)</li>
+                            <li>Line F: thermal-shield return (~55 K)</li>
                         </ul>
                     </div>
+                    <figure class="qrl-figure">
+                        <img src="images/qrl/400_mhz_cryomodule.png" alt="Cutaway illustration of a 400 MHz cryomodule and its principal components" />
+                        <figcaption>400 MHz cryomodule and principal components (<a href="https://indico.cern.ch/event/1552126/timetable/#281-srf-system-integration-cry" target="_blank" rel="noopener noreferrer">FCC Week 2026</a>).</figcaption>
+                    </figure>
+                </section>
 
-                    <div class="portfolio-image">
-                        <img src="images/qrl/qrl_CD_profiles.png" alt="QRL lines C and D mass flow, velocity, pressure, temperature, and enthalpy profiles" />
+                <section class="qrl-section">
+                    <div class="qrl-section-copy">
+                        <h3 class="qrl-section-title">Purpose of the Code</h3>
+                        <p>The model calculates the behaviour and changes in the helium properties at each
+                            mixing/diverging node along one side of the QRL. A node is a location where a cryomodule,
+                            return module, or QUI is connected.</p>
+                        <p><strong>Properties tracked with the code:</strong> pressure [bar], temperature [K], enthalpy
+                            [h, J/g], mass flow [g/s], velocity [m/s], density [rho, kg/m<sup>3</sup>], and flash [%].</p>
                     </div>
-                </div>
+                    <figure class="qrl-figure">
+                        <img src="images/qrl/Image of wanted qrl properties.png" alt="QRL nodes showing the helium properties calculated at each location" />
+                        <figcaption>The model updates the helium state and flow at every active node.</figcaption>
+                    </figure>
+                </section>
 
-                <div class="portfolio-info">
-                    <div class="portfolio-text2">
-                        <h7>Results</h7>
-                        <p> The plots on this page show the modeled profiles for each line pair: mass flow, flow velocity,
-                            pressure, temperature, and enthalpy as functions of position along the transfer line. The mass
-                            flow in the return lines builds up as each cryomodule feeds into them, which drives the flow
-                            velocities and pressure gradients used to evaluate the pipe sizing. The model is set up so that
-                            cryomodule counts, spacings, heat loads, pipe diameters, and initial conditions can all be
-                            changed from a single input block, allowing different sections of the accelerator to be studied
-                            with the same code.</p>
+                <section class="qrl-section">
+                    <div class="qrl-section-copy">
+                        <h3 class="qrl-section-title">Step 0 - Define the Calculation Sequence</h3>
+                        <p>The calculation starts from known or assumed boundary conditions at the return-module end and
+                            progresses node by node, or cryomodule by cryomodule, towards the QUI. The properties inside
+                            each cryomodule are also known. For each QRL segment, the code:</p>
+                        <ul>
+                            <li>calculates the heat added to the helium and the pressure drop along the pipe;</li>
+                            <li>updates pressure, enthalpy, temperature, and density at the next node;</li>
+                            <li>calculates flash and required mass flow when a cryomodule is connected; and</li>
+                            <li>repeats the process until the properties have been mapped along the complete line.</li>
+                        </ul>
+                        <p>A node-by-node calculation is important because the helium state before a JT valve affects the
+                            flash fraction. The flash fraction changes the required mass flow, which in turn affects flow
+                            velocity and pressure loss.</p>
                     </div>
+                    <figure class="qrl-figure">
+                        <img src="images/qrl/qrl_step0_overview.png" alt="Overview of the QRL calculation loop from known boundary conditions to updated node properties" />
+                        <figcaption>Overview of the repeated node calculation.</figcaption>
+                    </figure>
+                    <figure class="qrl-figure">
+                        <img src="images/qrl/qrl_step0_known_cryomodule_properties.png" alt="QRL diagram showing the known pressure and temperature properties of the 800 MHz and 400 MHz cryomodules" />
+                        <figcaption>The operating properties of the 800 MHz and 400 MHz cryomodules are known and consistent for every cryomodule of the same type.</figcaption>
+                    </figure>
+                </section>
 
-                    <div class="portfolio-image">
-                        <img src="images/qrl/qrl_EF_profiles.png" alt="QRL lines E and F mass flow, velocity, pressure, temperature, and enthalpy profiles" />
+                <section class="qrl-section">
+                    <div class="qrl-section-copy">
+                        <h3 class="qrl-section-title">Step 1 - Build the QRL Layout</h3>
+                        <p>The physical arrangement is defined as a set of cryomodule blocks. For each block, the user
+                            specifies the cryomodule type, number of modules, spacing between jumpers, and connected QRL
+                            lines. The <code>build_layout()</code> function converts those inputs into:</p>
+                        <ul>
+                            <li><code>x_nodes</code>, an ordered list of positions for the QUI, cryomodules, and return module; and</li>
+                            <li>a line-specific Boolean mask that identifies where helium mass enters or leaves each line.</li>
+                        </ul>
+                        <p>This keeps the calculation flexible when the number, order, or spacing of the 400 MHz and
+                            800 MHz cryomodules changes.</p>
                     </div>
-                </div>
+                    <figure class="qrl-figure">
+                        <img src="images/qrl/qrl_step1_node_positions.png" alt="Example array of QRL node positions showing the QUI and first cryomodules" />
+                        <figcaption>The layout builder converts the physical spacing into an ordered node array.</figcaption>
+                    </figure>
+                    <figure class="qrl-figure">
+                        <img src="images/qrl/qrl_step1_flow_masks.png" alt="Example QRL line masks showing where mass flow changes for different helium lines" />
+                        <figcaption>Each line receives its own mask so flow changes occur only at connected cryomodules.</figcaption>
+                    </figure>
+                </section>
+
+                <section class="qrl-section">
+                    <div class="qrl-section-copy">
+                        <h3 class="qrl-section-title">Step 2 - Map Conditions Node by Node</h3>
+                        <p>The <code>node_flow_mapping()</code> calculation treats the helium lines in supply/return pairs
+                            and marches from the return module toward the QUI. The boundary pressure, temperature,
+                            enthalpy, and mass flow are first assigned at the return-module node.</p>
+                        <p>For every pipe segment, the code calculates pressure loss from the local flow conditions and
+                            pipe geometry. Distributed heat inleak is converted into an enthalpy change, after which the
+                            pressure, enthalpy, temperature, and density are updated at the next node.</p>
+                        <p>When the line mask is true, the cryomodule heat load sets the required liquid flow. The code
+                            then calculates the JT flash and upstream mass flow. Return lines combine incoming streams
+                            using mass and energy balances so that different inlet enthalpies are represented correctly.</p>
+                    </div>
+                    <figure class="qrl-figure">
+                        <img src="images/qrl/qrl_step2_node_mapping.png" alt="QRL nodes labelled X, X minus 1, and X minus 2 to illustrate the calculation direction" />
+                        <figcaption>The calculation advances one segment at a time through the node array.</figcaption>
+                    </figure>
+                </section>
+
+                <section class="qrl-section">
+                    <div class="qrl-section-copy">
+                        <h3 class="qrl-section-title">Step 3 - Plot and Tabulate the Results</h3>
+                        <p>The same process is repeated for all six lines. The reporting functions then generate profiles
+                            of pressure, temperature, enthalpy, mass flow, velocity, density, and flash along the QRL,
+                            together with compact tables for the most important nodes.</p>
+                    </div>
+                    <figure class="qrl-figure qrl-profile-figure">
+                        <img src="images/qrl/qrl_AB_profiles.png" alt="Representative property profiles for QRL lines A and B" />
+                        <figcaption>Representative profiles for the 2 K supply and return lines.</figcaption>
+                    </figure>
+                </section>
+
+                <section class="qrl-section">
+                    <div class="qrl-section-copy">
+                        <h3 class="qrl-section-title">Results</h3>
+                        <p>The current results for the Point H baseline are shown below. The full node-by-node results are
+                            displayed for one line at a time; clicking the different line names changes the results shown.</p>
+                        <p>For each line, the selected pipe diameter is shown. It was chosen iteratively to ensure that the
+                            pressure-drop budget was not exceeded. The pressure-drop budget is based on operational
+                            experience from the LHC. In addition, the mass flow at the QUI, total pressure drop, and maximum
+                            velocity are shown for each line.</p>
+                        <p>A PDF summary is also available for download.</p>
+                    </div>
+                    <div class="qrl-report-actions">
+                        <a class="qrl-report-button" href="images/qrl/qrl%20results/H_400_baseline_qrl_report.html" target="_blank" rel="noopener noreferrer">Open full interactive report</a>
+                        <a class="qrl-report-button qrl-report-button-secondary" href="docs/qrl/QRL_Point_H_key_node_tables.pdf" target="_blank" rel="noopener noreferrer">Download key-node tables (PDF)</a>
+                    </div>
+                    <iframe class="qrl-report-frame" src="images/qrl/qrl%20results/H_400_baseline_qrl_report.html" title="Interactive Point H QRL node-by-node results report" loading="lazy"></iframe>
+                </section>
+
+                <section class="qrl-section qrl-conclusion">
+                    <div class="qrl-section-copy">
+                        <h3 class="qrl-section-title">Conclusion</h3>
+                        <p>The model takes a cryomodule layout, estimated heat loads for each cryomodule, and a set of
+                            boundary conditions, then calculates the estimated QRL properties at each node (where a
+                            cryomodule is connected). It calculates how the mass flow, temperature, and pressure change
+                            throughout the QRL. This information is useful for sizing the rest of the refrigeration
+                            system because it helps estimate the conditions required at the QUI.</p>
+                        <p>This model provides a first-pass estimate of the properties expected in a theoretical QRL. The
+                            modularity of the code is also useful because the FCC baseline is constantly changing and
+                            evolving. Further improvements are still needed, including accounting for losses across the
+                            Joule–Thomson valves, improving the return-model behaviour, and adding other effects. Further
+                            validation of the model, including comparison with current LHC data, is also still needed.</p>
+                    </div>
+                </section>
 
             </div>
         </div>

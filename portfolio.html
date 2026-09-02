@@ -35,49 +35,55 @@
             <div class="portfolio-heading">
                 <h1>Portfolio</h1>
                 <p>Welcome to my portfolio page! <br>Here, you'll discover a curated showcase of my projects and design work, 
-                    highlighting my journey and growth as a Mechanical Engineer. 
+                    highlighting my journey and growth as a mechanical engineer.
                     </p>
                 
-                <div class="portfolio-info">
+                <div class="portfolio-info qrl-portfolio-card">
                     <div class="portfolio-text">
                         <h2>FCC-ee QRL Cryogenic Flow Model</h2>
-                        <p> At CERN, I am developing a Python tool that models the helium mass flow and pressure distribution along the QRL (cryogenic transfer line) for the proposed FCC-ee accelerator. The QRL feeds helium to the superconducting cryomodules along the tunnel through six parallel lines operating between 2 K and 55 K. Starting from the far end of the tunnel, the model steps node by node along the line, calculating the mass flow, pressure, and enthalpy at each point while accounting for heat inleaks from the pipe walls and the cryomodule loads at each jumper connection.</p>
+                        <p>At CERN, I work on cryogenic studies for the FCC project. As part of this work, I created a Python tool that models the helium mass flow and pressure distribution along the QRL (cryogenic distribution line).
+                            The QRL feeds helium to dozens of superconducting cryomodules along the tunnel.</p>
+                            
                         <p>Click <a href="qrl.html">here</a> to learn more about this project!</p>
                     </div>
 
                     <div class="portfolio-image">
-                        <img src="images/qrl/qrl_EF_profiles.png" alt="QRL thermal shield line profiles" />
+                        <img src="images/qrl/qrl_propeties_simplified_image.png" alt="Simplified overview of the QRL helium properties" />
                     </div>
                 </div>
 
-                <div class="portfolio-info">
+                <div class="portfolio-info biphase-portfolio-card">
                     <div class="portfolio-text">
                         <h3>Cryomodule Bi-Phase Line Sizing</h3>
-                        <p> Another project of mine at CERN is sizing the bi-phase lines for the FCC-ee superconducting radiofrequency cryomodules. The bi-phase line is the horizontal tube above the cavities where saturated liquid helium and its vapour coexist, and it must be large enough to keep the vapour speed low while holding enough liquid to ride through operational transients. I wrote a Python tool that calculates the liquid level profile along the gently sloped tube, the vapour and liquid cross sections, and the time it takes for the line to dry out for a range of pipe diameters.</p>
+                        <p>Another project of mine at CERN involves sizing the bi-phase lines for the FCC-ee superconducting radiofrequency cryomodules. The bi-phase line is the horizontal tube above the cavities that contains saturated liquid helium and its vapour.
+                             It must be large enough to keep the vapour speed low while holding enough liquid to handle operational failures.</p>
+                        <p>I made a Python tool that calculates the liquid-level profile along the bi-phase tube and the time it takes for the line to dry out in the event of an interruption in the helium supply.</p>
                         <p>Click <a href="biphase.html">here</a> to learn more about this project!</p>
                     </div>
 
                     <div class="portfolio-image">
-                        <img src="images/biphase/biphase_nominal.png" alt="Bi-phase line nominal operation schematic" />
+                        <img src="images/biphase/biphase_constraints_sharp.png" alt="Simplified sloped bi-phase line showing its helium supply, vapour outlet, operating margin, and 5 metre per second vapour-speed constraint" />
                     </div>
                 </div>
 
-                <div class="portfolio-info">
+                <div class="portfolio-info mci-portfolio-card">
                     <div class="portfolio-text">
                         <h4>Maximum Credible Incident (MCI) Analysis</h4>
-                        <p> For the FCC-ee superconducting radiofrequency cryomodules at CERN, I analyzed the pressure losses during a Maximum Credible Incident — a sudden loss of insulation vacuum in which air condenses on the cold surfaces and deposits an extreme heat flux into the helium bath. The resulting boil-off must be vented safely through the risers, bi-phase tube, and burst disk line without over-pressurizing the cryomodule. I calculated the venting mass flow following the EN 17527 cryogenic safety standard and compared the pressure drops of four different relief line routing options.</p>
+                        <p>For the FCC-ee superconducting RF cryomodules at CERN, I investigated the pressure differential during a Maximum Credible Incident (MCI) event.</p>
+                        <p>An MCI event causes an extreme heat flux into the helium bath. The resulting boil-off must be vented safely through the inner piping without over-pressurizing the cryomodule.
+                            I calculated the venting mass flow and compared design changes that would limit the pressure differential within the cryomodules during such an event.</p>
                         <p>Click <a href="mci.html">here</a> to learn more about this project!</p>
                     </div>
 
                     <div class="portfolio-image">
-                        <img src="images/mci/mci_cryomodule.png" alt="FCC-ee 400 MHz cryomodule CAD model" />
+                        <img src="images/mci/mini MCI image.png" alt="Simplified FCC-ee cryomodule showing the bi-phase tube and nominal helium conditions" />
                     </div>
                 </div>
 
                 <div class="portfolio-info">
                     <div class="portfolio-text">
                         <h2>Hydrogen Motorcycle</h2>
-                        <p> The project aimed to establish the feasibility of powering a motorcycle with a hydrogen fuel cell. The goals were to source and calculate the total cost of components for the powertrain design and to perform high-level component integration and simulation. My contributions included creating CAD components, designing the fuel cell schematics, and conducting Simulink simulations to assess the performance of the fuel cell, supercapacitor, DC/DC converter, and motor system under various loading conditions.</p>
+                        <p>The project aimed to establish the feasibility of powering a motorcycle with a hydrogen fuel cell. The goals were to source components, calculate the total cost of the powertrain design, and perform high-level component integration and simulation. My contributions included creating CAD components, designing the fuel-cell schematics, and conducting Simulink simulations to assess the performance of the fuel cell, supercapacitor, DC/DC converter, and motor system under various loading conditions.</p>
                              <p>Click <a href="motorcycle.html">here</a> to learn more about this project!</p>
                         <!-- <p> Click here to learn more! <a href="portfolio.html">here</a></p> -->
                 
@@ -104,13 +110,13 @@
                 <div class="portfolio-info">
                     <div class="portfolio-text">
                         <h4>EcoCar UrbanConcept Suspension Hub</h4>
-                        <p> EcoCar is a student vehicle project at the University of Alberta, 
-                            which I was part of for five years. For this project, 
+                        <p>EcoCar is a student vehicle project at the University of Alberta,
+                            which I was a part of for five years. For this project,
                             I designed a new hub for our UrbanConcept vehicle, which achieved 
-                            almost a 50% reduction in weight while maintaining structural, 
+                            nearly a 50% reduction in weight while maintaining structural,
                             maintenance, and safety requirements. The design process included 
-                            multiple iterations and simulations to analyze the part and create 
-                            an optimized final product.</p>
+                            multiple iterations and simulations to analyse the part and create 
+                            an optimised final product.</p>
                             <p> Click <a href="hub.html">here</a> to learn more!</p>
                     </div>
 
@@ -122,11 +128,11 @@
                 <div class="portfolio-info">
                     <div class="portfolio-text">
                         <h5>Suspension Bushing Test Fixture</h5>
-                        <p> At Lucid Motors, one project of mine involved the design of a bushing test fixture. The final design of the fixture was deemed free of proprietary material and can be seen on the right. <p></p>
+                        <p>At Lucid Motors, one of my projects involved designing a bushing test fixture. The final design was deemed free of proprietary material and can be seen on the right.</p>
 
-                            The fixture was composed of multiple CNC-machined steel components, which would clamp bushings down and attach them to a CTW LA-48 actuator. The design process was iterative and involved many revisions. FEA was used to enhance the design by reducing material, limiting deflection, and ensuring the parts could handle maximum loading conditions.<p></p>
-                            
-                            The actuator was programmed using chirp signals to dynamically and statically test the bushings. I then created a MATLAB program to analyze data from various suppliers to ensure they met performance benchmarks.</p>
+                        <p>The fixture was composed of multiple CNC-machined steel components that clamped the bushings and attached them to a CTW LA-48 actuator. The design process was iterative and involved many revisions. FEA was used to improve the design by reducing material, limiting deflection, and ensuring that the parts could handle maximum loading conditions.</p>
+
+                        <p>The actuator was programmed using chirp signals to test the bushings under dynamic and static conditions. I then created a MATLAB program to analyse data from various suppliers to ensure that they met performance benchmarks.</p>
 
                            
                     
@@ -134,7 +140,7 @@
 
                             The fixture was composed of multiple steel components, which would clamp to bushings and attach them to a CTW LA-48 actuator. I used FEA during this iterative design process to limit deflection and withstand the maximum loading conditions. Additionally, multiple drawings were created to fabricate the parts with a CNC machine.
                             
-                            The actuator was programmed using chirp signals to dynamically and statically test the bushings. I then created a MATLAB program to analyze data from various suppliers to ensure they met performance benchmarks.</p> -->
+                            The actuator was programmed using chirp signals to dynamically and statically test the bushings. I then created a MATLAB program to analyse data from various suppliers to ensure they met performance benchmarks.</p> -->
                         </div>
 
                     <div class="portfolio-image">
@@ -149,8 +155,8 @@
                             of powering a motorcycle using a hydrogen fuel cell. The project goals were to source and 
                             calculate the total cost of components for the powertrain design and to perform high level
                              component integration and simulation. My main contribution for the project was components 
-                             of the CAD work along with the Simulink simulation of how the fuel cell, super capacitor, 
-                             DC/DC converter, and motor system preform under different loading conditions.</p>
+                             of the CAD work along with the Simulink simulation of how the fuel cell, supercapacitor, 
+                             DC/DC converter, and motor system perform under different loading conditions.</p>
                     </div>
 
                     <div class="portfolio-image">
@@ -161,7 +167,7 @@
                 <div class="portfolio-info">
                     <div class="portfolio-text">
                         <h2>EcoCar Sideview Mirrors</h2>
-                        <p> Another EcoCar project of mine involved the design of an aerodynamic side-view mirror. The design included tailored draft angles that could be integrated into the outer shell's mold during the carbon fiber layup process. This integration technique enabled the mirror to become a seamless part of the vehicle's carbon shell, enhancing both aesthetics and aerodynamics.</p>
+                        <p>Another EcoCar project of mine involved designing an aerodynamic side-view mirror. The design included tailored draft angles that could be integrated into the outer shell's mould during the carbon-fibre layup process. This integration technique enabled the mirror to become a seamless part of the vehicle's carbon shell, enhancing both aesthetics and aerodynamics.</p>
                     </div>
 
                     <div class="portfolio-image">

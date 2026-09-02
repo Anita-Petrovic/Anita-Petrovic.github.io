@@ -1,0 +1,46 @@
+# Local previews and image-editing working files
+/tmp/
+/render_tmp/
+/matte_portrait.py
+/refine_background_edge.py
+
+# Original/unused profile photos kept only on this computer
+/images/profile/profile2.png
+/images/profile/profile3.png
+/images/profile/profile4.png
+/images/profile/profile5.png
+
+# Unused image drafts and source figures
+/images/biphase/biphase_constraints.png
+/images/biphase/biphase_jt_expansion.png
+/images/hub/hub2.JPG
+/images/hub/hub3.JPG
+/images/mci/mci_cryomodule_break.png
+/images/mci/mci_cryomodule.png
+/images/mci/mci_cryomodule_end.png
+/images/motorcycle/FC system schematictable3.png
+/images/motorcycle/simulinkdiagramtable1.png
+/images/personal/rock1.jpg
+/images/personal/rock2.jpg
+/images/personal/rock4.jpg
+/images/personal/snow3.jpg
+/images/personal/snow4.jpg
+/images/personal/snow6.jpg
+/images/portfolio/prototype1.JPG
+/images/qrl/Picture3.png
+/images/qrl/Picture3.1.png
+/images/qrl/Picture4.png
+/images/qrl/Picture5.png
+/images/qrl/Picture7.png
+/images/qrl/Picture8.png
+/images/qrl/Picture9.png
+/images/qrl/Picture10.png
+/images/qrl/Picture11.png
+/images/qrl/Picture12.png
+/images/qrl/TS model.png
+/images/qrl/qrl_CD_profiles.png
+/images/qrl/qrl_EF_profiles.png
+/images/qrl/qrl_ph_diagram.png
+/images/qrl/qrl_step2_return_mixing.png
+/images/qrl/qrl_step2_supply_flow.png
+/images/qrl/qrl results/H_400_baseline_key_tables.txt

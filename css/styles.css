@@ -97,7 +97,7 @@ body, html {
     background-color: #ffffff;
     padding: 40px;
     margin: 40px auto;
-    border-radius: 20px;
+    border-radius: 6px;
     max-width: 1000px;
     box-shadow: 0 2px 8px rgba(90, 60, 40, 0.10); /* Soft warm shadow instead of black border */
 }
@@ -106,7 +106,7 @@ body, html {
 .profile-image img {
     width: 336px; /* Adjust the width as needed */
     height: 369.2px; /* Adjust the height as needed */
-    border-radius: 13px; /* Subtle corner rounding */
+    border-radius: 6px; /* Subtle corner rounding */
     margin-right: 50px; /* Adds some space between the image and the profile info */
     /* border: 2px solid #000000; */
 }
@@ -154,7 +154,7 @@ body, html {
     color: #4a1b0c; /* Dark shade of the same family instead of black outline */
     border: none;
     padding: 10px 20px;
-    border-radius: 8px;
+    border-radius: 6px;
     cursor: pointer;
     width: 160px;
 }
@@ -164,7 +164,7 @@ body, html {
     color: #173404;
     border: none;
     padding: 10px 20px;
-    border-radius: 8px;
+    border-radius: 6px;
     cursor: pointer;
     width: 160px;
 }
@@ -175,7 +175,7 @@ body, html {
     color: #633806;
     border: none;
     padding: 10px 20px;
-    border-radius: 8px;
+    border-radius: 6px;
     cursor: pointer;
     width: 160px;
 }
@@ -198,7 +198,7 @@ body, html {
     background-color: #ffffff;
     padding: 30px;
     margin: 30px auto;
-    border-radius: 20px;
+    border-radius: 6px;
     max-width: 1050px;
     box-shadow: 0 2px 8px rgba(90, 60, 40, 0.10); /* Soft warm shadow instead of border */
 }
@@ -409,6 +409,445 @@ body, html {
 
 }
 
+/* Keep the QRL content column wide enough for its full-width diagram */
+.qrl-page {
+    width: 100%;
+}
+
+/* QRL page intro: place the model diagram below the introductory text */
+.qrl-intro {
+    display: block;
+    width: 100%;
+}
+
+.qrl-intro .portfolio-text {
+    flex-basis: 100%;
+    max-width: 100%;
+    margin-bottom: 20px;
+}
+
+.portfolio-image.qrl-intro-image {
+    flex-basis: auto;
+    width: 90%;
+    max-width: 90%;
+    align-self: center;
+    margin: 0 auto 30px;
+}
+
+.portfolio-image.qrl-intro-image img {
+    display: block;
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    margin-bottom: 0;
+}
+
+/* QRL project sections: text first, then readable full-width visuals */
+.qrl-section {
+    width: 90%;
+    max-width: 90%;
+    margin: 10px auto 24px;
+}
+
+.qrl-section-copy {
+    width: 100%;
+}
+
+.qrl-section-copy p {
+    margin-bottom: 14px;
+    text-align: left;
+}
+
+.qrl-section-copy ul {
+    margin: 0 0 18px;
+    padding-left: 24px;
+}
+
+.qrl-section-copy li {
+    margin-bottom: 5px;
+    text-align: left;
+}
+
+.qrl-section-title {
+    color: #2b2320;
+    display: table;
+    padding: 0 2px 5px;
+    border-bottom: 3px solid #f47068;
+    font-size: 1.2rem;
+    font-weight: 500;
+    text-align: center;
+    margin: 20px auto;
+}
+
+.qrl-section code {
+    color: #173404;
+    background: #eef5f0;
+    padding: 1px 4px;
+    border-radius: 3px;
+}
+
+.qrl-figure {
+    width: 100%;
+    margin: 16px auto 32px;
+}
+
+.qrl-figure img {
+    display: block;
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    border-radius: 6px;
+}
+
+.qrl-figure figcaption {
+    color: #6b5d55;
+    font-size: 0.9rem;
+    line-height: 1.35;
+    text-align: center;
+    margin-top: 8px;
+}
+
+.qrl-equation-figure {
+    max-width: 850px;
+}
+
+.qrl-profile-figure {
+    max-width: 760px;
+}
+
+.qrl-report-actions {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin: 8px 0 18px;
+}
+
+.qrl-report-button {
+    display: inline-block;
+    background: #f47068;
+    color: #4a1b0c;
+    padding: 10px 18px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: 700;
+}
+
+.qrl-report-button:hover {
+    color: #4a1b0c;
+    opacity: 0.8;
+}
+
+.qrl-report-button-secondary {
+    background: #9fc7aa;
+    color: #173404;
+}
+
+.qrl-report-button-secondary:hover {
+    color: #173404;
+}
+
+.qrl-report-frame {
+    display: block;
+    width: 100%;
+    height: 600px;
+    border: 1px solid #e8ddd6;
+    border-radius: 6px;
+    background: #ffffff;
+}
+
+.qrl-conclusion {
+    margin-bottom: 10px;
+}
+
+/* MCI page: compact QRL-style sections with long diagrams below the text */
+.mci-page .qrl-intro .portfolio-text p {
+    margin-bottom: 0;
+    font-style: italic;
+}
+
+.mci-section {
+    margin-bottom: 18px;
+}
+
+.mci-section-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 24px;
+    width: 90%;
+    max-width: 90%;
+    margin: 0 auto 6px;
+}
+
+.mci-section-grid .mci-section {
+    width: 100%;
+    max-width: 100%;
+    margin: 0;
+}
+
+.mci-figure {
+    margin-bottom: 22px;
+}
+
+.mci-approach-gallery {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+    width: 100%;
+    margin: 16px auto 22px;
+}
+
+.mci-approach-gallery figure {
+    margin: 0;
+}
+
+.mci-approach-caption {
+    margin: -4px 0 0;
+    color: #5f6368;
+    font-size: 0.95rem;
+    line-height: 1.6;
+}
+
+.mci-approach-gallery img {
+    display: block;
+    width: 100%;
+    height: auto;
+    border-radius: 6px;
+}
+
+.mci-table-wrap {
+    width: 100%;
+    overflow-x: auto;
+    margin: 12px 0 8px;
+}
+
+.mci-criteria-table {
+    width: 100%;
+    border-collapse: collapse;
+    background: #ffffff;
+    text-align: left;
+}
+
+.mci-criteria-table th,
+.mci-criteria-table td {
+    padding: 12px 14px;
+    border: 1px solid #ded5cf;
+    vertical-align: top;
+}
+
+.mci-criteria-table thead th {
+    background: #eef5f0;
+    color: #173404;
+}
+
+.mci-criteria-table tbody th {
+    width: 34%;
+    min-width: 180px;
+}
+
+.mci-footnote {
+    color: #6b5d55;
+    font-size: 0.85rem;
+}
+
+.mci-results {
+    margin-bottom: 8px;
+}
+
+/* Bi-phase page: reuse the QRL text-first layout with scientific tables and code notes */
+.biphase-page {
+    width: 100%;
+}
+
+.biphase-section a {
+    overflow-wrap: anywhere;
+}
+
+.biphase-compact-figure,
+.biphase-code-figure {
+    max-width: 900px;
+}
+
+.biphase-formula-figure,
+.biphase-ph-figure {
+    max-width: 760px;
+}
+
+.biphase-code-block {
+    width: 100%;
+    margin: 12px 0 24px;
+    padding: 16px 18px;
+    overflow-x: auto;
+    border-left: 4px solid #f47068;
+    border-radius: 4px;
+    background: #20332d;
+    color: #f7f4ef;
+    font-family: Consolas, "Courier New", monospace;
+    font-size: 0.88rem;
+    line-height: 1.5;
+    text-align: left;
+    white-space: pre;
+}
+
+.biphase-code-block code {
+    padding: 0;
+    background: transparent;
+    color: inherit;
+}
+
+.biphase-equation {
+    margin: 14px auto 18px;
+    padding: 14px 18px;
+    border-radius: 4px;
+    background: #eef5f0;
+    color: #173404;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 1.08rem;
+    text-align: center;
+}
+
+.biphase-table-wrap {
+    width: 100%;
+    overflow-x: auto;
+    margin: 14px 0 30px;
+}
+
+.biphase-spec-table,
+.biphase-results-table {
+    width: 100%;
+    border-collapse: collapse;
+    background: #ffffff;
+    text-align: left;
+}
+
+.biphase-spec-table th,
+.biphase-spec-table td,
+.biphase-results-table th,
+.biphase-results-table td {
+    padding: 13px 14px;
+    border: 1px solid #ded5cf;
+    vertical-align: top;
+}
+
+.biphase-spec-table thead th,
+.biphase-results-table thead th {
+    background: #eef5f0;
+    color: #173404;
+}
+
+.biphase-spec-table tbody th {
+    width: 25%;
+    min-width: 170px;
+}
+
+.biphase-results-table tbody th {
+    width: 16%;
+    min-width: 145px;
+}
+
+.biphase-results-table td:nth-child(2) {
+    width: 38%;
+    min-width: 280px;
+}
+
+.biphase-results-table td:nth-child(3) {
+    width: 46%;
+    min-width: 360px;
+}
+
+.biphase-results-table img {
+    display: block;
+    width: 100%;
+    height: auto;
+    border-radius: 4px;
+}
+
+.biphase-key-results {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 14px;
+    margin: 12px 0 22px;
+}
+
+.biphase-key-result {
+    padding: 18px;
+    border-top: 4px solid #f47068;
+    background: #f8f4f1;
+    text-align: center;
+}
+
+.biphase-key-result strong {
+    display: block;
+    margin-bottom: 6px;
+    color: #173404;
+    font-size: 1.35rem;
+}
+
+.biphase-key-result span {
+    display: block;
+    color: #5c5049;
+    line-height: 1.35;
+}
+
+.biphase-calculation-section h4 {
+    margin: 24px 0 8px;
+    color: #2b2320;
+    font-size: 1.05rem;
+    font-weight: 700;
+    text-align: left;
+}
+
+@media (max-width: 700px) {
+    .qrl-section,
+    .portfolio-image.qrl-intro-image {
+        width: 100%;
+        max-width: 100%;
+    }
+
+    .qrl-report-actions {
+        flex-direction: column;
+    }
+
+    .qrl-report-button {
+        text-align: center;
+    }
+
+    .qrl-report-frame {
+        height: 520px;
+    }
+
+    .biphase-key-results {
+        grid-template-columns: 1fr;
+    }
+
+    .biphase-spec-table th,
+    .biphase-spec-table td,
+    .biphase-results-table th,
+    .biphase-results-table td {
+        padding: 10px;
+    }
+
+    .biphase-code-block {
+        font-size: 0.8rem;
+    }
+
+    .mci-section-grid {
+        grid-template-columns: 1fr;
+        gap: 12px;
+        width: 100%;
+        max-width: 100%;
+    }
+
+    .mci-criteria-table th,
+    .mci-criteria-table td {
+        padding: 10px;
+    }
+
+    .mci-approach-gallery {
+        grid-template-columns: 1fr;
+    }
+}
+
 
 /* .portfolio-info h1 {
     margin-bottom: 20px;
@@ -592,9 +1031,36 @@ body, html {
 .portfolio-image img {
     max-width: 90%; /* Ensures the image is never wider than its container */
     height: auto; /* Keeps the image's aspect ratio intact */
-    border-radius: 8px; /* Subtle corner rounding */
+    border-radius: 6px; /* Subtle corner rounding */
     /* Remove fixed width and height to make the image responsive */
     margin-bottom: 40px; /* Space below the  */
+}
+
+/* Vertically center the simplified QRL diagram beside its project description */
+.qrl-portfolio-card {
+    align-items: center;
+}
+
+.qrl-portfolio-card .portfolio-image img {
+    margin-bottom: 0;
+}
+
+/* Vertically center the sharp bi-phase schematic beside its project summary */
+.biphase-portfolio-card {
+    align-items: center;
+}
+
+.biphase-portfolio-card .portfolio-image img {
+    margin-bottom: 0;
+}
+
+/* Vertically center the simplified MCI schematic beside its project summary */
+.mci-portfolio-card {
+    align-items: center;
+}
+
+.mci-portfolio-card .portfolio-image img {
+    margin-bottom: 0;
 }
 
 .portfolio-image2 {
@@ -611,7 +1077,7 @@ body, html {
 .portfolio-image2 img {
     max-width: 90%; /* Ensures the image is never wider than its container */
     height: auto; /* Keeps the image's aspect ratio intact */
-    border-radius: 8px; /* Subtle corner rounding */
+    border-radius: 6px; /* Subtle corner rounding */
     /* Remove fixed width and height to make the image responsive */
     margin-bottom: 20px; /* Space below the  */
     /* border: 2px solid #000000; */
@@ -631,7 +1097,7 @@ body, html {
 .portfolio-image3 img {
     max-width: 100%; /* Ensures the image is never wider than its container */
     height: auto; /* Keeps the image's aspect ratio intact */
-    border-radius: 8px; /* Subtle corner rounding */
+    border-radius: 6px; /* Subtle corner rounding */
     /* Remove fixed width and height to make the image responsive */
     margin-bottom: 30px; /* Space below the  */
     border: 0px solid #000000;
@@ -711,7 +1177,7 @@ body, html {
 
 .header-box {
     padding: 10px 20px;
-    border-radius: 10px;
+    border-radius: 6px;
     border: none;
     font-size: 1.2rem;
     margin-bottom: 20px;

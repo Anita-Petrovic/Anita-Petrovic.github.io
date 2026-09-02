@@ -5,16 +5,14 @@
         <meta charset="UTF-8">
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
-        <link href="css/styles.css" rel="stylesheet"> <!-- LINKING TO STYLE CSS SHEET -->
+        <link href="css/styles.css" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;700&display=swap" rel="stylesheet">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>Anita Petrovic - Portfolio</title>
-
+        <meta name="description" content="Sizing the FCC-ee cryomodule bi-phase helium line for vapour velocity, liquid-level control, and dry-out autonomy.">
+        <title>Cryomodule Bi-Phase Line Sizing - Anita Petrovic</title>
     </head>
 
     <body>
-
-        <!-- NAV BAR -->
         <nav class="navbar">
             <div class="nav-container">
                 <div class="nav-brand">
@@ -28,88 +26,305 @@
             </div>
         </nav>
 
-
-        <!-- Main Content Section -->
-        <!-- Portfolio Content Section -->
         <div class="main-content">
+            <div class="portfolio-heading qrl-page biphase-page">
+                <p><a href="portfolio.html">&lt; Back to Portfolio</a></p>
 
-            <div class="portfolio-heading">
-                <p><a href="portfolio.html">< Back to Portfolio</a></p>
-
-                <div class="portfolio-info">
+                <div class="portfolio-info qrl-intro">
                     <div class="portfolio-text">
                         <h2>Cryomodule Bi-Phase Line Sizing</h2>
-                        <p> As part of my work in the cryogenics group at CERN, I developed a Python tool to size the
-                            bi-phase lines of the FCC-ee superconducting radiofrequency cryomodules. The bi-phase line
-                            is the horizontal tube sitting above the cavities in which saturated liquid helium and its
-                            vapour coexist: the liquid keeps the cavities immersed at their operating temperature, while
-                            the boil-off vapour flows along the tube toward the pumping outlet. Sizing this line correctly
-                            matters — the diameter must keep the vapour speed low enough to avoid disturbing the liquid
-                            surface, while holding enough helium to ride through operational transients.</p>
-                    </div>
-
-                    <div class="portfolio-image">
-                        <img src="images/biphase/biphase_nominal.png" alt="Bi-phase line at nominal operation, with liquid cross sections along the tube" />
                     </div>
                 </div>
 
-                <div class="portfolio-info">
-                    <div class="portfolio-text2">
-                        <h7>How the Sizing Works</h7>
+                <section class="qrl-section biphase-section">
+                    <div class="qrl-section-copy">
+                        <h3 class="qrl-section-title">Summary</h3>
+                        <p>The bi-phase line runs above the cavities in an FCC-ee cryomodule and carries saturated helium: liquid helium supplies the cavity tanks, while boil-off vapour returns toward the outlet. Together with the level gauge, inlet Joule-Thomson valve, and high-end outlet, it supports stable helium-flow and liquid-level control. Correct sizing is important because the line must keep the returning gas below 5 m/s, provide a measurable operating-level range, and store enough liquid helium to sustain the cryomodule during a 10-15 minute supply interruption.</p>
+                    </div>
+                    <figure class="qrl-figure biphase-compact-figure">
+                        <img src="images/biphase/biphase_constraints_sharp.png" alt="Simplified sloped bi-phase line showing the helium supply, outlet, operating margin, and section constrained by the 5 metre per second gas-speed limit">
+                        <figcaption>Simplified bi-phase line and its main geometric constraints. Created by Krzysztof Brodzinski.</figcaption>
+                    </figure>
+                </section>
+
+                <section class="qrl-section biphase-section">
+                    <div class="qrl-section-copy">
+                        <h3 class="qrl-section-title">Background on Cryomodules</h3>
+                        <p>The 400 MHz cryomodule is the baseline superconducting RF unit for the FCC-ee Z, W, and ZH operating points. In the current baseline, 66 cryomodules each house four 2-cell 400.79 MHz cavities operating at 4.5 K, for a total of 264 cavities. The bi-phase helium line runs along each cryomodule as the liquid-helium reservoir and supply for the cavity tanks, while supporting stable level measurement and local helium buffering; the complete module sits on the tunnel-floor slope of 0.0025 rad.</p>
+                    </div>
+                    <figure class="qrl-figure">
+                        <img src="images/qrl/400_mhz_cryomodule.png" alt="Cutaway illustration of the FCC-ee 400 MHz cryomodule and its principal components">
+                        <figcaption>FCC-ee 400 MHz cryomodule. Source: <a href="https://indico.cern.ch/event/1408515/timetable/" target="_blank" rel="noopener noreferrer">Karin Canderan</a>.</figcaption>
+                    </figure>
+                </section>
+
+                <section class="qrl-section biphase-section">
+                    <div class="qrl-section-copy">
+                        <h3 class="qrl-section-title">Specifications</h3>
+                        <p>The bi-phase line specifications were created by Krzysztof Brodzinski.</p>
+                    </div>
+                    <div class="biphase-table-wrap">
+                        <table class="biphase-spec-table">
+                            <thead>
+                                <tr>
+                                    <th scope="col">Specification</th>
+                                    <th scope="col">Requirement</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <th scope="row">Time to dry</th>
+                                    <td>If an abrupt valve closure, blockage, or similar incident interrupts the helium supply, the line shall contain sufficient liquid-helium inventory to sustain nominal cryomodule heat loads for 10-15 minutes. In other words, 10-15 minutes should pass before the first cavity starts to dry out and is no longer fully covered by liquid helium.</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Level control and measurement</th>
+                                    <td>The diameter shall account for the level gauge's large uncertainty and limited effective resolution. The expected operational liquid-level variation shall be at least 50 mm, with approximately 100 mm preferred, to provide stable and observable level control.</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Gas speed</th>
+                                    <td>The geometry and helium-level control shall not allow the returning gas to exceed 5 m/s, except during monophasic transients and accidental cases. This limit helps avoid unstable level control, unsteady mass flow, piping vibration, and liquid droplets being carried into the vapour return.</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Safety</th>
+                                    <td>The geometry shall allow gas to exit the helium tanks, including during a maximum credible incident (MCI) and other safety scenarios.</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Geometry</th>
+                                    <td>The design shall account for the tunnel slope. The pumping port shall be located at the higher end of the bi-phase line when the cryomodule is installed on a sloped surface.</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </section>
+
+                <section class="qrl-section biphase-section">
+                    <div class="qrl-section-copy">
+                        <h3 class="qrl-section-title">Assumptions</h3>
                         <ul>
-                        <li> The cavity heat loads, with an overcapacity margin, are converted into an evaporating mass
-                            flow using the latent heat of helium at the operating temperature (2 K for the 800 MHz
-                            cryomodules and 4.5 K for the 400 MHz cryomodules)</li>
-                        <li> The vapour speed anywhere in the tube is limited to 5 m/s; from the vapour mass flow and
-                            density, this sets the minimum cross-sectional area that must remain free for the vapour</li>
-                        <li> The tube is installed on a slight slope, so the liquid level — and therefore the split
-                            between the liquid and vapour cross sections — changes along its length</li>
-                        <li> The code computes the liquid height at each position along the inclined tube and integrates
-                            the cross-sectional areas to obtain the total liquid volume for a given filling level</li>
-                        <li> Helium properties are evaluated with HEPAK at the saturated conditions of each case</li>
+                            <li>One end of the bi-phase tube has the highest vapour speed; the highest speed does not occur in the middle of the pipe.</li>
+                            <li>The inlet is always at the lower end of the slope, and the outlet is always at the higher end. This arrangement lowers the vapour speed toward the outlet.</li>
                         </ul>
                     </div>
+                </section>
 
-                    <div class="portfolio-image">
-                        <img src="images/biphase/biphase_dry.png" alt="Bi-phase line dry-out case, showing the liquid receding toward the inlet" />
+                <section class="qrl-section biphase-section">
+                    <div class="qrl-section-copy">
+                        <h3 class="qrl-section-title">How the Code Works</h3>
+                        <p>The Python model converts the sloped pipe geometry, heat loads, saturated-helium properties, and operating limits into liquid-height profiles, cross-sectional areas, helium volumes, and dry-out times.</p>
                     </div>
-                </div>
+                </section>
 
-                <div class="portfolio-info">
-                    <div class="portfolio-text2">
-                        <h7>Dry-Out Time and Diameter Selection</h7>
-                        <ul>
-                        <li> A key requirement is autonomy: if the liquid supply is interrupted, the line must keep the
-                            cavities covered long enough for the machine to respond</li>
-                        <li> Starting from the nominal 50% filling level, the code calculates how long it takes for the
-                            evaporating flow to lower the liquid level until the first cavity connection is uncovered —
-                            the "dry" condition, with the critical location taken from the CAD model</li>
-                        <li> This calculation is swept over a range of pipe diameters to find the smallest tube that
-                            still meets the required autonomy time, balancing helium inventory against the space the
-                            line takes up inside the cryomodule</li>
-                        <li> The same tool also answers operational questions, such as how the level reading at the
-                            gauge location relates to the liquid volume in the rest of the tube under worst-case
-                            vapour flow conditions</li>
-                        </ul>
+                <section class="qrl-section biphase-section">
+                    <div class="qrl-section-copy">
+                        <h3 class="qrl-section-title">Step 0 - Select the Reference Point</h3>
+                        <p>The nominal helium level is set at the halfway mark, so the bi-phase tube is normally half full. Because the cryomodule sits on a 0.0025 rad slope, the calculation needs a fixed reference location to translate that gauge reading into the liquid height elsewhere in the tube.</p>
+                        <p>The centre of the cryomodule is used as the reference point. The pipe wall, rather than the ground, defines the reference height.</p>
+                        <pre class="biphase-code-block"><code>D_goal = 0.150                 # pipe diameter [m]
+L_cm = 9.0                     # cryomodule length [m]
+slope = 0.0025                 # tunnel slope [rad]
+reference_point = L_cm / 2
+nominal_depth = D_goal / 2     # 50% filling at the gauge</code></pre>
                     </div>
-                </div>
+                    <figure class="qrl-figure biphase-code-figure">
+                        <img src="images/biphase/biphase_reference_flat.png" alt="Flat half-full pipe with the midpoint used as a liquid-level reference">
+                        <figcaption>The reference point is defined before applying the tunnel slope.</figcaption>
+                    </figure>
+                </section>
 
+                <section class="qrl-section biphase-section">
+                    <div class="qrl-section-copy">
+                        <h3 class="qrl-section-title">Step 1 - Calculate the Effect of the Slope</h3>
+                        <p>To calculate the changing helium volume, the liquid height must be known along the complete pipe. Starting from the reference height, basic trigonometry adds or subtracts the vertical contribution of the 0.0025 rad slope at every axial position.</p>
+                        <div class="biphase-equation"><i>h</i>(<i>x</i>) = <i>h</i><sub>ref</sub> + tan(&alpha;)(<i>x</i><sub>ref</sub> - <i>x</i>)</div>
+                        <pre class="biphase-code-block"><code>def reference_submerged_height(x):
+    z_tilt = math.tan(slope) * (given_height_location - x)
+    return given_height + z_tilt</code></pre>
+                    </div>
+                    <figure class="qrl-figure biphase-code-figure">
+                        <img src="images/biphase/biphase_tilt_geometry.png" alt="Sloped bi-phase pipe geometry showing the midpoint reference and changing liquid height along the line">
+                        <figcaption>The gauge reference and tunnel slope determine the liquid height at each position.</figcaption>
+                    </figure>
+                </section>
+
+                <section class="qrl-section biphase-section">
+                    <div class="qrl-section-copy">
+                        <h3 class="qrl-section-title">Step 2 - Calculate the Area of a Partially Full Pipe</h3>
+                        <p>Once the liquid height is known, circular-segment geometry converts it into a liquid cross-sectional area. The formulas are adapted from the <a href="https://www.engineeringexcelspreadsheets.com/2019/04/partially-full-pipe-flow-viscous-liquid-spreadsheet/" target="_blank" rel="noopener noreferrer">partially full pipe-flow reference</a>.</p>
+                        <div class="biphase-equation">&theta; = 2 cos<sup>-1</sup>((<i>R</i> - <i>h</i>) / <i>R</i>) &nbsp;&nbsp;&nbsp; <i>A</i> = &frac12;<i>R</i><sup>2</sup>(&theta; - sin &theta;)</div>
+                        <pre class="biphase-code-block"><code>def segment_area_from_height(h, R):
+    if h &lt;= 0:
+        return 0
+    if h &gt;= 2 * R:
+        return math.pi * R**2
+
+    theta = 2 * math.acos((R - h) / R)
+    return 0.5 * R**2 * (theta - math.sin(theta))</code></pre>
+                    </div>
+                    <figure class="qrl-figure biphase-formula-figure">
+                        <img src="images/biphase/biphase_partial_pipe_formula.png" alt="Circular-segment parameters and equations for a partially full pipe">
+                        <figcaption>Circular-segment geometry used to map liquid height to cross-sectional area.</figcaption>
+                    </figure>
+                </section>
+
+                <section class="qrl-section biphase-section">
+                    <div class="qrl-section-copy">
+                        <h3 class="qrl-section-title">Step 3 - Define Heat Loads and Helium Properties</h3>
+                        <p>The model defines the 400 MHz cryomodule geometry, temperature, static and dynamic heat loads, RF margin, first-riser location, latent heat, flash fraction, and design margin. Latent heat is the energy needed to change phase without changing temperature: heat added to saturated helium boils liquid into vapour instead of raising its temperature.</p>
+                        <pre class="biphase-code-block"><code>case = "4.5K"
+L_cm = 9.0                         # m
+T = 4.5                            # K
+static_heat_load = 32.83           # W per cavity
+dyn_heat_load = 128.1              # W per cavity
+dry_location = 7.725125            # m
+latent_heat = 18839.76740822       # J/kg
+flash = 0.033395091
+margin = 1.5
+cav_cm = 4
+Q_cm = margin * (static_heat_load + dyn_heat_load) * cav_cm</code></pre>
+                        <p>The Joule-Thomson valve drops the pressure at approximately constant enthalpy. At the lower pressure, some helium flashes immediately into vapour, so this extra vapour flow must be included in the line sizing.</p>
+                        <p><a href="https://indico.cern.ch/event/1570269/contributions/6614982/attachments/3158931/5614955/Cryostats%20for%20SC%20devices%202025%20part%201%20with%20results.pdf" target="_blank" rel="noopener noreferrer">HEPAK</a> is a helium-property calculation package used at CERN to evaluate thermophysical properties such as saturated liquid and vapour density, enthalpy, and latent heat.</p>
+                        <pre class="biphase-code-block"><code>m_dot_l = Q_cm / latent_heat
+m_dot_v = flash * m_dot_l
+m_dot_cm = m_dot_l + m_dot_v
+
+rho_v = hepak.calculate(3, "T", T, "sV", 0, 2)
+rho_l = hepak.calculate(3, "T", T, "sL", 0, 0)</code></pre>
+                    </div>
+                    <figure class="qrl-figure biphase-ph-figure">
+                        <img src="images/biphase/biphase_ph_diagram.png" alt="Pressure-enthalpy diagram showing sub-cooled liquid, Joule-Thomson expansion, helium flash, and saturated liquid">
+                        <figcaption>Joule-Thomson expansion on a pressure-enthalpy diagram. Source: <a href="https://indico.cern.ch/event/1211961/contributions/5098113/attachments/2540296/4372902/Talk%20Superfluid%20Helium%20CERN.pdf" target="_blank" rel="noopener noreferrer">Ph. Lebrun and L. Tavian</a>.</figcaption>
+                    </figure>
+                </section>
+
+                <section class="qrl-section biphase-section">
+                    <div class="qrl-section-copy">
+                        <h3 class="qrl-section-title">Step 4 - Evaluate the Operating Cases</h3>
+                        <p>The code first calculates the vapour area that corresponds to the 5 m/s limit, then maps the liquid profile for the limiting, nominal, and dry cases. It integrates the area along the pipe to obtain the helium inventory and repeats the calculation over a range of diameters.</p>
+                        <pre class="biphase-code-block"><code>S_total = math.pi * (D_goal / 2)**2
+S_vap = m_dot_cm / (rho_v * speed_v)
+
+positions, heights, areas, volume = compute_profiles_along_pipe(
+    D_goal, L_cm, slope, D_goal / 2, L_cm / 2
+)</code></pre>
+                    </div>
+                </section>
+
+                <section class="qrl-section biphase-section">
+                    <div class="qrl-section-copy">
+                        <h3 class="qrl-section-title">Results</h3>
+                        <p>Three cases define the usable operating envelope of the 150 mm line.</p>
+                    </div>
+                    <div class="biphase-table-wrap">
+                        <table class="biphase-results-table">
+                            <thead>
+                                <tr>
+                                    <th scope="col">Case</th>
+                                    <th scope="col">Importance</th>
+                                    <th scope="col">Visual</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <th scope="row">5 m/s vapour speed</th>
+                                    <td>The maximum returning-gas speed is 5 m/s. At the inlet, this limit corresponds to a 140.37 mm liquid height and a 9.63 mm vapour height; this operating point should be avoided because it leaves only 2.71% of the cross-section for vapour.</td>
+                                    <td><img src="images/biphase/biphase_worst_5ms.png" alt="Bi-phase line and cross-sections at the 5 metre per second vapour-speed limit"></td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Nominal operation</th>
+                                    <td>The line is regulated to 50% filling at the centre gauge. The 0.0025 rad slope produces different liquid heights along the tube, with a calculated liquid volume of approximately 0.0795 m<sup>3</sup>.</td>
+                                    <td><img src="images/biphase/biphase_nominal.png" alt="Bi-phase line and cross-sections at nominal operation with 50 percent filling at the centre"></td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Dry at 7.725 m</th>
+                                    <td>The first riser begins at 7.725 m and must remain covered. A centre-gauge reading of approximately 8.06 mm corresponds to this dry threshold, with approximately 0.00416 m<sup>3</sup> of liquid remaining in the tube.</td>
+                                    <td><img src="images/biphase/biphase_dry.png" alt="Bi-phase line and cross-sections when the first riser at 7.725 metres is dry"></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </section>
+
+                <section class="qrl-section biphase-section">
+                    <div class="qrl-section-copy">
+                        <h3 class="qrl-section-title">Time to Dry Outcome</h3>
+                        <p>If the helium supply is interrupted, boiling continues while the liquid inventory falls from the nominal level to the first-riser dry threshold. The diameter sweep shows that the current line does not provide the required autonomy.</p>
+                    </div>
+                    <div class="biphase-key-results" aria-label="Key dry-out results">
+                        <div class="biphase-key-result">
+                            <strong>0.2586 m<sup>3</sup></strong>
+                            <span>usable liquid-helium volume required for 10 minutes</span>
+                        </div>
+                        <div class="biphase-key-result">
+                            <strong>2.9141 min</strong>
+                            <span>dry-out time with the current 150 mm diameter</span>
+                        </div>
+                        <div class="biphase-key-result">
+                            <strong>280 mm</strong>
+                            <span>first tested diameter above 10 minutes (10.4921 min)</span>
+                        </div>
+                    </div>
+                    <div class="qrl-section-copy">
+                        <p>For the 150 mm line, only 0.0754 m<sup>3</sup> is available between nominal and dry conditions, leaving a 0.1832 m<sup>3</sup> shortfall relative to the 10-minute calculation. A 275 mm pipe remains just below the target at 9.9448 minutes, while 280 mm reaches 10.4921 minutes.</p>
+                    </div>
+                </section>
+
+                <section class="qrl-section biphase-section biphase-calculation-section">
+                    <div class="qrl-section-copy">
+                        <h3 class="qrl-section-title">How Time to Dry Was Calculated</h3>
+
+                        <h4>Step 0 - Integrate the Liquid Area</h4>
+                        <p>The code calculates the liquid cross-sectional area at each position and integrates it along the pipe length.</p>
+                        <pre class="biphase-code-block"><code>def segment_area_from_height(h, R):
+    if h &lt;= 0:
+        return 0
+    elif h &gt;= 2 * R:
+        return math.pi * R**2
+    else:
+        theta = 2 * math.acos((R - h) / R)
+        return 0.5 * R**2 * (theta - math.sin(theta))
+
+
+z_mid_total = nominal_depth
+
+def local_submerged_height(x):
+    z_tilt = math.tan(slope) * (reference_point - x)
+    return z_mid_total + z_tilt
+
+
+def local_area(x):
+    h = local_submerged_height(x)
+    return segment_area_from_height(h, R)
+
+volume, _ = quad(local_area, 0, L)</code></pre>
+
+                        <h4>Step 1 - Find the Usable Volume</h4>
+                        <p>The nominal and dry liquid volumes are calculated, then subtracted to obtain the volume that can boil away before the first riser is exposed.</p>
+                        <pre class="biphase-code-block"><code>volume_delta = volume_nominal - volume_dry</code></pre>
+
+                        <h4>Step 2 - Convert Volume to Time</h4>
+                        <p>The liquid density from HEPAK converts the usable volume into evaporated mass. Dividing that mass by the boiling mass-flow rate gives the dry-out time.</p>
+                        <pre class="biphase-code-block"><code>m_evap = volume_delta * rho_l       # kg
+t_seconds = m_evap / m_dot_l        # s
+t_minutes = t_seconds / 60</code></pre>
+                    </div>
+                </section>
+
+                <section class="qrl-section qrl-conclusion biphase-section">
+                    <div class="qrl-section-copy">
+                        <h3 class="qrl-section-title">Conclusions</h3>
+                        <p>The current 150 mm bi-phase line provides only about 2.9 minutes of autonomy, so it does not meet the 10-15 minute requirement. Based on the CAD inventory of 0.095 m<sup>3</sup> for the tube and risers, the design needs an additional 0.1636 m<sup>3</sup> of liquid-helium volume to reach the 0.2586 m<sup>3</sup> target for 10 minutes. The line therefore needs to be redesigned with a larger diameter or expanded sections while preserving the vapour-speed, level-control, safety, and geometric constraints.</p>
+                    </div>
+                </section>
             </div>
         </div>
 
-
-
-        <!-- FOOTER -->
         <div class="footer-container">
             <footer class="footer">
                 <div class="footer-column">
                     <span class="footer-title">LINKEDIN:</span>
-                    <a href="https://www.linkedin.com/in/anitapetrovic/" target="_blank" class="footer-link">Anita's Profile</a>
+                    <a href="https://www.linkedin.com/in/anitapetrovic/" target="_blank" rel="noopener noreferrer" class="footer-link">Anita's Profile</a>
                 </div>
             </footer>
         </div>
-
-
-
     </body>
-    </html>
+</html>

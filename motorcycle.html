@@ -59,7 +59,7 @@
                 <div class="portfolio-info">
                     <div class="portfolio-text">
                         <h7>Hydrogen Fuel Cell Components Overview</h7>
-                        <p> The main components necessary for the hydrogen fuel cell system can be found illustrated in the figures below. The following schematic demonstrates how each component of the fuel cell system is connected. Below the schematic is a color-coded table which describes the purpose of the system components.</p>
+                        <p> The main components necessary for the hydrogen fuel cell system can be found illustrated in the figures below. The following schematic demonstrates how each component of the fuel cell system is connected. Below the schematic is a colour-coded table which describes the purpose of the system components.</p>
                     </div>
 
                     <div class="portfolio-image2">
@@ -181,7 +181,7 @@
                 <div class="portfolio-info">
                   <div class="portfolio-text-center">
                       <h2>Component Sourcing</h2>
-                      <p> The below table summarizes the selected components, makes, and models that will be used in the hydrogen fuel cell system. The selected components will then be modeled together using Simulink.
+                      <p> The below table summarizes the selected components, makes, and models that will be used in the hydrogen fuel cell system. The selected components will then be modelled together using Simulink.
 
                       </p>
                   </div>
@@ -318,13 +318,13 @@
                              </p> -->
 
                         <p> 
-                          Simulink™ is a MATLAB-based graphical programming environment for modeling, simulating, and analyzing multidomain 
+                          Simulink™ is a MATLAB-based graphical programming environment for modelling, simulating, and analysing multidomain 
                           dynamical systems. Its primary purpose is to provide an interactive graphical interface and a set of block libraries 
                           that let you design, simulate, implement, and test a variety of time-varying systems, including control systems, 
                           signal processing systems, communication systems, and many others that can be represented with block diagrams.</p>
 
                         <p>For this project, Simulink was mainly used to model a hybrid system and how 
-                          it responds to different loading cases. The Simulink model was created by modeling each component into its fundamental 
+                          it responds to different loading cases. The Simulink model was created by modelling each component into its fundamental 
                           equations, then sending data between them to see how they interact. A top model overview of the 
                           entire system is found in the figure below. The below figure shows the specific signals and data being transferred 
                           throughout the system. From this model, the speed, acceleration, torque, efficiency, and wheel slip 
@@ -386,8 +386,8 @@
                         <td>Supercapacitor System</td>
                           <td>
                             <ul>
-                              <li>Assumed linear behavior and ignored self-discharging effects </li>
-                              <li>Simplified by modeling as an RC circuit  </li>
+                              <li>Assumed linear behaviour and ignored self-discharging effects </li>
+                              <li>Simplified by modelling as an RC circuit  </li>
                               <li>Input for the system is the current from the DC/DC converter </li>
                               <li>Calculates the voltage changes in the supercapacitor </li>
                              
@@ -494,9 +494,9 @@
                     <div class="portfolio-text-center">
                         <h2>DC/DC Converter System </h2>
                         <p> A DC/DC converter is required to convert the input voltage from the fuel cell to the same 
-                            voltage as the supercapacitor. Ideally, this system would have been modeled as a buck/boost converter, 
+                            voltage as the supercapacitor. Ideally, this system would have been modelled as a buck/boost converter, 
                             but this proved to be too complex to model. To simplify this process, 
-                            the DC/DC converter was instead modeled as a system of constant efficiency loss where the 
+                            the DC/DC converter was instead modelled as a system of constant efficiency loss where the 
                             output voltage would simply match that of the supercapacitor. The DC/DC converter system can be 
                             seen in the figure below.
                              </p>
@@ -511,15 +511,15 @@
                     <div class="portfolio-text-center">
                         <h2>Supercapacitor System </h2>
                         <p> The supercapacitor system was another complex component designed around a model created by Bertini et al. at the KTH 
-                          Royal Institute of Technology. Supercapacitors would ideally be modeled as a series of circuits with multiple resistances 
+                          Royal Institute of Technology. Supercapacitors would ideally be modelled as a series of circuits with multiple resistances 
                           and non-linear capacitances as seen in the first figure below. However, this would be extremely difficult to model and far too 
                           complex for the purposes of this project. 
                           <p> <div class="portfolio-image3">
                         <img src="images/motorcycle/IdealSupercapacitorCircuit.png" alt="Ideal Supercapacitor Circuit " style="width: 40%;" /> 
                           </div> 
                         </p>
-                          To simplify the model, the supercapacitor was assumed to have linear behavior and no 
-                          self-discharging effects. Through these assumptions, the supercapacitor was modeled as an RC circuit as shown in equation E-1 
+                          To simplify the model, the supercapacitor was assumed to have linear behaviour and no 
+                          self-discharging effects. Through these assumptions, the supercapacitor was modelled as an RC circuit as shown in equation E-1 
                           and its defined variables are shown in the table below. The final Simulink model for the supercapacitor can be seen below. 
                           </p>
                     </div>
@@ -623,9 +623,9 @@
                         <img src="images/motorcycle/DrivetrainSimulinkModel.png" alt="Drivetrain Simulink Model" /> 
                     </div> 
 
-                    <p>Through Simscape, the motorcycle body, wheels, and braking systems were modeled. The motorcycle body system was designed using
+                    <p>Through Simscape, the motorcycle body, wheels, and braking systems were modelled. The motorcycle body system was designed using
                        MathWorks physical modelling tutorials and can be seen below. Magic Tire Formula blocks were used to model the motorcycle wheels
-                         and the braking system was modeled using Simscape’s inbuilt Loaded-contact rotational friction blocks.
+                         and the braking system was modelled using Simscape’s inbuilt Loaded-contact rotational friction blocks.
                            </p>
 
                     <div class="portfolio-image3">

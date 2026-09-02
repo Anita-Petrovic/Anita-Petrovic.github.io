@@ -5,11 +5,10 @@
         <meta charset="UTF-8">
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
-        <link href="css/styles.css" rel="stylesheet"> <!-- LINKING TO STYLE CSS SHEET -->
+        <link href="css/styles.css" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;700&display=swap" rel="stylesheet">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>Anita Petrovic - Portfolio</title>
-
+        <title>Anita Petrovic - MCI Analysis</title>
     </head>
 
     <body>
@@ -30,70 +29,126 @@
 
 
         <!-- Main Content Section -->
-        <!-- Portfolio Content Section -->
         <div class="main-content">
+            <div class="portfolio-heading qrl-page mci-page">
+                <p><a href="portfolio.html">&lt; Back to Portfolio</a></p>
 
-            <div class="portfolio-heading">
-                <p><a href="portfolio.html">< Back to Portfolio</a></p>
-
-                <div class="portfolio-info">
+                <div class="portfolio-info qrl-intro">
                     <div class="portfolio-text">
                         <h2>Maximum Credible Incident (MCI) Analysis</h2>
-                        <p> As part of my work in the cryogenics group at CERN, I analyzed the behavior of the FCC-ee
-                            superconducting radiofrequency cryomodules during a Maximum Credible Incident. The MCI for
-                            these cryomodules is a sudden loss of insulation vacuum: air rushes into the vacuum space,
-                            condenses on the cold surfaces, and deposits an extreme heat flux into the helium bath. The
-                            helium boils off far faster than in normal operation, and this flow must be vented safely
-                            through the relief system — the risers, the bi-phase tube, and the burst disk line — without
-                            the pressure inside the cryomodule ever exceeding what the vessel can withstand.</p>
-                    </div>
-
-                    <div class="portfolio-image">
-                        <img src="images/mci/mci_cryomodule.png" alt="FCC-ee 400 MHz cryomodule CAD model" />
+                        <p>Calculating helium pressure losses along the burst-disc relief path during a Maximum Credible Incident.</p>
                     </div>
                 </div>
 
-                <div class="portfolio-info">
-                    <div class="portfolio-text2">
-                        <h7>How the Analysis Works</h7>
+                <section class="qrl-section mci-section">
+                    <div class="qrl-section-copy">
+                        <h3 class="qrl-section-title">The Problem</h3>
+                        <p>In an MCI event (maximum credible incident) such as a break in the beam tube or insulation vacuum, helium boils off and must vent through the burst-disk relief path.</p>
+                        <p>The burst-disc must be sized according to standards. However, the current size ignored <strong>local pressure losses</strong> (losses due to bends, valves, and tees) along the relief path.</p>
+                        <p>The image below shows a simplified diagram of the components in an RF cryomodule. The cryomodule contains four helium tanks, each housing RF cavities. These cavities are submerged in liquid helium, whose level is controlled by the bi-phase tube. The helium supply comes from the cryogenic distribution system. Before entering the cryomodule, the helium undergoes a final expansion through the Joule–Thomson valve. The return vapour from the cryomodule is also sent back to the cryogenic distribution lines.</p>
+                        <p>During an MCI event, the helium in the cryomodule will almost instantly boil. The normal outlet to the distribution system cannot handle the resulting mass flow, so the helium is instead directed through the burst-disc relief line and into the tunnel. This is an event that should be avoided because of the loss of helium, the high pressures involved, and the potential damage to the cryomodule. No personnel are allowed in the tunnel during nominal operations, so the risk to human life during such an event is low.</p>
+                    
+                    </div>
+                    <figure class="qrl-figure mci-figure">
+                        <img src="images/mci/mci_biphase_tube_description.png" alt="Simplified FCC-ee cryomodule showing the bi-phase tube, helium tanks, cavities, beam tube, and operating conditions" />
+                        <figcaption>Simplified cryomodule and bi-phase tube at the nominal operating conditions.</figcaption>
+                    </figure>
+                </section>
+
+                <div class="mci-section-grid">
+                    <section class="qrl-section mci-section">
+                        <div class="qrl-section-copy">
+                            <h3 class="qrl-section-title">Why Does It Matter?</h3>
+                            <ul>
+                                <li>Local losses mean the helium tanks see higher pressure than the burst discs during an MCI event.</li>
+                                <li>This can push the cryomodule past its 2.05 bar limit and damage it.</li>
+                            </ul>
+                        </div>
+                    </section>
+
+                    <section class="qrl-section mci-section">
+                        <div class="qrl-section-copy">
+                            <h3 class="qrl-section-title">Assumptions &amp; Known Limits</h3>
+                            <ul>
+                                <li>Fluid properties are calculated using discharge properties, then held constant. No helium warming is considered.</li>
+                                <li>Incompressible flow is considered.</li>
+                                <li>Elevation / gravity is neglected.</li>
+                            </ul>
+                        </div>
+                    </section>
+                </div>
+
+                <section class="qrl-section mci-section">
+                    <div class="qrl-section-copy">
+                        <h3 class="qrl-section-title">Cryomodule Pressure Criteria</h3>
+                        <div class="mci-table-wrap">
+                            <table class="mci-criteria-table">
+                                <thead>
+                                    <tr>
+                                        <th scope="col">Criterion</th>
+                                        <th scope="col">Pressure requirement</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <th scope="row">Nominal condition</th>
+                                        <td>1.3 bar / 4.5 K</td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">Deformation limit</th>
+                                        <td>Stay below 2.05 bar</td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">Target total pressure drop</th>
+                                        <td>&Delta;P (friction + local) &lt; 10% of 2.05 bara = 0.205 bar<sup>*</sup></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <p class="mci-footnote"><sup>*</sup>Comes from CRG-OP operational experience.</p>
+                    </div>
+                </section>
+
+                <section class="qrl-section mci-section">
+                    <div class="qrl-section-copy">
+                        <h3 class="qrl-section-title">My Approach</h3>
                         <ul>
-                        <li> The venting mass flow is calculated following the EN 17527 cryogenic safety standard,
-                            applying the standard's heat flux for a loss of insulation vacuum over the cold surface
-                            area of the cavities</li>
-                        <li> The heat load is converted into a boil-off mass flow using the latent heat of helium at
-                            the discharge conditions, with helium properties evaluated using HEPAK</li>
-                        <li> The total pressure drop along the relief path is the sum of major losses (wall friction
-                            along the pipes) and minor losses (tees, bends, contractions, and exits, using K values
-                            from Idelchik)</li>
-                        <li> The design goal is to keep the total pressure difference during the MCI below 10% of the
-                            starting pressure, so the burst disks can protect the cryomodule reliably</li>
+                            <li>Used helium-cryostat pressure-protection standards (EN 17527) to find the worst-case mass flow, which drives the &Delta;P.</li>
+                            <li>Made a simple model in Excel to calculate the pressure losses along the path for various diameter sizes, burst-disc locations, and burst-disc counts.</li>
                         </ul>
                     </div>
-
-                    <div class="portfolio-image">
-                        <img src="images/mci/mci_cryomodule_end.png" alt="End of the cryomodule showing the relief line hardware" />
+                    <div class="mci-approach-gallery">
+                        <figure>
+                            <img src="images/mci/mci_biphase_tube_description.png" alt="Simplified cryomodule showing the bi-phase tube and nominal helium conditions" />
+                        </figure>
+                        <p class="mci-approach-caption">This first sketch identifies the bi-phase tube inside the cryomodule and the nominal helium conditions used as the starting point for the pressure-relief assessment.</p>
+                        <figure>
+                            <img src="images/mci/mci_biphase_tube_break.png" alt="Simplified cryomodule showing an MCI break and the line to the burst discs" />
+                        </figure>
+                        <p class="mci-approach-caption">The second sketch shows the MCI break scenario: helium is released from the cryomodule into the relief line leading to the burst discs.</p>
+                        <figure>
+                            <img src="images/mci/mci_relief_flow_path.png" alt="Simplified MCI flow path from four helium tanks to the burst-disc line" />
+                        </figure>
+                        <p class="mci-approach-caption">The final sketch combines the four helium tanks into one relief-flow model, 
+                            showing how the total discharge travels through the pipes, fittings, and burst-disc line. I calculated the pressure loss along this path to find the true pressure differential the cryomodule will experience. </p>
                     </div>
-                </div>
+                </section>
 
-                <div class="portfolio-info">
-                    <div class="portfolio-text2">
-                        <h7>Scenarios and Conclusions</h7>
+                <section class="qrl-section mci-section mci-results">
+                    <div class="qrl-section-copy">
+                        <h3 class="qrl-section-title">The Results</h3>
                         <ul>
-                        <li> Four different routing options for the burst disk line were compared, trading off flow
-                            velocity, heat inleaks, and the K values of the tee connections in each arrangement</li>
-                        <li> The analysis showed that minor losses dominate the total pressure drop — the tees and
-                            bends matter more than pipe friction</li>
-                        <li> Increasing the riser and burst disk line diameters roughly halved the total pressure drop,
-                            thanks to the lower flow velocity and more favorable K values</li>
-                        <li> The study concluded with concrete design recommendations: larger relief line diameters,
-                            fewer tee bends, and smoother corners along the venting path</li>
+                            <li>Pressure peaks farthest from the disc and is dominated (90-95%) by local losses.</li>
+                            <li>Preliminary calculations show &Delta;P over 0.5 bar.</li>
+                            <li>The current burst-disc is likely undersized.</li>
+                            <li>Suggested design changes such as enlarging relief lines, smoothing out tees, and increasing the number of burst-discs lower the &Delta;P.</li>
+                            <li>More dynamic modelling is needed.</li>
                         </ul>
                     </div>
-                </div>
+                </section>
 
             </div>
         </div>
-
 
 
         <!-- FOOTER -->
@@ -106,7 +161,5 @@
             </footer>
         </div>
 
-
-
     </body>
-    </html>
+</html>
