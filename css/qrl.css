@@ -1,0 +1,178 @@
+/* Styles used only by the QRL project page. */
+.qrl-page {
+    min-width: 0;
+}
+
+.qrl-page .qrl-intro {
+    width: 90%;
+}
+
+.qrl-page .qrl-intro p {
+    text-align: left;
+    margin-bottom: 0;
+}
+
+.qrl-page .qrl-table-wrap {
+    width: 100%;
+    margin: 16px 0 18px;
+}
+
+.qrl-page .qrl-table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: left;
+    line-height: 1.45;
+    font-size: 0.95rem;
+}
+
+.qrl-page .qrl-table caption {
+    caption-side: top;
+    color: #6b5d55;
+    font-size: 0.9rem;
+    padding: 0 0 10px;
+}
+
+.qrl-page .qrl-table th,
+.qrl-page .qrl-table td {
+    padding: 12px;
+    border-bottom: 1px solid #e8ddd6;
+    vertical-align: top;
+}
+
+.qrl-page .qrl-table thead th {
+    background: #eef5f0;
+    color: #2b2320;
+    font-weight: 600;
+}
+
+.qrl-page .qrl-comparison-table {
+    table-layout: fixed;
+}
+
+.qrl-page .qrl-results-scroll {
+    overflow-x: auto;
+}
+
+.qrl-page .qrl-results-table {
+    min-width: 650px;
+    font-variant-numeric: tabular-nums;
+}
+
+.qrl-page .qrl-results-table td {
+    white-space: nowrap;
+}
+
+.qrl-page .qrl-results-table tbody th span {
+    display: block;
+    font-size: 0.85rem;
+    font-weight: 400;
+    max-width: 180px;
+}
+
+.qrl-page .qrl-table-note {
+    color: #6b5d55;
+    font-size: 0.9rem;
+}
+
+.qrl-page .qrl-technical-details {
+    border-top: 1px solid #e8ddd6;
+    border-bottom: 1px solid #e8ddd6;
+}
+
+.qrl-page .qrl-technical-details > summary {
+    padding: 18px 4px;
+    color: #2b2320;
+    cursor: pointer;
+    font-weight: 600;
+}
+
+.qrl-page .qrl-technical-details > summary::marker {
+    color: #8b443f;
+}
+
+.qrl-page .qrl-technical-details > summary:hover {
+    background: #fff4f0;
+}
+
+.qrl-page .qrl-technical-content p {
+    text-align: left;
+    margin-bottom: 14px;
+}
+
+.qrl-page .qrl-technical-step {
+    padding: 20px 0 8px;
+}
+
+.qrl-page .qrl-technical-step + .qrl-technical-step {
+    border-top: 1px solid #e8ddd6;
+}
+
+.qrl-page .qrl-technical-step h3 {
+    font-size: 1.15rem;
+    color: #2b2320;
+    margin: 0 0 16px;
+}
+
+.qrl-page .qrl-technical-step h4 {
+    font-size: 1rem;
+    color: #2b2320;
+    margin: 24px 0 12px;
+}
+
+.qrl-page .qrl-figure > a {
+    display: block;
+    cursor: zoom-in;
+}
+
+.qrl-page a:focus-visible,
+.qrl-page summary:focus-visible,
+.qrl-page .qrl-results-scroll:focus-visible {
+    outline: 3px solid #377154;
+    outline-offset: 4px;
+}
+
+@media (max-width: 700px) {
+    .qrl-body .main-content {
+        padding: 22px 18px;
+        margin: 18px 10px;
+    }
+
+    .qrl-page .qrl-intro {
+        width: 100%;
+    }
+
+    .qrl-page .qrl-table th,
+    .qrl-page .qrl-table td {
+        padding: 10px 8px;
+    }
+}
+
+@media (max-width: 480px) {
+    .qrl-body .nav-container {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 10px;
+        padding-bottom: 12px;
+    }
+
+    .qrl-body .nav-links {
+        display: flex;
+        justify-content: center;
+        gap: 22px;
+        width: 100%;
+    }
+
+    .qrl-body .nav-links a {
+        margin-left: 0;
+    }
+}
+
+@media print {
+    .qrl-page .qrl-technical-details > .qrl-technical-content {
+        display: block;
+    }
+
+    .qrl-page .qrl-figure {
+        break-inside: avoid;
+    }
+}

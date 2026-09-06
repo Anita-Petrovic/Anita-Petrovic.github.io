@@ -374,6 +374,25 @@ body, html {
     text-align: left; /* Align the text to the left */
 }
 
+.resume-credentials {
+    text-align: left;
+}
+
+.resume-credential {
+    margin-bottom: 18px;
+}
+
+.resume-credential p {
+    margin: 0 0 4px;
+}
+
+.resume-credential .credential-note {
+    color: #5f5754;
+    font-size: 0.95rem;
+    line-height: 1.45;
+    max-width: 900px;
+}
+
 /* PORTFOILIO PAGE */
 .portfolio-heading {
     display: flex;

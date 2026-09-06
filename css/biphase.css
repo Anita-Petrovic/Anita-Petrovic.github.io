@@ -1,0 +1,90 @@
+/* Additions scoped to the bi-phase project; the shared QRL layout is reused. */
+.biphase-page .qrl-intro p + p {
+    margin-top: 14px;
+}
+
+.biphase-page .biphase-page-nav {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px 24px;
+    width: 90%;
+    margin: 0 auto 30px;
+    padding: 12px 0 18px;
+    border-bottom: 1px solid #e8ddd6;
+    font-size: 0.9rem;
+}
+
+.biphase-page .qrl-section-copy h3 {
+    margin: 24px 0 12px;
+    color: #2b2320;
+    font-size: 1.08rem;
+    text-align: left;
+}
+
+.biphase-page .biphase-approach {
+    padding-left: 24px;
+    text-align: left;
+}
+
+.biphase-page .biphase-approach li {
+    padding-left: 5px;
+    margin-bottom: 14px;
+}
+
+.biphase-page .biphase-summary-table {
+    min-width: 0;
+    width: 100%;
+}
+
+.biphase-page .biphase-summary-table tbody th {
+    width: 28%;
+}
+
+.biphase-page .biphase-equation {
+    max-width: 100%;
+    overflow-x: auto;
+    line-height: 2;
+    font-size: 1.12rem;
+    text-align: left;
+}
+
+.biphase-page .biphase-math-line {
+    display: block;
+}
+
+.biphase-page .biphase-symbols {
+    color: #5c5049;
+    font-size: 0.94rem;
+    line-height: 1.65;
+}
+
+.biphase-page .qrl-technical-step > h4 {
+    text-align: left;
+}
+
+.biphase-page .qrl-figure img {
+    background: #fff;
+}
+
+.biphase-page .biphase-table-wrap:focus-visible,
+.biphase-page .biphase-equation:focus-visible {
+    outline: 3px solid #377154;
+    outline-offset: 4px;
+}
+
+@media (max-width: 700px) {
+    .biphase-page .biphase-page-nav {
+        width: 100%;
+        gap: 10px 18px;
+    }
+
+    .biphase-page .biphase-equation {
+        padding: 12px;
+        font-size: 1rem;
+    }
+
+    .biphase-page .biphase-summary-table {
+        font-size: 0.88rem;
+    }
+}
