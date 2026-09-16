@@ -7,7 +7,7 @@
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
         <link href="css/styles.css?v=1a83d974" rel="stylesheet"> <!-- LINKING TO STYLE CSS SHEET -->
         <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;700&display=swap" rel="stylesheet">
-        <link href="css/qrl.css?v=20260905" rel="stylesheet">
+        <link href="css/qrl.css?v=20260906" rel="stylesheet">
         <meta name="description" content="My work on helium flow modelling and pipe sizing for FCC-ee at CERN, including design assumptions, results, model comparisons, and the calculation method.">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>Anita Petrovic - FCC-ee Cryogenic Distribution and Pipe Sizing</title>
@@ -261,18 +261,67 @@
                                 <p>The cryomodule heat load sets the liquid flow needed. The code then adds the flow
                                     needed to account for flash. For example, if 10% becomes vapour, delivering 10 g/s
                                     of liquid requires about 11.1 g/s before the valve.</p>
-                                <figure class="qrl-figure qrl-equation-figure">
-                        <a href="images/qrl/qrl_step2_supply_flow.png" target="_blank" rel="noopener noreferrer" aria-label="Open full-size image: Equations for latent heat, flash fraction, and helium supply flow"><img src="images/qrl/qrl_step2_supply_flow.png" alt="Equations for latent heat, flash fraction, and helium supply flow" width="4069" height="1003" loading="lazy" /></a>
-                        <figcaption>Supply-flow calculation. h_sL and h_sV are saturated-liquid and saturated-vapour enthalpies. Flash is used as a fraction in these equations: 10% = 0.10.</figcaption>
-                    </figure>
+                                <div class="qrl-equations" role="group" aria-label="Supply-flow calculation">
+                                    <div class="qrl-equation-row">
+                                        <span class="qrl-equation-label">Latent heat</span>
+                                        <math xmlns="http://www.w3.org/1998/Math/MathML" aria-label="L equals saturated-vapour enthalpy minus saturated-liquid enthalpy">
+                                            <mi>L</mi><mo>=</mo><msub><mi>h</mi><mtext>sV</mtext></msub><mo>−</mo><msub><mi>h</mi><mtext>sL</mtext></msub>
+                                        </math>
+                                        <span class="qrl-equation-unit">J/g</span>
+                                    </div>
+                                    <div class="qrl-equation-row">
+                                        <span class="qrl-equation-label">Flash fraction</span>
+                                        <math xmlns="http://www.w3.org/1998/Math/MathML" aria-label="x equals incoming enthalpy minus saturated-liquid enthalpy, divided by L">
+                                            <mi>x</mi><mo>=</mo><mfrac><mrow><msub><mi>h</mi><mtext>in</mtext></msub><mo>−</mo><msub><mi>h</mi><mtext>sL</mtext></msub></mrow><mi>L</mi></mfrac>
+                                        </math>
+                                        <span class="qrl-equation-unit">fraction</span>
+                                    </div>
+                                    <div class="qrl-equation-row">
+                                        <span class="qrl-equation-label">Liquid flow needed</span>
+                                        <math xmlns="http://www.w3.org/1998/Math/MathML" aria-label="Liquid mass flow equals cryomodule heat load divided by L">
+                                            <msub><mover><mi>m</mi><mo>˙</mo></mover><mtext>liquid</mtext></msub><mo>=</mo><mfrac><msub><mi>Q</mi><mtext>CM</mtext></msub><mi>L</mi></mfrac>
+                                        </math>
+                                        <span class="qrl-equation-unit">g/s</span>
+                                    </div>
+                                    <div class="qrl-equation-row">
+                                        <span class="qrl-equation-label">Supply before the valve</span>
+                                        <math xmlns="http://www.w3.org/1998/Math/MathML" aria-label="Supply mass flow equals liquid mass flow divided by one minus x">
+                                            <msub><mover><mi>m</mi><mo>˙</mo></mover><mtext>supply</mtext></msub><mo>=</mo><mfrac><msub><mover><mi>m</mi><mo>˙</mo></mover><mtext>liquid</mtext></msub><mrow><mn>1</mn><mo>−</mo><mi>x</mi></mrow></mfrac>
+                                        </math>
+                                        <span class="qrl-equation-unit">g/s</span>
+                                    </div>
+                                </div>
+                                <p class="qrl-equation-note"><var>h</var><sub>sL</sub> and <var>h</var><sub>sV</sub> are the saturated-liquid and saturated-vapour enthalpies at the bath pressure;
+                                    <var>h</var><sub>in</sub> is the enthalpy before the valve (all in J/g).
+                                    <var>Q</var><sub>CM</sub> is the cryomodule heat load in watts. Flash is used as a fraction: 10% = 0.10.</p>
                                 <h4>Mixing the return flows</h4>
                                 <p>On the return side, helium from a cryomodule joins the flow already in the pipe.
                                     I use mass and energy balances to calculate the combined flow and enthalpy before
                                     continuing to the next segment.</p>
-                                <figure class="qrl-figure qrl-equation-figure">
-                        <a href="images/qrl/qrl_step2_return_mixing.png" target="_blank" rel="noopener noreferrer" aria-label="Open full-size image: Mass and energy balances for two helium streams joining a return pipe"><img src="images/qrl/qrl_step2_return_mixing.png" alt="Mass and energy balances for two helium streams joining a return pipe" width="1952" height="902" loading="lazy" /></a>
-                        <figcaption>The green and purple labels represent the two incoming streams; red represents the combined stream. Its enthalpy is weighted by the incoming mass flows.</figcaption>
-                    </figure>
+                                <p class="qrl-equation-note">Stream 1 is the flow already in the return pipe; stream 2 is the flow joining from the cryomodule.
+                                    The subscript “mix” denotes the combined stream.</p>
+                                <div class="qrl-equations" role="group" aria-label="Return-flow mixing calculation">
+                                    <div class="qrl-equation-row">
+                                        <span class="qrl-equation-label">Mass balance</span>
+                                        <math xmlns="http://www.w3.org/1998/Math/MathML" aria-label="Combined mass flow equals stream 1 mass flow plus stream 2 mass flow">
+                                            <msub><mover><mi>m</mi><mo>˙</mo></mover><mtext>mix</mtext></msub><mo>=</mo><msub><mover><mi>m</mi><mo>˙</mo></mover><mn>1</mn></msub><mo>+</mo><msub><mover><mi>m</mi><mo>˙</mo></mover><mn>2</mn></msub>
+                                        </math>
+                                    </div>
+                                    <div class="qrl-equation-row">
+                                        <span class="qrl-equation-label">Energy balance</span>
+                                        <math xmlns="http://www.w3.org/1998/Math/MathML" aria-label="Combined mass flow times combined enthalpy equals mass flow times enthalpy for stream 1 plus mass flow times enthalpy for stream 2">
+                                            <msub><mover><mi>m</mi><mo>˙</mo></mover><mtext>mix</mtext></msub><msub><mi>h</mi><mtext>mix</mtext></msub><mo>=</mo><msub><mover><mi>m</mi><mo>˙</mo></mover><mn>1</mn></msub><msub><mi>h</mi><mn>1</mn></msub><mo>+</mo><msub><mover><mi>m</mi><mo>˙</mo></mover><mn>2</mn></msub><msub><mi>h</mi><mn>2</mn></msub>
+                                        </math>
+                                    </div>
+                                    <div class="qrl-equation-row">
+                                        <span class="qrl-equation-label">Combined enthalpy</span>
+                                        <math xmlns="http://www.w3.org/1998/Math/MathML" aria-label="Combined enthalpy equals the sum of mass flow times enthalpy for both incoming streams, divided by their combined mass flow">
+                                            <msub><mi>h</mi><mtext>mix</mtext></msub><mo>=</mo><mfrac><mrow><msub><mover><mi>m</mi><mo>˙</mo></mover><mn>1</mn></msub><msub><mi>h</mi><mn>1</mn></msub><mo>+</mo><msub><mover><mi>m</mi><mo>˙</mo></mover><mn>2</mn></msub><msub><mi>h</mi><mn>2</mn></msub></mrow><msub><mover><mi>m</mi><mo>˙</mo></mover><mtext>mix</mtext></msub></mfrac>
+                                        </math>
+                                    </div>
+                                </div>
+                                <p class="qrl-equation-note">Here, ṁ is mass flow (g/s) and <var>h</var> is specific enthalpy (J/g).
+                                    The combined enthalpy is weighted by the incoming mass flows.</p>
                             </section>
                             <section class="qrl-technical-step">
                                 <h3>Step 3 — Read the profiles</h3>
